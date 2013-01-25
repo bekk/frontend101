@@ -1,0 +1,40 @@
+body {
+    padding:5%;
+    color:#333;
+    font-size:18px;
+}
+
+p {
+    line-height:1.5;
+}
+
+.container {
+    margin:0 auto;
+}
+
+
+/****************************************************
+ * CSS for desktop
+ */
+
+@media all and (min-width: 50em) {
+    .container { width:40em; }
+}
+
+
+/****************************************************
+ * CSS for tablets
+ */
+
+@media all and (max-width: 50em) {
+    .container { width:25em; }
+}
+
+
+/****************************************************
+ * CSS for mobiler
+ */
+
+@media all and (max-width: 30em) {
+    .container { width:15em; }
+}
