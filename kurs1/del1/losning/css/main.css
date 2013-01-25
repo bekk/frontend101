@@ -21,7 +21,7 @@ p {
  * CSS for desktop
  */
 
-@media all and (min-width: 50em) {
+@media all and (min-width: 60em) {
     .container { width:40em; }
 }
 
@@ -30,7 +30,7 @@ p {
  * CSS for tablets
  */
 
-@media all and (max-width: 50em) {
+@media all and (max-width: 60em) {
     .container { width:25em; }
 }
 

@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BEKK-theme for remark</title>
+    <title>Lynkurs i webutvikling</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-    <script src="http://cloud.github.com/downloads/gnab/remark/remark-0.3.6.min.js" type="text/javascript"></script>
+    <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
     <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
+    <style type="text/css" media="screen">
+      #slideshow .slide .content.front-page h1 { width: 100%; }
+      .slide p { padding: 0; margin: 1.1em 0; }
+      .slide ul { padding: 0; margin: 1.1em 0; }
+      .slide img { max-width: 100%; max-height: 600px; }
+      .slide .big { font-size: 4em; }
+      #slideshow .slide .content ul li { padding-left: 1.3em; }
+      #slideshow .slide .attr a { color:#333; font-size:0.8em; }
+      #slideshow .slide .fullscreen img { width:100%; height:100%; position:absolute; top:40px; left:0; }
+      .slide span.alt { color:#FD5158; }
+      .jquery { background-color: #1E2837; }
+      .nodejs { background-color: #3F4239; }
+      #slideshow .position { display: none; }
+    </style>
   </head>
   <body>
     <textarea id="source">
 
+.fullscreen
+
+![Nyan](img/nyan.jpg)
+
+---
+
 .front-page
 
-# BEKK-theme
+# Lynkurs i webutvikling
 
-## En (kort) introduksjon
+## Kom igang med HTML, CSS, JavaScript og HTTP
 
-Sjekk ut [remark](https://github.com/gnab/remark)
+Presentasjon holdt for Online og Abakus
 
-Kim Joar Bekkelund
+Kim Joar Bekkelund og Olav Bjørkøy
 
-18/11/2011
+August 2012
 
 ---
 
@@ -30,255 +49,1203 @@ Kim Joar Bekkelund
 
 # Agenda
 
-* Forside og agenda
-* Bilder
-* Lister
-* Kode (med highlighting)
-* Kolonner
-* Lenker
-
----
-
-# Forside
-
-Legg til klassen `front-page`. Overskrift, underoverskrift, beskrivelse, navn og dato er obligatorisk.
-
-Eksempel-slide:
-
-    .no-highlight
-    .front-page
-    
-    # Coffeescript og SASS
-    
-    ## En introduksjon
-    
-    Forelesning ved NITH
-    
-    Kim Joar Bekkelund
-    
-    18/11/2011
-
-For agenda, legg til klassen `agenda` og lag liste:
-
-    .no-highlight
-    .agenda
-
-    * første punkt
-    * andre punkt
-    * tredje punkt
-
----
-
-.round
-
-# Rundt bilde
-
-![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/round/24.png)
-
----
-
-.round
-
-![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/round/24.png)
-
----
-
-# Rundt bilde
-
-Eksempel-slide:
-
-    .no-highlight
-    .round
-    
-    ![alternativ tekst](images/round/24.png)
-
----
-
-.pushed
-
-![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
-
-# Stort bilde
-
-Og litt undertekst
-
----
-
-.pushed
-
-![](https://github.com/kjbekkelund/remark-bekk/raw/master/example/images/details/_DSC2394.jpg)
-
-# Stort bilde med rundt boks
-
-.circle.yellow.top-right[Fin tekst]
-
-Og såklart litt tekst
-
----
-
-# Stort bilde
-
-Bruk klassen `pushed` og legg til et stort bilde.
-
-Eksempel-slide:
-
-    .no-highlight
-    .pushed
-    
-    ![](images/details/_DSC2394.jpg)
-    
-    # Stort bilde med rundt boks
-    
-    \.circle.yellow.top-right[Fin tekst]
-    
-    Og såklart litt tekst
-
----
-
-# Lister
-
-* Bare bruk `*`
-* ... så får du en liste
-
-Og:
-
-1. Nummererte lister er også mulig!
-2. Bare skriv `1.`, `2.`, og så videre
-
----
-
-# Hva med highlighting av kode?
-
-Vi bruker [Solarized](http://ethanschoonover.com/solarized), som ser ut
-til å passe godt med BEKK-themet.
-
-Et Ruby-eksempel:
-
-    .ruby
-    names = people.map do |person|
-      person.name.capitalize
-    end
-
-Og et JavaScript-eksempel:
-
-    .javascript
-    var names = []
-    for (var i = 0, l = people.length; i &lt; l; i++) {
-      var person = people[i];
-      var name = person.name.slice(0,1).toUpperCase() +
-                 person.name.slice(1);
-      names.push(name);
-    }
-
-For kodeblokk, ha 4 mellomrom før kode:
-
-    .no-highlight
-        function test() {
-          return "test"
-        }
-
----
-
-# `.javascript testFunction()`
-
-Kode i overskrift ser fortsatt litt vel funky ut, og bør nok unngås.
+* Nettleseren      <span class="alt">(klienten)</span>
+* HTML             <span class="alt">(innhold)</span>
+* CSS              <span class="alt">(design)</span>
+* JavaScript       <span class="alt">(oppførsel)</span>
+* HTTP             <span class="alt">(transport)</span>
 
 ---
 
 .middle.center
 
-# Midtjusterte overskrifter
+# Nettleseren 
 
 ---
 
-# Midtjusterte overskrifter
+.middle.center
 
-Kode for å få til midtjustert overskrift:
+![Browsers](img/browsers.png)
 
-    .no-highlight
-    .middle.center
+&nbsp;
+
+Konkurranse mellom nettlesere er flott!
+
+---
+
+.middle.center
+
+![Spider](img/spider.jpg)
+
+---
+
+.middle.center.attr
+
+![iOS](img/ios.jpg)
+
+[flickr.com/photos/blakespot](http://www.flickr.com/photos/blakespot)
+
+---
+
+.middle.center
+
+![Browser Stats](img/statcounter.png)
+
+Chrome > IE9 > Firefox 5+ > IE8 > Safari (OS X) > Opera > Safari (iPad) > IE7
+
+---
+
+.middle.center
+
+![Sites](img/sites.png)
+
+---
+
+.middle.center
+
+![Apple 2012](img/apple.com.2012.png)
+
+apple.com, 2012
+
+---
+
+.middle.center
+
+![Apple 1997](img/apple.com.1997.png)
+
+apple.com, 1997
+
+---
+
+.middle.center
+
+![VG 1996](img/vg.no.1996.png)
+
+vg.no, 1996
+
+---
+
+.middle.center
+
+Men hva består en nettside av?
+
+---
+
+.middle.center
+
+# HyperText Markup Language 
+
+# (HTML)
+
+---
+
+.middle.center
+
+![NTNU](img/ntnu.css.off.png)
+
+
+---
+
+# HTML
+
+    .html
+    <!doctype html>
+
+    <h1>
+        Velkommen til min flotte nettside!
+    </h1>
+
+    <p>
+        Her er et avsnitt.
+    </p>
+
+    <p>
+        Her er en link til en annen side: 
+        <a href="http://bekk.no">Bekk Consulting AS</a>.
+    </p>
+
+
+---
+
+# HTML
+
+&nbsp;
+
+HTML er enkle tekstfiler.
+
+HTML beskriver strukturen og innholdet til en nettside.
+
+Denne strukturen brukes av CSS og JS.
+
+---
+
+# HTML
+
+&nbsp;
+
+HTML er enkle tekstfiler.
+
+HTML beskriver strukturen og innholdet til en nettside.
+
+Denne strukturen brukes av CSS og JS.
+
+&nbsp;
+
+HTML sier ingenting om utseende.
+
+HTML sier ingenting om oppførsel.
+
+---
+
+# HTML
+
+&nbsp;
+
+HTML er enkle tekstfiler.
+
+HTML beskriver strukturen og innholdet til en nettside.
+
+Denne strukturen brukes av CSS og JS.
+
+&nbsp;
+
+HTML sier ingenting om utseende.
+
+HTML sier ingenting om oppførsel.
+
+&nbsp;
+
+HTML er ikke et programmeringsspråk
+
+HTML er et markeringsspråk som beskriver semantikken til et dokument.
+
+---
+
+.middle.center
+
+![Bekk.no](img/bekk.no.png)
+
+[view-source:bekk.no](http://www.bekk.no)
+
+---
+
+# HTML
+  
+    .html
+    <!doctype html>
+
+    <html lang="en">
+        <head>
+
+
+
+
+        </head>
+        <body>
+
+
+
+
+        </body> 
+    </html>
+
+---
+
+# HTML
+
+    .html
+    <!doctype html>
+
+    <html lang="en">
+        <head>
+
+            <meta charset="utf-8">
+            <title>En enkel HTML-side</title>
+
+        </head>
+        <body>
+
+            <h1>Velkommen til min flotte nettside!</h1>
+            <p>Her er litt mer informasjon.</p>
+
+        </body>
+    </html>
+
+---
+
+.middle.center
+
+[goo.gl/jP3Nv](http://goo.gl/jP3Nv)
+
+---
+
+.middle.center
+
+HTML beskriver hva innholdet *er*.
+
+Men hva med hvordan innholdet *ser ut*?
+
+---
+
+.middle.center
+
+# Cascading Style Sheets 
+
+# (CSS)
+
+
+---
+
+.middle.center
+
+![NTNU](img/ntnu.css.off.png)
+
+---
+
+.middle.center
+
+![NTNU](img/ntnu.png)
+
+---
+
+.middle.center
+
+![iOS CSS Icons](img/cssicons.png)
+
+[graphicpeel.com/cssiosicons](http://graphicpeel.com/cssiosicons)
+
+---
+
+.middle.center
+
+![Opera Logo](img/opera.png)
+
+[v2.desandro.com/articles/opera-logo-css](http://v2.desandro.com/articles/opera-logo-css/)
+
+---
+
+.middle.center
+
+![Really do](img/really.jpeg)
+
+---
+
+# CSS
+
+    .css
+    /* screen.css */
+
+    body {
+        background: blue;
+        font-family: Helvetica, Arial, sans-serif;
+    }
+
+    h1 {
+        color: red;
+    }
+
+&nbsp;
+
+    .html
+    <!-- index.html -->
+
+    <link href="screen.css" rel="stylesheet">    
+
+---
+
+# CSS
+
+    .css
+    /* 
+     * <body>...</body> 
+     */
+    body { background: red; }     
+
+    /* 
+     * <h1>...</h1> 
+     */
+    h1 { color: white; } 
     
-    # Midtjusterte overskrifter
+    /* 
+     * <div class="description">...</div> 
+     */
+    .description { font-weight:bold; } 
+    
+    /* 
+     * <div id="content">...</div> 
+     */
+    #content { margin:10px; } 
+
+    /* 
+     * ID > Klasse > Element > Rekkefølge
+     */
 
 ---
 
-.cols.three
+.middle.center
 
-# 3 kolonner
+![CSSZenGarden](img/zen.orig.png)
 
-<div class="col">
-  Første kolonne.
+[csszengarden.com](http://www.csszengarden.com/)
 
-  For å få til kolonner må vi bruke litt HTML, sammen med to klasser.
+---
+
+# CSS
+
+    .css
+    /* ID, klasse, eller tag (#foo, .bar, baz) => selector */
+    selector {
+
+        /* Bakgrunn */
+        background: #f00;
+
+        /* Kanter */
+        border: 1px solid red;
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+        /* Dimensjoner */
+        height:20px;
+        width:30px;
+
+        /* Posisjon */
+        float:left;
+        position:absolute;
+        top:10px;
+        left:25px;
+
+        /* Tekst */
+        font-size:20px;
+        line-height:1.5;
+
+        /* Spacing */
+        margin:10px;
+        padding: 10px 0;
+
+    }
+
+---
+
+.middle.center
+
+[goo.gl/psbDf](http://goo.gl/psbDf)
+
+---
+
+.middle.center
+
+# Mobile First
+
+---
+
+.middle.center
+
+![Finn.no Stats](img/finn.stats.png)
+
+[labs.finn.no](http://labs.finn.no/)
+
+---
+
+.middle.center
+
+![Mediaqueri.es](img/mediaq.png)
+
+[mediaqueri.es](http://mediaqueri.es/)
+
+---
+
+&nbsp;
+
+    .css
+    @media (max-width:1000px) {
+        #content {
+            width:700px;
+        }
+    }
+
+    @media (max-width:750px) {
+        #content {
+            width:500px;
+        }
+    }
+    
+    /* Retina display */
+    @media 
+        only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min--moz-device-pixel-ratio: 2),
+        only screen and (-o-min-device-pixel-ratio: 2/1),
+        only screen and (min-device-pixel-ratio: 2) 
+    {
+        #myimage {
+            background:url("img/myimage@2x.png");
+        }
+    }
+
+
+---
+
+.middle.center
+
+HTML beskriver hva innholdet *er*.
+
+CSS beskriver hvordan innholdet *ser ut*.
+
+Men hva hvis vi trenger *dynamisk oppførsel*?
+
+---
+
+.middle.center
+
+# JavaScript
+
+---
+
+.middle.center
+
+![Google instant search](img/google.png)
+
+---
+
+.middle.center
+
+![Google Maps](img/googlemaps.png)
+
+---
+
+.middle.center
+
+![JSLinux](img/jslinux.png)
+[JSLinux](http://bellard.org/jslinux/)
+
+---
+
+.middle.center
+
+![Three.js](img/threejs.png)
+[Three.js](http://mrdoob.github.com/three.js/)
+
+---
+
+.middle.center
+
+JavaScript er et programmeringspråk.
+
+---
+
+.middle.center
+
+… men det har ingenting med Java å gjøre.
+
+---
+
+# Hvorfor dynamisk oppførsel?
+
+---
+
+# Hvorfor dynamisk oppførsel?
+
+Endre HTML og CSS
+
+Lytte på det brukeren gjør, som for eksempel å klikke på noe
+
+Validere brukerinput
+
+Animasjon
+
+Spill, lyd, video
+
+---
+
+.middle.center
+
+La oss ta en rask introduksjon
+
+---
+
+&nbsp;
+
+    .javascript
+    function add(a, b) {
+        return a + b;
+    } // For de som kan matte: f(x,y) = x + y
+    
+    add(2, 2); // f(2,2) = 4
+
+---
+
+&nbsp;
+
+    .javascript
+    function add(a, b) {
+        return a + b;
+    } // For de som kan matte: f(x,y) = x + y
+    
+    add(2, 2); // f(2,2) = 4
+
+Skrevet på en litt annen måte:
+
+    .javascript
+    var add = function(a, b) {
+        return a + b;
+    }
+    
+    add(2, 2); // 4
+
+---
+
+Man kan til og med returnere en funksjon fra en funksjon:
+
+
+    .javascript
+    var adder = function(a) {
+
+        return function(b) {
+            return a + b;
+        }
+
+    }
+
+    // Vi lager en funksjon av en funksjon!
+    var addOne = adder(1);
+    addOne(2); // 3
+
+    var addTwo = adder(2);
+    addTwo(2); // 4
+
+---
+
+Vi kan lage objekter:
+
+    .javascript
+    var obj = {
+        x: 100,
+        y: "Test"
+    };
+
+    obj.x // 100
+    obj.y // Test
+
+---
+
+Vi kan lage objekter:
+
+    .javascript
+    var obj = {
+        x: 100,
+        y: "Test"
+    };
+
+    obj.x // 100
+    obj.y // Test
+
+Og arrays:
+
+    .javascript
+    var array = [1, 2, "Test", true];
+
+    array[0] // 1
+    array[2] // Test
+
+---
+
+.middle.center
+
+… men hvordan endrer vi HTML og CSS?
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+
+
+
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+addText.js:
+
+    .javascript
+    document.body.appendChild( document.createTextNode( 'Hello World!' ) );
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+addText.js:
+
+    .javascript
+    document.body.appendChild( document.createTextNode( 'Hello World!' ) );
+
+Ny HTML etter at siden er lastet:
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+            Hello World!
+        </body>
+    </html>
+
+---
+
+.middle
+
+`getElementsByTagName`
+
+`getElementsByClassName`
+
+`getElementById`
+
+---
+
+.middle
+
+`getElementsByTagName` &mdash; `.html <h1>Overskrift</h1>`
+
+`getElementsByClassName` &mdash; `.html <div class="user">…</div>`
+
+`getElementById` &mdash; `.html <div id="nav">…</div>`
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+
+
+
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+changeText.js:
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.textContent = "Ny tittel!";
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+changeText.js:
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.textContent = "Ny tittel!";
+
+Ny HTML etter at siden er lastet:
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>Ny tittel!</h1>
+        </body>
+    </html>
+
+---
+
+# Lytte på klikk
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.addEventListener("click", function() {
+        header.textContent = header.textContent + "!";
+    });
+
+[http://jsbin.com/uqawuq/1/edit](http://jsbin.com/uqawuq/1/edit)
+
+Vi kan blant annet lytte på:
+
+* dblclick
+* keyup
+* mousedown
+* resize
+* scroll
+* touchstart
+
+---
+
+# Endre design
+
+    .javascript
+    var list = document.getElementsByClassName("technologies");
+    list[0].style.color = "red";
+
+[http://jsbin.com/icalon/2/edit](http://jsbin.com/icalon/2/edit)
+
+---
+
+.middle.center
+
+Stress å skrive `getElementsByClassName`, `getElementsByTagName` og
+`getElementById` hele tiden.
+
+![sleepy](img/sleepy.gif)
+
+---
+
+.middle.center
+
+`querySelectorAll`
+
+---
+
+&nbsp;
+
+    .html
+    <html>
+        <body>
+            <h1>This is HTML</h1>
+
+            <p id="description">Test</p>
+
+            <ul class="technologies">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>HTTP</li>
+            </ul>
+        </body>
+    </html>
+
+JavaScript
+
+    .javascript
+    document.querySelectorAll("h1")
+    // <h1>This is HTML</h1>
+
+    document.querySelectorAll("#description")
+    // <p id="description">Test<p>
+
+    document.querySelectorAll(".technologies")
+    // <ul class="technologies">…</ul>
+
+---
+
+.middle.center
+
+Men kun for nyere nettlesere (IE8+)
+
+---
+
+.middle.center.jquery
+
+![jQuery](img/jquery_logo.png)
+
+---
+
+jQuery kan brukes med `$`:
+
+    .javascript
+    // Endre tekst
+    $("h1").text("Ny tittel!");
+
+
+    // Lytte på klikk
+    $("h1").click(function() {
+      var header = $(this);
+      header.text(header.text() + "!");
+    });
+
+    // Endre CSS
+    $(".technologies").css("background-color", "red");
+
+---
+
+.middle.center
+
+Hvordan slipper Gmail å laste siden på nytt når du åpner en epost?
+
+---
+
+.middle.center
+
+AJAX
+
+&nbsp;
+
+---
+
+.middle.center
+
+AJAX
+
+Send og motta data i bakgrunnen
+
+---
+
+… men her kommer det noen nettleser-problemer igjen
+
+    .javascript
+    var httpRequest;
+
+    if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+      httpRequest = new XMLHttpRequest();
+    } else if (window.ActiveXObject) { // IE
+      try {
+        httpRequest = new ActiveXObject("Msxml2.XMLHTTP");
+      }
+      catch (e) {
+        try {
+          httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        catch (e) {}
+      }
+    }
+
+    httpRequest.onreadystatechange = function() {
+      if (httpRequest.readyState === 4) {
+        if (httpRequest.status === 200) {
+          alert(httpRequest.responseText);
+        } else {
+          alert('There was a problem with the request.');
+        }
+      }
+    }
+
+    httpRequest.open('GET', 'http://bekk.no/api');
+    httpRequest.send();
+
+---
+
+.middle.center
+
+![wtf](img/wtf.gif)
+
+---
+
+.middle.center.jquery
+
+![jQuery](img/jquery_logo.png)
+
+&nbsp;
+
+… igjen
+
+---
+
+Ajax med jQuery:
+
+    .javascript
+    $.ajax({
+
+      url: 'http://bekk.no/api',
+
+      success: function(data) {
+          $("body").append(data);
+      },
+
+      error: function() {
+          $("body").append("Henting feilet");
+      }
+
+    });
+
+---
+
+.middle.center
+
+HTML beskriver hva innholdet *er*.
+
+CSS beskriver hvordan innholdet *ser ut*.
+
+JavaScript gir siden *dynamisk oppførsel*.
+
+Men hvor kommer alle disse filene fra?
+
+---
+
+.middle.center
+
+# Hypertext Transfer Protocol 
+
+# (HTTP)
+
+---
+
+.middle.center
+
+*http*://bekk.no
+
+---
+
+.middle.center
+
+HTTP er en protokoll
+
+---
+
+.middle.center.big
+
+?
+
+---
+
+.middle
+
+*Protokoll*
+
+Gjør det mulig for "datamaskiner" å snakke sammen
+
+---
+
+.middle
+
+*HTTP*
+
+Gjør det mulig for nettlesere å be om blant annet HTML, CSS og JavaScript
+
+---
+
+.middle.center
+
+Vi gjør sjelden HTTP-kall selv, men viktig å forstå hva som skjer
+
+---
+
+HTTP-request for forsiden av [bekk.no](http://bekk.no)
 
     .no-highlight
-    .cols.three
+    GET / HTTP/1.1
+    Host: bekk.no
 
-    # Kolonnetest
+---
 
-    <div class="col">
-      kolonne 1
-    </div>
-
-    <div class="col">
-      kolonne 2
-    </div>
-
-    <div class="col">
-      kolonne 3
-    </div>
-</div>
-
-<div class="col">
-  Andre kolonne.
-</div>
-
-<div class="col">
-  Tredje kolonne
-
-  Vi støtter også to kolonner ved bruk av klassen `two` istedenfor `three`
+HTTP-request for forsiden av [bekk.no](http://bekk.no)
 
     .no-highlight
-    .cols.two
-</div>
+    GET / HTTP/1.1
+    Host: bekk.no
+
+Litt av responsen:
+
+    .no-highlight
+    HTTP/1.1 200 OK
+    Cache-Control: …
+    Connection: …
+    Content-Type: text/html; charset=utf-8
+    Date: Sun, 19 Aug 2012 10:07:11 GMT
+    Expires: …
+    Server: …
+    Set-Cookie: …
+    Set-Cookie: …
+    Transfer-Encoding: …
+    X-AspNet-Version: …
+    X-Powered-By: …
+    
+    
+    <!DOCTYPE html>
+    <html>
+        <head>
+            …
+        </head>
+        <body>
+            …
+        </body>
+    </html>
 
 ---
 
-.cols.three
+Fra kommendolinjen med Telnet:
 
-# Kolonner støtter Markdown
+    .no-highlight
+    telnet bekk.no 80
 
-<div class="col">
-  .circle.red.centered[Kolonne 1]
+HTTP-requesten:
 
-  *em* sweet
-
-  [kimjoar.net](http://kimjoar.net)
-</div>
-
-<div class="col">
-  .circle.red.centered[Kolonne 2]
-
-  * liste!
-  * nytt element
-  * *winning*
-</div>
-
-<div class="col">
-  .circle.yellow.centered[Kolonne 3]
-
-  # overskrift
-
-  Overskrifter fungerer også i kolonner!
-</div>
+    .no-highlight
+    GET / HTTP/1.1
+    Host: bekk.no
 
 ---
 
-# Noen lenker
+Fra kommendolinjen med Telnet:
 
-* [remark](https://github.com/gnab/remark)
-* [Markdown syntax](http://daringfireball.net/projects/markdown/syntax)
-* [Eksempelpresentasjon](http://bekkopen.github.com/infrastruktur-som-kode/) som bruker BEKK themet
+    .no-highlight
+    telnet bekk.no 80
+
+HTTP-requesten:
+
+    .no-highlight
+    GET / HTTP/1.1
+    Host: bekk.no
+
+La oss hente et bilde:
+
+    .no-highlight
+    GET /Content/Images/services-tech.png HTTP/1.1
+    Host: bekk.no
+
+---
+
+.middle.center
+
+HTTP/1.1 200 OK
+
+---
+
+.middle.center
+
+HTTP/1.1 404 Not Found
+
+---
+
+.middle.center
+
+![http://www.jackfig.com/404](img/jackfig404.png)
+
+---
+
+.middle.center
+
+![Digipost 404](img/digipost404.png)
+
+---
+
+.middle.center
+
+AJAX er bare HTTP-kall
+
+[bekk.no](http://bekk.no)
+
+---
+
+.middle.center
+
+# Oppsummering
+
+---
+
+.middle.center
+
+Alt er ren tekst
+
+---
+
+.middle.center
+
+Alt har sin oppgave
+
+---
+
+.middle.center
+
+HTML &mdash; innhold
+
+CSS &mdash; design
+
+JavaScript &mdash; oppførsel
+
+HTTP &mdash; transport
+
+---
+
+.middle.center
+
+Kraftig teknologi
+
+---
+
+.middle.center.nodejs
+
+![Node.js](img/nodejs.png)
+
+&nbsp;
+
+&nbsp;
+
+JavaScript på serveren med Node.js
+
+---
+
+.middle.center
+
+![Phonegap](img/phonegap.png)
+[Phonegap](http://phonegap.com/)
+
+---
+
+.middle.center
+
+![Chrome Developer Tools](img/dt.png)
+[Chrome Developer Tools](https://developers.google.com/chrome-developer-tools/)
+
+---
+
+.middle.center
+
+Spørsmål?
+
+kim.bekkelund@bekk.no, @kimjoar
+
+olav.bjorkoy@bekk.no, @vandelay
 
     </textarea>
     <div id="slideshow"></div>
