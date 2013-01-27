@@ -1,42 +1,55 @@
 /*
- * Generell CSS
+ * Basic CSS
  */
 
 body {
     padding:5%;
     color:#333;
-    font-size:18px;
+    font-size:16px;
+    color:#444;
 }
 
 p {
     line-height:1.5;
 }
 
+a {
+    color:#EC651B;
+}
+
 .container {
     margin:0 auto;
 }
 
+.container img {
+    max-width: 100%;
+}
 
-/*
- * CSS for desktop
- */
-
-@media all and (min-width: 60em) {
-    .container { width:40em; }
+header, nav, section {
+    margin-bottom:2em;
 }
 
 
 /*
- * CSS for tablets
+ * Desktop layout CSS
  */
 
-@media all and (max-width: 60em) {
+@media all and (min-width: 960px) {
+    .container { width:860px; }
+}
+
+
+/*
+ * Tablet layout CSS
+ */
+
+@media all and (max-width: 960px) {
     .container { width:25em; }
 }
 
 
 /*
- * CSS for mobiler
+ * Mobile layout CSS
  */
 
 @media all and (max-width: 30em) {
