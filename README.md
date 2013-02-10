@@ -52,11 +52,43 @@
 
 ## Del 1: Intro
 
-## Del 2: Responsive JS
+* Presentasjon:
+    * JavaScript syntax
+    * Objekter
+    * Funksjoner
+    * Prototype
+    * Scoping
+* Oppgave:
+
+
+## Del 2: jQuery ftw
 
 * Presentasjon:
-    * Fjerne click-delays på touch-skjermer
+    * Intro til DOM og selectorer i jQuery
+    * Intro til manipulering av DOM
+    * Intro til binding av eventer
+    * [click-delays på touch-skjermer]
 
-## Del 3: ...
+* Oppgave:
+    * Lage en dom-basert app:
+        * Liste opp elementer
+        * Legge til elementer
+        * Slette eleenter
 
-## Del 4: ...
+## Del 3: Api
+* Presentasjon:
+    * Same origin policy
+    * Jsonp
+    * Cross-origin resource sharing
+    * Hente data fra rest-api
+    * Lagre date via Post
+*Oppgave:
+    * Persister data via api
+
+## Del 4: Strukturer applikasjonen med require.js
+* Presentasjon
+    * require sytax, define/require
+    * Strukturer applikajonen med require
+    * Vise at det er noe som heter rjs og almond.js
+* Oppgave
+    * Bygg om applikasjonen til å bruke require.js //Siste oppgave har en tendes til å skli ut, så legger lite trykk på denne
