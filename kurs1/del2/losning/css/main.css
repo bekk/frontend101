@@ -1,0 +1,57 @@
+/*
+ * Basic CSS
+ */
+
+body {
+    padding:5%;
+    color:#333;
+    font-size:16px;
+    color:#444;
+}
+
+p {
+    line-height:1.5;
+}
+
+a {
+    color:#EC651B;
+}
+
+.container {
+    margin:0 auto;
+}
+
+.container img {
+    max-width: 100%;
+}
+
+header, nav, section {
+    margin-bottom:2em;
+}
+
+
+/*
+ * Desktop layout CSS
+ */
+
+@media all and (min-width: 960px) {
+    .container { width:860px; }
+}
+
+
+/*
+ * Tablet layout CSS
+ */
+
+@media all and (max-width: 960px) {
+    .container { width:25em; }
+}
+
+
+/*
+ * Mobile layout CSS
+ */
+
+@media all and (max-width: 30em) {
+    .container { width:15em; }
+}
