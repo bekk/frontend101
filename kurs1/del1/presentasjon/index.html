@@ -120,8 +120,6 @@ http://flic.kr/p/5HzQsy
 # HTML
 
     .html
-    <!doctype html>
-
     <h1>
         Velkommen til min flotte nettside!
     </h1>
@@ -429,7 +427,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
     #id .class element              /*kombinasjon av forskjellige selektorer*/
 
-    .class.class .class             /*?*/
+    .class1.class2 .class3          /*?*/
 
     element .class #id              /*wtf*/
 
@@ -466,10 +464,10 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 <h1>&nbsp;Hvem vinner?&nbsp;</h1>
 </div>
 
----
+<!-- 
 .middle.center
 
-#Det kommer an på..!
+#Det kommer an på..! -->
 
 ---
 .middle
@@ -493,10 +491,10 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 ###2  !important i Author style sheets
 ##1  !important i User style sheets
 
----
+<!--
 .middle
 
-#3. Vekting av selektorer
+#3. Vekting av selektorer -->
 
 ---
 
@@ -1002,7 +1000,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px}
+     div { width: 180px; padding:40px} /* Ny bredde: 180 + 40 + 40 = 260 */
 
 &nbsp;
 
@@ -1022,7 +1020,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px; border: 10px}
+     div { width: 180px; padding:40px; border: 10px} /* Ny bredde: 260 + 10 + 10 = 280*/
 
 &nbsp;
 
@@ -1039,7 +1037,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px; border: 10px; margin: 20px}
+     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
 
 &nbsp;
 
