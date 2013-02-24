@@ -29,9 +29,17 @@ iframe { border:none; }
 .imganim img { -webkit-transition: all 300ms ease-in-out; }
 .imganim img:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
+.gradient { background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); }
+.middle.center h1 span { background:none !important; }
+
+.middle.center.shadow { background:#333; text-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+.middle.center.shadow .shadow1 { background: #444; padding:1em; box-shadow:0 2px 3px rgba(0,0,0,0.2); }
+
+a.two { font-size:3em; display: block; text-align: left; color:#fff !important; line-height: 1.3; }
+
 .spinners {
     width:500px;
-    height:500px;
+    height:600px;
     margin:0 auto;
     position: relative;
 }
@@ -40,37 +48,37 @@ iframe { border:none; }
     position: absolute;
     top:50%;
     left:50%;
-    margin:-20px 0 0 -20px;
+    margin:-80px 0 0 -80px;
 
-    border:5px solid #000;
-    border-right:5px solid #e32d22;
-    border-left:5px solid #e32d22;
-    border-radius:40px;
-    width:40px;
-    height:40px;
-    -webkit-animation:rotation 1s infinite linear;
-    -moz-animation:rotation 1s infinite linear;
-    -ms-animation:rotation 1s infinite linear;
-    -o-animation:rotation 1s infinite linear;
-    animation:rotation 1s infinite linear;
+    border:20px solid #000;
+    border-right:20px solid #e32d22;
+    border-left:20px solid #e32d22;
+    border-radius:160px;
+    width:160px;
+    height:160px;
+    -webkit-animation:rotation 2s infinite linear;
+    -moz-animation:rotation 2s infinite linear;
+    -ms-animation:rotation 2s infinite linear;
+    -o-animation:rotation 2s infinite linear;
+    animation:rotation 2s infinite linear;
 }
 
 .spinner2 {
     position: absolute;
     top:50%;
     left:50%;
-    margin:-10px 0 0 -10px;
-    border:5px solid #000;
-    border-right:5px solid #e32d22;
-    border-left:5px solid #e32d22;
-    border-radius:20px;
-    width:20px;
-    height:20px;
-    -webkit-animation:rotation2 1s infinite linear;
-    -moz-animation:rotation2 1s infinite linear;
-    -ms-animation:rotation2 1s infinite linear;
-    -o-animation:rotation2 1s infinite linear;
-    animation:rotation2 1s infinite linear;
+    margin:-40px 0 0 -40px;
+    border:20px solid #000;
+    border-right:20px solid #e32d22;
+    border-left:20px solid #e32d22;
+    border-radius:80px;
+    width:80px;
+    height:80px;
+    -webkit-animation:rotation2 2s infinite linear;
+    -moz-animation:rotation2 2s infinite linear;
+    -ms-animation:rotation2 2s infinite linear;
+    -o-animation:rotation2 2s infinite linear;
+    animation:rotation2 2s infinite linear;
 }
 
 @-webkit-keyframes rotation {
@@ -93,30 +101,17 @@ iframe { border:none; }
 
 # CSS-Snacks
 
-* Web fonts <span class="alt last">&mdash; Bruk flere fonter på web</span>
-* Icon fonts <span class="alt last">&mdash; Windings FTW</span>
-* &nbsp;
-* CSS Gradients <span class="alt last">&mdash; Uflate farger</span>
-* CSS Shadows <span class="alt last">&mdash; Skygger på tekst og elementer</span>
-* CSS Transforms <span class="alt last">&mdash; Transformer elementer i 2D og 3D</span>
-* CSS Transitions <span class="alt last">&mdash; Animerte overganger mellom stiler</span>
-* CSS Animations <span class="alt last">&mdash; Lag egne animasjoner med keyframes</span>
+* Web fonts + Icon fonts
+* Gradients + Shadows
+* Transforms + Transitions + Animations
 
 ---
 
+.middle.center
+
 # Web fonts
 
-#### Fordeler
-
-* Bedre for skjermlesere
-* Bedre for retina-skjermer
-* Standardfonter er kjedelige
-
-#### Ulemper
-
-* Tar tid å laste <span class="alt">&mdash; bruk lokale kopier av webfonter</span>
-* Mange dårlige fonter <span class="alt">&mdash; vær forsiktig</span>
-* Enkelt å bruke, utfordrende å bruke bra.
+Lett å bruke, vanskelig å mestre
 
 ---
 
@@ -140,12 +135,6 @@ iframe { border:none; }
 
 .middle.center
 
-![CaniuseFonts](img/caniuse.fonts.png)
-
----
-
-.middle.center
-
 ![CaniuseFonts](img/fonts3.png)
 
 ---
@@ -162,7 +151,7 @@ iframe { border:none; }
 
 ---
 
-# Bruk av web fonter
+# Web fonts
 
 Importer font via CSS:
 
@@ -177,10 +166,8 @@ Importer font via CSS:
 Importer font via HTML (f.eks. for Google Web Fonts):
 
     .html
-    <link
-        href='http://fonts.googleapis.com/css?family=Snowburst+One'
-        rel='stylesheet'
-        type='text/css'>
+    <link type='text/css' rel='stylesheet'
+        href='http://fonts.googleapis.com/css?family=Snowburst+One'>
 
 Bruk fonten:
 
@@ -189,24 +176,20 @@ Bruk fonten:
         font-family: "Snowburst One", Helvetica, Arial, sans-serif;
     }
 
+
 ---
+
+.middle.center
+
+![CaniuseFonts](img/caniuse.fonts.png)
+
+---
+
+.middle.center
 
 # Icon fonts
 
-* Spesialfonter med tegn istedenfor ikoner (tenk, Windings)
-
-#### Fordeler
-
-* Enkelt å bruke
-* Bruk CSS-effekter på ikoner (f.eks. farge, størrelse).
-* Bedre for retina-skjermer
-* Færre HTTP-requests (aka raskere side)
-* Mange gode, gratis ikon-fonter
-
-#### Ulemper
-
-* ?
-
+Windings++
 
 ---
 
@@ -228,28 +211,92 @@ Bruk fonten:
 
 ---
 
+.middle.center.gradient
+
 # CSS Gradients
 
-* a
-* b
-* c
+Enklere enn bakgrunnsbilder
+
+---
+
+# CSS Gradients
+
+    /*
+     * http://www.colorzilla.com/gradient-editor/
+     */
+
+    /* W3C */
+    background: linear-gradient(to bottom, #333 0%,#000 100%);
+
+    /* Old browsers */
+    background: rgb(69,72,77);
+
+    /* FF3.6+ */
+    background: -moz-linear-gradient(top, #333 0%, #000 100%);
+
+    /* Chrome,Safari4+ */
+    background: -webkit-gradient(linear, left top, left bottom,
+        color-stop(0%,#333), color-stop(100%,#000));
+
+    /* Chrome10+,Safari5.1+ */
+    background: -webkit-linear-gradient(top, #333 0%,#000 100%);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #333 0%,#000 100%);
+
+    /* IE10+ */
+    background: -ms-linear-gradient(top, #333 0%,#000 100%);
+
+    /* IE6-9 */
+    filter: progid:DXImageTransform.Microsoft.gradient(
+        startColorstr='#333333', endColorstr='#000000', GradientType=0);
+
+
+---
+
+.middle.center.shadow
+
+<div class="shadow1">
+# CSS Shadows
+</div>
 
 ---
 
 # CSS Shadows
 
-* a
-* b
-* c
+    .css
+
+    /*
+     * text-shadow: x y blur color;
+     */
+
+    p { text-shadow:1px 1px 1px rgba(0,0,0,0.1); }
+
+
+    /*
+     * box-shadow: x y blur spread color;
+     */
+
+    .box1 { box-shadow:0 2px 3px rgba(0,0,0,0.2); }
+
+
+    /*
+     * box-shadow: inset x y blur spread color;
+     */
+
+    .box2 { box-shadow: inset 0 2px 3px rgba(0,0,0,0.2); }
+
+---
+
+.middle.center
+
+# CSS Transforms
+
+Endre koordinater utenom flyten, i 2D og 3D.
 
 ---
 
 # CSS Transforms
-
-* Endre koordinater til elementer, uten å ta de ut av flyten på siden
-* Søttes av mange moderne nettlesere
-* Trenger foreløpig vendor-prefixes:
-
 
     .css
     /*
@@ -261,7 +308,7 @@ Bruk fonten:
         -moz-transform: scale(2, 2);    /* firefox */
         -ms-transform: scale(2, 2);     /* IE */
         -o-transform: scale(2, 2);      /* Opera */
-        transform: scale(2, 2);         /* Fremtiden */
+        transform: scale(2, 2);         /* W3C */
     }
 
 ---
@@ -305,14 +352,18 @@ Bruk fonten:
 
 ---
 
-.anim
+.middle.center
 
 # CSS Transitions
 
-* Beskriv transisjon mellom to forskjellige stiler.
-* For eksempel overgang mellom to farger eller størrelser.
-* Implisitt animasjon, nettleseren fyller inn det som trengs.
+Overgang mellom stiler, med implisitt animasjon.
 
+
+---
+
+.anim
+
+# CSS Transitions
 
     .css
     a {
@@ -382,11 +433,13 @@ Bruk fonten:
 
 ---
 
+.middle.center
+
 # CSS Animations
 
-* 1
-* 2
-* 3
+Egne animasjoner mellom stiler, med keyframes
+
+---
 
 <div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
 
@@ -395,28 +448,6 @@ Bruk fonten:
 # CSS Animations
 
     .css
-    .spinner1 {
-        border:5px solid #000;
-        border-right:5px solid #e32d22;
-        border-left:5px solid #e32d22;
-        border-radius:40px;
-        width:40px;
-        height:40px;
-
-        animation:rotation1 1s infinite linear;
-    }
-
-    .spinner2 {
-        border:5px solid #000;
-        border-right:5px solid #e32d22;
-        border-left:5px solid #e32d22;
-        border-radius:20px;
-        width:20px;
-        height:20px;
-
-        animation:rotation2 1s infinite linear;
-    }
-
     @keyframes rotation1 {
         0%   { transform: rotate(0deg); }
         100% { transform: rotate(359deg); }
@@ -427,15 +458,60 @@ Bruk fonten:
         100% { transform: rotate(-359deg); }
     }
 
+    .spinner1 {
+        border:20px solid #000;
+        border-right:20px solid #e32d22;
+        border-left:20px solid #e32d22;
+        border-radius:160px;
+        width:160px;
+        height:160px;
+        animation:rotation1 1s infinite linear;
+    }
+
+    .spinner2 {
+        border:5px solid #000;
+        border-right:5px solid #e32d22;
+        border-left:5px solid #e32d22;
+        border-radius:20px;
+        width:20px;
+        height:20px;
+        animation:rotation2 1s infinite linear;
+    }
+
 ---
 
 .middle.center
 
-<a href="http://www.joelambert.co.uk/cube3d/">Joe Lambert &mdash; Cube 3D</a>
-
-<a href="http://www.satine.org/research/webkit/snowleopard/snowstack.html">3D Flying Gallery</a>
-
 <a href="https://squareup.com/">Square landing page</a>
+
+---
+
+.middle.center
+
+<a class="two" href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">dowebsites<br>needtolook<br>exactlythesame<br>ineverybrowser.com</a>
+
+---
+
+# Oppgave
+
+&nbsp;
+
+Fonts:
+
+1. Bruk en font fra Google Web Fonts til oveskrifter
+
+2. Bruk en annen font fra Google Web Fonts til avsnitt
+
+3. Legg til ikoner ved hjelp av en ikon-font (eksempel: søk etter "Font Awesome")
+
+&nbsp;
+
+Animations:
+
+4. Bruk en CSS-transition som fader farger på linker ved :hover.
+
+5. Bruk en CSS-transisjon som lar headeren komme inn ovenfra.
+
 
 
     </textarea>
