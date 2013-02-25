@@ -297,6 +297,8 @@ Media queries gir oss *betinget css* gjennom *nettleserspørringer*
 
 Basically; hvis stor skjerm, så stor skjerm-css.
 
+(legg inn mediaqueri.es bildene her)
+
 ---
 
 &nbsp;
@@ -343,19 +345,20 @@ DEMO
 
 ---
 
-.middle.center
+#Oppgaver
 
-#OPPGAVE
+Ved hjelp av media queries, løs følgende problem ved siden:
 
-Tilpasse siden til tablet (768px);
+1. Ved skjermstørrelse <= 950px, sett bredden på elementer med klassen *container* til å bruke all tilgjengelig bredde i stedet for en fast verdi
 
----
+2. Bildet under menyen brekker designet vårt. Sett en property på dette elementet slik at det ikke blir større enn bredden på elementet det bor i.
 
-.middle.center
+3. Det er hardkodet inn store marginer på sidene av innholdet vårt. Endre disse til en relativ størrelse slik at det skalerer bedre.
 
-#OPPGAVE
+4. Avgjør ved hvilken skjermbredde menyen brekker, og legg inn et breakpoint som setter bredden til menypunktene slik at de fordeler seg over to linjer. I tillegg ønsker vi ikke å ha menyen ankret til toppen ved denne størrelsen - implementer dette og sentrèr overskriften.
+5. Ved skjermstørrelse <= 480px ønsker vi at menyen skal bestå av tre menypunkter per linje over tre linjer.
 
-Tilpasse siden til telefon (480px);
+6. Innfør støtte for retinabilder ved å lage en media query som setter *display: none* på alle bilder med klassen *standard*, og *display: block* på alle bilder med klassen *retina*
 
 ---
 

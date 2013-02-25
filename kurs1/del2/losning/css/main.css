@@ -3,10 +3,10 @@
  */
 
 body {
-    padding:5%;
-    color:#333;
-    font-size:16px;
-    color:#444;
+    padding:        20px 160px;
+    color:          #333;
+    font-size:      16px;
+    color:          #444;
 }
 
 p {
@@ -21,37 +21,122 @@ a {
     margin:0 auto;
 }
 
-.container img {
-    max-width: 100%;
-}
-
 header, nav, section {
     margin-bottom:2em;
 }
 
+.retina {
+    display: none;
+}
+
+/*Oppgave 1 start */
+
+.container { width:860px; }
+body > .container:first-of-type {margin-top:120px;}
+
+
+.siteheader {
+    position:       fixed;
+    top:            0;
+    left:           160px;
+    right:          160px;
+    background:     #fff;
+}
+
+
+.sitenav {
+    background:         #1b1b1b;
+    margin:             0;
+}
+
+.sitenav ul {
+    margin: 0;padding:0;
+}
+
+.sitenav li {
+    padding-top:5px;
+    float:left;
+}
+
+.sitenav li.active {
+    background-color:#fd5157;
+}
+
+.sitenav li:hover {
+    background:#ccc;
+}
+
+.sitenav li a {
+    display:block;
+    padding:10px;
+    color:#ccc;
+    text-decoration:none;
+}
+
+.sitenav li a:hover {
+    color:#fff;
+}
+
+.sitenav li a, .sitenav li a:hover, .sitenav li a:active {
+    background:#1b1b1b;
+}
+
+
+.group:after, .images:after { 
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both
+}
+
+
+/* Oppgave 2 - Responsify */
 
 /*
  * Desktop layout CSS
  */
 
-@media all and (min-width: 960px) {
-    .container { width:860px; }
+body {
+    padding:20px 5%;
 }
 
 
-/*
- * Tablet layout CSS
- */
+.siteheader {
+    left:               5%;
+    right:              5%;
+    width:              90%;
+}
 
-@media all and (max-width: 960px) {
-    .container { width:25em; }
+.container img {
+    max-width: 100%; 
 }
 
 
-/*
- * Mobile layout CSS
- */
+@media all and (max-width: 950px) {
+    .container { width: 100%; }
+}
 
-@media all and (max-width: 30em) {
-    .container { width:15em; }
+@media all and (max-width: 690px) {
+    .sitenav li { width: 20%; }   
+    body > .container:first-of-type { margin-top: 0px; }
+    .siteheader {
+        position: relative;
+        text-align: center;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .sitenav li { width: 33%; }   
+    .siteheader {
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+}
+
+@media only screen and (min-device-pixel-ratio: 1.5) {
+    img.retina { display: none; } 
+    img.standard { display: block;}
 }
