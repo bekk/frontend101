@@ -1,34 +1,33 @@
-/*
- * Basic CSS
- */
+/* Basic styling
+--------------------------------------------- */
 
 body {
-    padding:20px 5%;
-    color:#333;
-    font-size:16px;
-    color:#444;
-
+    padding: 20px 5%;
+    color: #333;
+    font-size: 16px;
+    color: #444;
 }
 
 p {
-    line-height:1.5;
+    line-height: 1.5;
 }
 
 a {
-    color:#EC651B;
+    color: #EC651B;
 }
 
 .container {
-    margin:0 auto;
+    margin: 0 auto;
 }
-
-
-
-
 
 header, nav, section {
-    margin-bottom:2em;
+    margin-bottom: 2em;
+}
+
+.container {
+    width: 860px;
 }
 
 
-.container { width:860px; }
+/* Meny
+--------------------------------------------- */

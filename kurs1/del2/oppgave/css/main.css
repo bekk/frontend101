@@ -1,98 +1,99 @@
-/*
- * Basic CSS
- */
+/* Basic styling
+--------------------------------------------- */
 
 body {
-    padding:        20px 160px;
-    color:          #333;
-    font-size:      16px;
-    color:          #444;
+    padding: 20px 160px;
+    color: #333;
+    font-size: 16px;
+    color: #444;
 }
 
 p {
-    line-height:    1.5;
+    line-height: 1.5;
 }
 
 a {
-    color:          #EC651B;
+    color: #EC651B;
 }
 
 .container {
-    margin:         0 auto;
+    margin: 0 auto;
 }
 
 header, nav, section {
-    margin-bottom:  2em;
+    margin-bottom: 2em;
+}
+
+.container {
+    width: 860px;
 }
 
 .retina {
     display: none;
 }
 
-/*Oppgave 1 */
 
-.container { width:860px; }
-body > .container:first-of-type {margin-top:120px;}
+/* Meny
+--------------------------------------------- */
 
-
-.siteheader {
-    position:       fixed;
-    top:            0;
-    left:           160px;
-    right:          160px;
-    background:     #fff;
+body > .container:first-of-type {
+    margin-top: 120px;
 }
 
+.siteheader {
+    position: fixed;
+    top: 0;
+    left: 160px;
+    right: 160px;
+    background: #fff;
+}
 
 .sitenav {
     background: #1b1b1b;
-    margin:0;
+    margin: 0;
 }
 
 .sitenav ul {
-    margin:0;padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .sitenav li {
-    padding-top:5px;
-    float:left;
+    padding-top: 5px;
+    float: left;
 }
 
 .sitenav li.active {
-    background-color:#fd5157;
+    background-color: #fd5157;
 }
 
 .sitenav li:hover {
-    background:#ccc;
+    background: #ccc;
 }
 
 .sitenav li a {
-    display:block;
-    padding:10px;
-    color:#ccc;
-    text-decoration:none;
+    display: block;
+    padding: 10px;
+    color: #ccc;
+    text-decoration: none;
 }
 
 .sitenav li a:hover {
-    color:#fff;
+    color: #fff;
 }
 
 .sitenav li a, .sitenav li a:hover, .sitenav li a:active {
-    background:#1b1b1b;
+    background: #1b1b1b;
+}
+
+.group:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
 }
 
 
-.group:after { 
-    content: "."; 
-    visibility: hidden; 
-    display: block; 
-    height: 0; 
-    clear: both
-}
-
-/* Oppgave 2 - Responsive */
-
-
-
-
-
+/* Responsive
+--------------------------------------------- */
