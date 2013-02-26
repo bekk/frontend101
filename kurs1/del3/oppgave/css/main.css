@@ -2,8 +2,7 @@
 --------------------------------------------- */
 
 body {
-    padding: 20px 160px;
-    color: #333;
+    padding: 20px 5%;
     font-size: 16px;
     color: #444;
 }
@@ -43,8 +42,9 @@ body > .container:first-of-type {
 .siteheader {
     position: fixed;
     top: 0;
-    left: 160px;
-    right: 160px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
     background: #fff;
 }
 
@@ -86,7 +86,7 @@ body > .container:first-of-type {
     background: #1b1b1b;
 }
 
-.group:after, .images:after {
+.group:after {
     content: ".";
     visibility: hidden;
     display: block;
