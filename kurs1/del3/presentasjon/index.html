@@ -25,15 +25,20 @@
 .imgtranslate img { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 iframe { border:none; }
 .anim a { -webkit-transition: color 200ms ease-in-out; display: block; font-size: 3em; text-align: center; margin:1em 0; }
-.anim a:hover { color:#fff !important; }
+.anim a:hover { color:#fff !important; text-decoration: none !important; }
 .imganim img { -webkit-transition: all 300ms ease-in-out; }
 .imganim img:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
-.gradient { background: -webkit-linear-gradient(top, rgba(69,72,77,1) 0%,rgba(0,0,0,1) 100%); }
+.gradient { background-image:-webkit-linear-gradient(red, green, blue, purple, orange); }
+
+.gradient * { color:#fff !important; }
+
 .middle.center h1 span { background:none !important; }
 
 .middle.center.shadow { background:#333; text-shadow:2px 2px 2px rgba(0,0,0,0.3); }
 .middle.center.shadow .shadow1 { background: #444; padding:1em; box-shadow:0 2px 3px rgba(0,0,0,0.2); }
+
+.caniuse { background: #ede1cc !important; }
 
 a.two { font-size:3em; display: block; text-align: left; color:#fff !important; line-height: 1.3; }
 
@@ -44,15 +49,19 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
     position: relative;
 }
 
+.anim-steps .spinners {
+    height:250px;
+}
+
 .spinner1 {
     position: absolute;
     top:50%;
     left:50%;
     margin:-80px 0 0 -80px;
 
-    border:20px solid #000;
-    border-right:20px solid #e32d22;
-    border-left:20px solid #e32d22;
+    border:20px solid #228fd3;
+    border-right:20px solid #000;
+    border-left:20px solid #000;
     border-radius:160px;
     width:160px;
     height:160px;
@@ -68,9 +77,9 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
     top:50%;
     left:50%;
     margin:-40px 0 0 -40px;
-    border:20px solid #000;
-    border-right:20px solid #e32d22;
-    border-left:20px solid #e32d22;
+    border:20px solid #228fd3;
+    border-right:20px solid #000;
+    border-left:20px solid #000;
     border-radius:80px;
     width:80px;
     height:80px;
@@ -121,6 +130,12 @@ Lett å bruke, vanskelig å mestre
 
 ---
 
+.middle.center.caniuse
+
+![CaniuseFonts](img/caniuse.fonts.png)
+
+---
+
 .middle.center
 
 ![Google](img/webfonts.png)
@@ -135,25 +150,25 @@ Lett å bruke, vanskelig å mestre
 
 .middle.center
 
-![CaniuseFonts](img/fonts3.png)
+![Eg1](img/fonts3.png)
 
 ---
 
 .middle.center
 
-![CaniuseFonts](img/fonts1.png)
+![Eg2](img/fonts4.png)
 
 ---
 
 .middle.center
 
-![CaniuseFonts](img/fonts4.png)
+![Eg3](img/fonts1.png)
 
 ---
 
 # Web fonts
 
-Importer font via CSS:
+1a. Importer font via CSS:
 
     .css
     @font-face {
@@ -163,25 +178,18 @@ Importer font via CSS:
       src: url("myfont.woff") format('woff');
     }
 
-Importer font via HTML (f.eks. for Google Web Fonts):
+1b. Importer font via HTML (f.eks. for Google Web Fonts):
 
     .html
     <link type='text/css' rel='stylesheet'
         href='http://fonts.googleapis.com/css?family=Snowburst+One'>
 
-Bruk fonten:
+2\. Bruk fonten:
 
     .css
     body {
         font-family: "Snowburst One", Helvetica, Arial, sans-serif;
     }
-
-
----
-
-.middle.center
-
-![CaniuseFonts](img/caniuse.fonts.png)
 
 ---
 
@@ -215,42 +223,64 @@ Windings++
 
 # CSS Gradients
 
-Enklere enn bakgrunnsbilder
+Mer fleksibelt enn bakgrunnsbilder
 
 ---
 
 # CSS Gradients
 
+    .css
     /*
-     * http://www.colorzilla.com/gradient-editor/
+     * Generering av gradienter:
+     *
+     * - http://www.colorzilla.com/gradient-editor/
+     * - SASS, LESS, Stylus, etc.
      */
 
-    /* W3C */
-    background: linear-gradient(to bottom, #333 0%,#000 100%);
+    /* fallback */
+    background-color:#063053;
 
-    /* Old browsers */
-    background: rgb(69,72,77);
+    /* chrome 10+, safari 5.1+ */
+    background-image: -webkit-linear-gradient(red, green, blue, purple, orange);
 
-    /* FF3.6+ */
-    background: -moz-linear-gradient(top, #333 0%, #000 100%);
+    /* firefox; multiple color stops */
+    background-image: -moz-linear-gradient(top, red, green, blue, purple, orange);
 
-    /* Chrome,Safari4+ */
-    background: -webkit-gradient(linear, left top, left bottom,
-        color-stop(0%,#333), color-stop(100%,#000));
+    /* ie10 */
+    background-image: -ms-linear-gradient(red, green, blue, purple, orange);
 
-    /* Chrome10+,Safari5.1+ */
-    background: -webkit-linear-gradient(top, #333 0%,#000 100%);
+    /* opera 11.1 */
+    background-image: -o-linear-gradient(red, green, blue, purple, orange);
 
-    /* Opera 11.10+ */
-    background: -o-linear-gradient(top, #333 0%,#000 100%);
+    /* The "standard" */
+    background-image: linear-gradient(red, green, blue, purple, orange);
 
-    /* IE10+ */
-    background: -ms-linear-gradient(top, #333 0%,#000 100%);
+---
 
-    /* IE6-9 */
-    filter: progid:DXImageTransform.Microsoft.gradient(
-        startColorstr='#333333', endColorstr='#000000', GradientType=0);
+# CSS Gradients
 
+    .css
+    <!--[if lt IE 10]>
+        <style>
+
+            .gradientElement {
+
+              filter: progid:DXImageTransform.Microsoft.gradient(
+                startColorstr='#063053', endColorstr='#395873');
+
+              -ms-filter: "progid:DXImageTransform.Microsoft.gradient(
+                startColorstr='#063053', endColorstr='#395873')";
+
+            }
+
+        </style>
+    <![endif]-->
+
+---
+
+.middle.center
+
+![colorzilla](img/colorzilla.png)
 
 ---
 
@@ -269,22 +299,23 @@ Enklere enn bakgrunnsbilder
     /*
      * text-shadow: x y blur color;
      */
-
-    p { text-shadow:1px 1px 1px rgba(0,0,0,0.1); }
-
-
-    /*
-     * box-shadow: x y blur spread color;
-     */
-
-    .box1 { box-shadow:0 2px 3px rgba(0,0,0,0.2); }
-
+    p {
+        text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+    }
 
     /*
-     * box-shadow: inset x y blur spread color;
+     * box-shadow: x y blur color;
      */
+    .box1 {
+        box-shadow:0 2px 3px rgba(0,0,0,0.2);
+    }
 
-    .box2 { box-shadow: inset 0 2px 3px rgba(0,0,0,0.2); }
+    /*
+     * box-shadow: inset x y blur color;
+     */
+    .box2 {
+        box-shadow: inset 0 2px 3px rgba(0,0,0,0.2);
+    }
 
 ---
 
@@ -304,11 +335,86 @@ Endre koordinater utenom flyten, i 2D og 3D.
      * langs både X- og Y-aksen.
      */
     .foo {
+        transform: scale(2, 2);
+    }
+
+    /*
+     * Roter elementet 45 grader, i 2D.
+     */
+    .foo {
+        transform: rotateX(45deg);
+    }
+
+---
+
+# CSS Transforms
+
+    .css
+    /*
+     * Øk størrelsen på elementer med klassen "foo" 2x,
+     * langs både X- og Y-aksen.
+     */
+    .foo {
         -webkit-transform: scale(2, 2); /* webkit */
         -moz-transform: scale(2, 2);    /* firefox */
         -ms-transform: scale(2, 2);     /* IE */
         -o-transform: scale(2, 2);      /* Opera */
         transform: scale(2, 2);         /* W3C */
+    }
+
+    /*
+     * Roter elementet 45 grader, i 2D.
+     */
+    .foo {
+        -webkit-transform: rotateX(45deg); /* webkit */
+        -moz-transform: rotateX(45deg);    /* firefox */
+        -ms-transform: rotateX(45deg);     /* IE */
+        -o-transform: rotateX(45deg);      /* Opera */
+        transform: rotateX(45deg);         /* W3C */
+    }
+
+---
+
+.middle.center.caniuse
+
+![caniuse.transforms](img/caniuse.transforms.png)
+
+
+---
+
+# CSS Transforms
+
+    .css
+    .foo {
+
+        /* Flytt langs x/y. */
+        transform: translate(12px, 50%);
+        transform: translateX(2em);
+        transform: translateY(3in);
+
+        /* skalering */
+        transform: scale(2, 0.5);
+        transform: scaleX(2);
+        transform: scaleY(0.5);
+        transform: scale3d(2.5, 1.2, 0.3);
+        transform: scaleZ(0.3);
+
+        /* perspektiv */
+        transform: skewX(30deg);
+        transform: skewY(1.07rad);
+        transform: translate3d(12px, 50%, 3em);
+        transform: translateZ(2px);
+
+        /* rotering */
+        transform: rotate3d(1, 2.0, 3.0, 10deg);
+        transform: rotateX(10deg);
+        transform: rotateY(10deg);
+        transform: rotateZ(10deg);
+        transform: perspective(17px);
+
+        /* kombinering av flere transforms */
+        transform: translateX(10px) rotate(10deg) translateY(5px);
+
     }
 
 ---
@@ -319,36 +425,6 @@ Endre koordinater utenom flyten, i 2D og 3D.
 
     .css
     img { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
-
----
-
-# CSS Transforms
-
-    .css
-    .foo {
-        transform: translate(12px, 50%);
-        transform: translateX(2em);
-        transform: translateY(3in);
-
-        transform: scale(2, 0.5);
-        transform: scaleX(2);
-        transform: scaleY(0.5);
-        transform: rotate(0.5turn);
-        transform: skewX(30deg);
-        transform: skewY(1.07rad);
-        transform: translate3d(12px, 50%, 3em);
-        transform: translateZ(2px);
-        transform: scale3d(2.5, 1.2, 0.3);
-        transform: scaleZ(0.3);
-
-        transform: rotate3d(1, 2.0, 3.0, 10deg);
-        transform: rotateX(10deg);
-        transform: rotateY(10deg);
-        transform: rotateZ(10deg);
-        transform: perspective(17px);
-
-        transform: translateX(10px) rotate(10deg) translateY(5px);
-    }
 
 ---
 
@@ -437,9 +513,17 @@ Overgang mellom stiler, med implisitt animasjon.
 
 # CSS Animations
 
-Egne animasjoner mellom stiler, med keyframes
+Egne animasjoner mellom stiler, med keyframes.
 
 ---
+
+<div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
+
+---
+
+.middle.center.anim-steps
+
+![circle](img/circle.png)
 
 <div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
 
@@ -459,9 +543,9 @@ Egne animasjoner mellom stiler, med keyframes
     }
 
     .spinner1 {
-        border:20px solid #000;
-        border-right:20px solid #e32d22;
-        border-left:20px solid #e32d22;
+        border:20px solid #228fd3;
+        border-right:20px solid #000;
+        border-left:20px solid #000;
         border-radius:160px;
         width:160px;
         height:160px;
@@ -469,9 +553,9 @@ Egne animasjoner mellom stiler, med keyframes
     }
 
     .spinner2 {
-        border:5px solid #000;
-        border-right:5px solid #e32d22;
-        border-left:5px solid #e32d22;
+        border:5px solid #228fd3;
+        border-right:5px solid #000;
+        border-left:5px solid #000;
         border-radius:20px;
         width:20px;
         height:20px;
@@ -482,17 +566,13 @@ Egne animasjoner mellom stiler, med keyframes
 
 .middle.center
 
+Fornuftig bruk av animasjoner?
+
 <a href="https://squareup.com/">Square landing page</a>
 
 ---
 
-.middle.center
-
-<a class="two" href="http://dowebsitesneedtolookexactlythesameineverybrowser.com/">dowebsites<br>needtolook<br>exactlythesame<br>ineverybrowser.com</a>
-
----
-
-# Oppgave
+# Siste oppgaver
 
 &nbsp;
 
@@ -500,18 +580,21 @@ Fonts:
 
 1. Bruk en font fra Google Web Fonts til oveskrifter
 
-2. Bruk en annen font fra Google Web Fonts til avsnitt
+2. Bruk en annen font til avsnitt
 
-3. Legg til ikoner ved hjelp av en ikon-font (eksempel: søk etter "Font Awesome")
+3. Legg til ikoner ved hjelp av en ikon-font
 
 &nbsp;
 
 Animations:
 
-4. Bruk en CSS-transition som fader farger på linker ved :hover.
+4. Bruk en CSS-transition som animerer farger på linker i menyen, ved :hover.
 
-5. Bruk en CSS-transisjon som lar headeren komme inn ovenfra.
+5. Bruk en CSS-transition for å gjøre bildet større ved :hover.
 
+&nbsp;
+
+(Se på løsningsforslaget hvis du sitter fast.)
 
 
     </textarea>
