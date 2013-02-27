@@ -154,6 +154,9 @@ body > .container:first-of-type {
         position: relative;
         text-align: center;
     }
+    .container {
+        padding: 50px 5.208333333%;
+    }
 }
 
 @media all and (max-width: 480px) {

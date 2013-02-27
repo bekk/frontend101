@@ -20,6 +20,7 @@
       .jquery { background-color: #1E2837; }
       .nodejs { background-color: #3F4239; }
       #slideshow .position { display: none; }
+       .code {font-family: Inconsolata, Consolas, Monaco, monospace;font-size:16px;color:#000;padding:3px; margin-bottom: 20px; background:#FDF6E3;}
     </style>
   </head>
   <body>
@@ -59,8 +60,11 @@
 
 ---
 
+.middle.center
 
-Eventuelt en slide om statistikk rundt mobil browsing her
+![Finn.no Stats](img/finn.stats.device.png)
+
+[labs.finn.no](http://labs.finn.no/)
 
 ---
 
@@ -85,19 +89,6 @@ design som skalerer
 .middle.center
 
 # Relative vs statiske enheter
-
----
-
-# CSS
-
-    .css
-
-    #content {
-        width: 960px;
-        font-size: 12px;
-        margin: 20px;
-    }
-
 
 ---
 
@@ -128,7 +119,10 @@ design som skalerer
 
 # target / context = result
 12 px / 16 px = 0.75 em
+
 540 px / 960 px = 0.54166666666 %
+
+.. ikke rund av!
 
 ---
 
@@ -143,35 +137,36 @@ default font size
     .css 
         html {
             font-size: 16px; /* eksplisitt verdi */
-            font-size: 100 % /* browser default */
+            font-size: 100%; /* browser default */
+            font-size: 62.5%; /* 10px */
         }
 
 ---
 
 # Margins
 
-Når man setter marginen, er det størrelsen på containeren til elementet du setter marginen på som er context
+Når man beregner marginer, er det størrelsen på containeren til elementet du setter marginen på som er context
 
 .css
     #parent {
         width: 200px;
     }
     #child-of-parent {
-        margin: 20px;
+        margin: 35px;
     }
 
 ---
 
 # Margins 2
 
-Når man setter marginen, er det størrelsen på containeren til elementet du setter marginen på som er context
+Når man beregner marginer, er det størrelsen på containeren til elementet du setter marginen på som er context
 
 .css
     #parent {
         width: 200px;
     }
     #child-of-parent {
-        margin: 20px;
+        margin: 35px;
     }
 
 ->
@@ -180,14 +175,14 @@ Når man setter marginen, er det størrelsen på containeren til elementet du se
         width: 200px;
     }
     #child-of-parent {
-        margin: 0.06481481481%; /* 35px/540px */
+        margin: 17.5%; /* 35px/200px */
     }
 
 ---
 
 # Padding
 
-Når man setter padding, er det størrelsen på elementet du setter padding på som er context
+Når man beregner padding, er det størrelsen på elementet du setter padding på som er context
 
 .css
     #site {
@@ -199,7 +194,7 @@ Når man setter padding, er det størrelsen på elementet du setter padding på 
 
 # Padding 2
 
-Når man setter marginen, er det størrelsen på containeren til elementet du setter marginen på som er context
+Når man beregner padding, er det størrelsen på elementet du setter padding på som er context
 
 .css
     #site {
@@ -218,20 +213,7 @@ Når man setter marginen, er det størrelsen på containeren til elementet du se
 
 .middle.center
 
-# Oppgave
-
-
----
-
-.middle.center
-
 # Flexible Media
-
----
-
-# Flexible Media
-
-1. Bruk større bilder
 
 ---
 
@@ -251,17 +233,55 @@ Når man setter marginen, er det størrelsen på containeren til elementet du se
 
 # Retina
 
+![Finn.no Stats](img/retina.png)
+
+
 ---
 
-<table class="pixels">
-<tr><td></td><th>Standard display</th><td></td><th>Retina display</th></tr>
-<tr>
-<th><strong>CSS</strong> pixels <br/>(DIPs)</th><td class="code" style="height:200px">Height: 2px;<br/>Width: 2px;</td><td></td><td class="code" style="height:200px">height: 2px;<br/>width: 2px;</td>
-</tr>
-<tr>
-<th><strong>Device</strong> pixels</th><td><img src="img/css-device-pixel-standard.png"/></td><td></td><td><img src="img/css-device-pixel-retina.png"/></td>
-</tr>
-</table>
+.middle.center
+
+# Media Queries
+
+---
+
+.middle.center
+
+Media queries gir oss *betinget css* gjennom *nettleserspørringer*
+
+Basically; hvis stor skjerm, så stor skjerm-css.
+
+(legg inn mediaqueri.es bildene her)
+
+
+
+---
+
+# Media queries
+
+
+&nbsp;
+
+    .css
+    /* <= 1000+x*/
+    @media (min-width:1000px) {
+        #content {
+            width:960px;
+        }
+    }
+    /* <= 750 px */
+    @media (min-width:750px) {
+        #content {
+            width:500px;
+        }
+    }
+    /* <= 480px px */
+    @media (min-width:480px) {
+        #content {
+            width: 100%;
+        }
+    }
+
+
 
 ---
 
@@ -283,47 +303,8 @@ Når man setter marginen, er det størrelsen på containeren til elementet du se
         ￼￼} 
     }
 
----
 
-.middle.center
 
-# Media Queries
-
----
-
-.middle.center
-
-Media queries gir oss *betinget css* gjennom *nettleserspørringer*
-
-Basically; hvis stor skjerm, så stor skjerm-css.
-
-(legg inn mediaqueri.es bildene her)
-
----
-
-&nbsp;
-
-    .css
-    /* <= 1000+x*/
-    @media (max-width:1000px) {
-        #content {
-            width:700px;
-        }
-    }
-    /* <= 750 px */
-    @media (max-width:750px) {
-        #content {
-            width:500px;
-        }
-    }
-    
-    /* Retina display */
-    @media 
-    only screen and (min-device-pixel-ratio: 2) {
-        #myimage {
-            background:url("img/myimage@2x.png");
-        }
-    }
 
 ---
 
@@ -337,11 +318,9 @@ Basically; hvis stor skjerm, så stor skjerm-css.
 
 .middle.center
 
-# Break points
+![Mediaqueri.es](img/mediaq.png)
 
-DEMO
-
-(www.mediaqueri.es)
+[mediaqueri.es](http://mediaqueri.es/)
 
 ---
 
@@ -349,11 +328,11 @@ DEMO
 
 Ved hjelp av media queries, løs følgende problem ved siden:
 
-1. Ved skjermstørrelse <= 950px, sett bredden på elementer med klassen *container* til å bruke all tilgjengelig bredde i stedet for en fast verdi
+1. Ved skjermstørrelse <= 960px, sett bredden på elementer med klassen *container* til å bruke all tilgjengelig bredde (auto) i stedet for en fast verdi
 
-2. Bildet under menyen brekker designet vårt. Sett en property på dette elementet slik at det ikke blir større enn bredden på elementet det bor i.
+2. Bildet under menyen brekker designet vårt. Sørg for at dette ikke blir større enn bredden på elementet det bor i.
 
-3. Det er hardkodet inn store marginer på sidene av innholdet vårt. Endre disse til en relativ størrelse slik at det skalerer bedre.
+3. Det er hardkodet inn 50px padding på begge sider av .container. Endre denne til en relativ størrelse (kun på sidene) slik at det skalerer bedre. (50px/960px)
 
 4. Avgjør ved hvilken skjermbredde menyen brekker, og legg inn et breakpoint som setter bredden til menypunktene slik at de fordeler seg over to linjer. I tillegg ønsker vi ikke å ha menyen ankret til toppen ved denne størrelsen - implementer dette og sentrèr overskriften.
 5. Ved skjermstørrelse <= 480px ønsker vi at menyen skal bestå av tre menypunkter per linje over tre linjer.
