@@ -7,7 +7,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
     <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
+
     <style type="text/css" media="screen">
+
+.fs { font-size:1.6em; }
+.f1 { font-family: 'Snowburst One', cursive; }
+.f2 { font-family: 'Griffy', cursive; }
+
 
 #slideshow .slide .content.front-page h1 { width: 100%; }
 .slide p { padding: 0; margin: 1.1em 0; }
@@ -120,7 +129,7 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 
 # Web fonts
 
-Lett å bruke, vanskelig å mestre
+<span class="fs">Lett å bruke,  <span class="f1">vanskelig</span> <span class="f2">å mestre</span></span>
 
 ---
 
@@ -230,13 +239,17 @@ Mer fleksibelt enn bakgrunnsbilder
 # CSS Gradients
 
     .css
-    /*
-     * Generering av gradienter:
-     *
-     * - http://www.colorzilla.com/gradient-editor/
-     * - SASS, LESS, Stylus, etc.
-     */
+    /* fallback */
+    background-color:#063053;
 
+    /* Gradient */
+    background-image: linear-gradient(red, green, blue, purple, orange);
+
+---
+
+# CSS Gradients
+
+    .css
     /* fallback */
     background-color:#063053;
 
@@ -252,8 +265,15 @@ Mer fleksibelt enn bakgrunnsbilder
     /* opera 11.1 */
     background-image: -o-linear-gradient(red, green, blue, purple, orange);
 
-    /* The "standard" */
+    /* Gradient */
     background-image: linear-gradient(red, green, blue, purple, orange);
+
+    /*
+     * Generering av gradienter:
+     *
+     * - http://www.colorzilla.com/gradient-editor/
+     * - SASS, LESS, Stylus, etc.
+     */
 
 ---
 
@@ -295,7 +315,6 @@ Mer fleksibelt enn bakgrunnsbilder
 # CSS Shadows
 
     .css
-
     /*
      * text-shadow: x y blur color;
      */
@@ -375,6 +394,16 @@ Endre koordinater utenom flyten, i 2D og 3D.
 
 ---
 
+.middle.center.imgtranslate
+
+![Icomoon](img/typekit.png)
+
+    .css
+    img { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+
+
+---
+
 .middle.center.caniuse
 
 ![caniuse.transforms](img/caniuse.transforms.png)
@@ -416,15 +445,6 @@ Endre koordinater utenom flyten, i 2D og 3D.
         transform: translateX(10px) rotate(10deg) translateY(5px);
 
     }
-
----
-
-.middle.center.imgtranslate
-
-![Icomoon](img/typekit.png)
-
-    .css
-    img { transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
 
 ---
 
@@ -586,15 +606,18 @@ Fonts:
 
 &nbsp;
 
-Animations:
+Shadows:
 
-4. Bruk en CSS-transition som animerer farger på linker i menyen, ved :hover.
-
-5. Bruk en CSS-transition for å gjøre bildet større ved :hover.
+1. Legg på en subtil `box-shadow` bak .container (over bakgrunnsfargen).
 
 &nbsp;
 
-(Se på løsningsforslaget hvis du sitter fast.)
+Animations (se eksempler i løsningsforslaget):
+
+4. Bruk en CSS-transition som animerer farger på linker i menyen, ved `:hover`.
+
+5. Bruk en CSS-transition for å gjøre bildet større ved `:hover`.
+
 
 
     </textarea>
