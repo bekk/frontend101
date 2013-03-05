@@ -39,45 +39,38 @@
 
 # Dag 2
 
-## Del 1: Intro
+
+## DEL 1: [Erik] Enkel Introduksjon
 
 * Presentasjon:
-    * JavaScript syntax
-    * Objekter
-    * Funksjoner
-    * Prototype
-    * Scoping
+    * JavaScript syntax, DOM-api jQuery
+    
 * Oppgave:
+    * Få meny menyen til å slide ned
+    * vise mer knapp
+    * click eventer
+    * sette css høyre i javascript .css("height", "100px");
 
-
-## Del 2: jQuery ftw
-
+## Del 2: [Helge] Api
 * Presentasjon:
-    * Intro til DOM og selectorer i jQuery
-    * Intro til manipulering av DOM
-    * Intro til binding av eventer
-    * [click-delays på touch-skjermer]
-
-* Oppgave:
-    * Lage en dom-basert app:
-        * Liste opp elementer
-        * Legge til elementer
-        * Slette eleenter
-
-## Del 3: Api
-* Presentasjon:
+    * jquery ajax
     * Same origin policy
     * Jsonp
-    * Cross-origin resource sharing
-    * Hente data fra rest-api
-    * Lagre date via Post
+    * flickr api
 *Oppgave:
-    * Persister data via api
+    * Hent data fra flickr
+    * lag js objekter for å holde på datene
+    * dytt bilde inn i liste
 
-## Del 4: Strukturer applikasjonen med require.js
+## Del 3: [Kent] Bildekarusell og applikasjonsstruktur
 * Presentasjon
-    * require sytax, define/require
-    * Strukturer applikajonen med require
+    * God struktur for metoder og eller view
+    * key-navigering
+    * eventbobling
     * Vise at det er noe som heter rjs og almond.js
-* Oppgave
-    * Bygg om applikasjonen til å bruke require.js //Siste oppgave har en tendes til å skli ut, så legger lite trykk på denne
+
+*oppgave
+    * enkel bildekarusell
+    * metode for å vise store bilder
+    * binde key navigering
+    * Flytende ramme (Hvis tid)
