@@ -57,7 +57,7 @@
     * Same origin policy
     * Jsonp
     * flickr api
-*Oppgave:
+* Oppgave:
     * Hent data fra flickr
     * lag js objekter for å holde på datene
     * dytt bilde inn i liste
@@ -69,7 +69,7 @@
     * eventbobling
     * Vise at det er noe som heter rjs og almond.js
 
-*oppgave
+* Oppgave:
     * enkel bildekarusell
     * metode for å vise store bilder
     * binde key navigering
