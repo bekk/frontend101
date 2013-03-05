@@ -43,8 +43,7 @@
 ## DEL 1: [Erik] Enkel Introduksjon
 
 * Presentasjon:
-    * JavaScript syntax, DOM-api jQuery
-    
+    * JavaScript syntax, DOM-api jQuery 
 * Oppgave:
     * Få meny menyen til å slide ned
     * vise mer knapp
@@ -63,12 +62,11 @@
     * dytt bilde inn i liste
 
 ## Del 3: [Kent] Bildekarusell og applikasjonsstruktur
-* Presentasjon
+* Presentasjon:
     * God struktur for metoder og eller view
     * key-navigering
     * eventbobling
     * Vise at det er noe som heter rjs og almond.js
-
 * Oppgave:
     * enkel bildekarusell
     * metode for å vise store bilder
