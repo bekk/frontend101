@@ -53,7 +53,7 @@ var render_image_menu = function(number_of_images) {
 	for(i = 0; i < number_of_images; i++) {
 		var image = images[i];
 		container.append(image.el);
-	}
+	};
 
 	return container; 
 };

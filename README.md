@@ -43,23 +43,36 @@
 ## DEL 1: [Erik] Enkel Introduksjon
 
 * Presentasjon:
-    * JavaScript syntax, DOM-api jQuery 
+    * Intro jQuery
+    * Enkel DOM
 * Oppgave:
-    * Få meny menyen til å slide ned
-    * vise mer knapp
-    * click eventer
-    * sette css høyre i javascript .css("height", "100px");
+    * Vise MENY ved breakpoint, sette høyde på meny-wrapper
+    * Sette click-event på meny-element som setter større høyde på wrapper
+    * Sette CSS-transition på høyden
+    * Sette ”open”-klasse på ikon for å rotere pil
+    * Sette absolutt posisjonering på menyknappen  
+
 
 ## Del 2: [Helge] Api
 * Presentasjon:
     * jquery ajax
     * Same origin policy
-    * Jsonp
-    * flickr api
+    * Array
+    * Callbacks 
+    * JSON
+    * JS-syntak
+    * Objektera
+    * Funksjon
+    * Ajax
+    * Json-callback
+
 * Oppgave:
-    * Hent data fra flickr
-    * lag js objekter for å holde på datene
-    * dytt bilde inn i liste
+    * Hente fra Flickr, logge respons
+    * Bygge ut success-callbacket med:
+        * Array
+        * Objekter
+        * Legge det i DOM 
+
 
 ## Del 3: [Kent] Bildekarusell og applikasjonsstruktur
 * Presentasjon:
@@ -68,7 +81,8 @@
     * eventbobling
     * Vise at det er noe som heter rjs og almond.js
 * Oppgave:
-    * enkel bildekarusell
-    * metode for å vise store bilder
-    * binde key navigering
-    * Flytende ramme (Hvis tid)
+    * Vise stort bilde ved klikk
+    * Forhåndslasting
+    * Søkefelt. Søk ved submit-event
+    * Søke ved keyup-event
+    * Hente ut title-attributt og vise det som label     
