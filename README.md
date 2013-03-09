@@ -52,8 +52,8 @@
     * Sette ”open”-klasse på ikon for å rotere pil
     * Sette absolutt posisjonering på menyknappen  
 
-
 ## Del 2: [Helge] Api
+
 * Presentasjon:
     * jquery ajax
     * Same origin policy
@@ -65,7 +65,6 @@
     * Funksjon
     * Ajax
     * Json-callback
-
 * Oppgave:
     * Hente fra Flickr, logge respons
     * Bygge ut success-callbacket med:
@@ -73,16 +72,16 @@
         * Objekter
         * Legge det i DOM 
 
-
-## Del 3: [Kent] Bildekarusell og applikasjonsstruktur
+## Del 3: [Kent] Bygge videre på bildegalleriet
 * Presentasjon:
-    * God struktur for metoder og eller view
-    * key-navigering
-    * eventbobling
-    * Vise at det er noe som heter rjs og almond.js
+    * ?
 * Oppgave:
     * Vise stort bilde ved klikk
     * Forhåndslasting
     * Søkefelt. Søk ved submit-event
     * Søke ved keyup-event
-    * Hente ut title-attributt og vise det som label     
+    * Hente ut title-attributt og vise det som label    
+
+## Del 4:
+    * God struktur for metoder og eller view
+    * Vise at det finnes noe som heter Backbone, Require
