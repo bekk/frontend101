@@ -74,7 +74,19 @@
 
 ## Del 3: [Kent] Bygge videre på bildegalleriet
 * Presentasjon:
-    * ?
+    * jquery element triks
+        * Attributes
+            * attr
+            * val
+            * prop
+            * data
+        * element bubling (on - off)
+            * event objekt
+
+    * setTimeout
+    * setInterval
+    * undescore.js
+    * 
 * Oppgave:
     * Vise stort bilde ved klikk
     * Forhåndslasting
