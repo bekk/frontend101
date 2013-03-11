@@ -40,7 +40,7 @@
 # Dag 2
 
 
-## DEL 1: [Erik] Enkel Introduksjon
+## Del 1: [Erik] Enkel Introduksjon
 
 * Presentasjon:
     * Intro jQuery

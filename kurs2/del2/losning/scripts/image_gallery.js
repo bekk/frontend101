@@ -4,7 +4,7 @@ var MyImage = function(item) {
 	this.src_small = item.media.m.replace("_m", "_s");
 	this.src_large = item.media.m.replace("_m", "");
 	this.title = item.title;
-	this.el = $('<img title="' + this.title + '" class="image-small" src="' + this.src_small + '" title="' + this.src_large + '" />')
+	this.el = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-small" src="' + this.src_small + '" />')
 };
 
 MyImage.prototype.init = function() {
