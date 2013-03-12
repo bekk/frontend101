@@ -7,29 +7,9 @@ var MyImage = function(item) {
 	this.el = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-small" src="' + this.src_small + '" />')
 };
 
-MyImage.prototype.init = function() {
-	this.el.on("click", function() {
-		var index = $(this).index();
-		display_large_image(index);
-	}); 
-	this.preload();
-};
-
-MyImage.prototype.preload = function() {
-	// Lite triks for å forhåndslaste bildene i nettleseren, 
-	// slik at applikasjonen virker mer snappy ;-)
-	var large_image = new Image();
-	large_image.src = this.src_large;
-};
-
-MyImage.prototype.render_large = function() {
-	return '<img title="' + this.title + '" class="image-large" src="' + this.src_large + '" title="' + this.title + '" />';
-};
-
 /* IMAGE GALLERY */
 
 var images = [];
-var stage = $('<div class="image-stage" />');
 
 var generate_flickr_url = function(query) {
 	var url = "http://api.flickr.com/services/feeds/photos_public.gne?lang=en-us&tags=" + query + "&tagmode=all&format=json&jsoncallback=?"
@@ -42,7 +22,6 @@ var create_image_objects = function(items) {
 	$(items).each(function() {
 		var item = this;
 		var img = new MyImage(item); 
-		img.init(); 
 		images.push(img); // Vi legger til hvert bilde-objekt på slutten av arrayet 
 	});
 };
@@ -56,12 +35,6 @@ var render_image_menu = function(number_of_images) {
 	};
 
 	return container; 
-};
-
-var display_large_image = function(index) {
-	var image = images[index];
-	var html = image.render_large(); 
-	stage.html(html);
 };
 
 var start_image_gallery = function(el) {
@@ -79,14 +52,12 @@ var start_image_gallery = function(el) {
 	el.html(loading_message);
 
 	$.ajax({
-		dataType: "json", 
+		dataType: "jsonp", 
 		url: url,
 		success: function(response) {
 			create_image_objects(response.items); 
 			var html = render_image_menu(number_of_images); 
 			el.prepend(html);
-			el.append(stage);
-			display_large_image(0);
 			loading_message.remove(); 
 		},
 		error: function() {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lynkurs i webutvikling</title>
+    <title>Javascript - Del 2</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
@@ -127,6 +127,8 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 
 ---
 
+# Objekter
+
 Vi kan lage objekter:
 
     .javascript
@@ -143,6 +145,8 @@ Vi kan lage objekter:
     obj.z() // true
 
 ---
+
+# Objekter
 
 Vi kan lage objekter:
 
@@ -246,6 +250,39 @@ Og arrays:
 
 # Prototype
 
+## Constructor Invocation
+
+    .javascript
+    var Person = function(navn) {
+        this.navn = navn;
+    };
+
+---
+
+# Prototype
+
+## Constructor Invocation
+
+    .javascript
+    var Person = function(navn) {
+        this.navn = navn;
+    };
+
+    var helge = new Person("Helge");
+    helge.navn // "Helge"
+
+---
+
+# Prototype Chain
+
+.middle.center
+
+![Prototype Chain](img/prototype2.png)
+
+---
+
+# Prototype
+
     .javascript
     var Person = function (navn, stilling, firma) {
         this.navn = navn;
@@ -272,6 +309,25 @@ Og arrays:
 
     var pat = new Person("Pat", "postmann", "Posten");
     var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
+
+---
+
+# Prototype 
+
+    .javascript
+    var Person = function (navn, stilling, firma) {
+        this.navn = navn;
+        this.stilling = stilling;
+        this.firma = firma;
+        this.hils = function() {
+            console.log("Hei, jeg heter " + this.navn);
+        };
+    };
+
+    var pat = new Person("Pat", "postmann", "Posten");
+    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
+
+    pat.hils(); // "Hei, jeg heter Pat"
 
 ---
 
@@ -402,7 +458,7 @@ Hvordan slipper Gmail å laste siden på nytt når du åpner en epost?
 
 .middle.center
 
-AJAX
+#AJAX
 
 &nbsp;
 
@@ -410,11 +466,13 @@ AJAX
 
 .middle.center
 
-AJAX
+#AJAX
 
 Send og motta data i bakgrunnen
 
 ---
+
+# AJAX
 
 … men her kommer det noen nettleser-problemer igjen
 
@@ -466,6 +524,8 @@ Send og motta data i bakgrunnen
 
 ---
 
+# AJAX
+
 Ajax med jQuery:
 
     .javascript
@@ -485,6 +545,154 @@ Ajax med jQuery:
 
 ---
 
+#AJAX
+
+##Same origin policy
+
+&laquo;In computing, the same origin policy is an important security concept for a number of browser-side programming languages, such as JavaScript.
+
+---
+
+#AJAX
+
+##Same origin policy
+
+&laquo;In computing, the same origin policy is an important security concept for a number of browser-side programming languages, such as JavaScript.
+
+The policy permits scripts running on pages originating from the same site – a combination of scheme, hostname, and port number – to access each other's methods and properties with no specific restrictions, but prevents access to most methods and properties across pages on different sites.&raquo;
+
+Wikipedia
+
+---
+
+.middle.center
+#Workaround
+
+&nbsp;
+
+---
+.middle.center
+#Workaround
+
+JSONP
+
+---
+
+#AJAX
+
+## Vanlig AJAX
+
+    .javascript
+    // JSON
+    {
+        "Name": "Foo",
+        "Id": 1234,
+        "Rank": 7
+    }      
+
+---
+
+#AJAX
+
+## Vanlig AJAX
+
+    .javascript
+    // JSON
+    {
+        "Name": "Foo",
+        "Id": 1234,
+        "Rank": 7
+    }    
+
+## JSONP
+
+    .javascript
+    // JSONP
+    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});    
+
+---
+
+#AJAX
+
+###JSONP med jQuery
+
+    .javascript 
+    $.ajax({
+        dataType: "jsonp", 
+        url: "http://www.bekk.no/api?jsoncallback=?", 
+        success: function(res) {
+            console.log(res);
+        },
+        error: function() {
+            console.log("Sorry, an error occured.");
+        }    
+    });
+
+---
+
+#AJAX
+
+###JSONP med jQuery
+
+    .javascript 
+    $.ajax({
+        dataType: "jsonp", 
+        url: "http://www.bekk.no/api?jsoncallback=?", 
+        success: function(res) {
+            console.log(res);
+        },
+        error: function() {
+            console.log("Sorry, an error occured.");
+        }    
+    });
+
+### URL
+    http://www.bekk.no/api?jsoncallback=jQuery18005757881309741956_1363111010831&_=1363111010857
+
+---
+
+#AJAX
+
+###JSONP med jQuery
+
+    .javascript 
+    $.ajax({
+        dataType: "jsonp", 
+        url: "http://www.bekk.no/api?jsoncallback=?", 
+        success: function(res) {
+            console.log(res);
+        },
+        error: function() {
+            console.log("Sorry, an error occured.");
+        }    
+    });
+
+### URL
+    http://www.bekk.no/api?jsoncallback=jQuery18005757881309741956_1363111010831&_=1363111010857
+
+### Respons
+    jQuery18005757881309741956_1363111010831({"Name": "Foo", "Id": 1234, "Rank": 7}); 
+
+---
+
+.middle.center
+
+#Oppgaver
+
+---
+
+#Oppgaver
+
+Del 2: Lag en bilde-stripe med bilder fra Flickr!
+
+1. Gjør et kall mot Flickr. Logg ut responsen.
+2. Lag et nytt **MyImage**-objekt for hvert bilde i responsen. 
+3. Lagre bildene i **images**-arrayet
+4. Rendre en bilde-meny (bildestripe) basert på bildene i arrayet
+5. Vis bildestripa i **el** som sendes inn til **start_image_gallery()**
+6. Fjern **loading_message** fra DOM
+
+---
 
     </textarea>
     <div id="slideshow"></div>

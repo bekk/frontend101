@@ -240,21 +240,8 @@ h3 i {
 }
 
 .image-small {
-    -webkit-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
-       -moz-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
-        -ms-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
-         -o-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
-            transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);      
-}
-
-.image-small {
     width: 65px;
     height: auto;
     padding: 5px;
     margin-right: 20px;   
-}
-
-.image-small:hover {
-    padding: 0;
-    width: 75px;  
 }

@@ -1,8 +1,8 @@
 /* MY IMAGE */
 
 var MyImage = function(item) 
-	// this.src_small = item.?.?.?
-	// this.src_large = ?
+	// this.src_small = item.?.?.? (Bytt ut "_m" med "_s" i image.media.m)
+	// this.src_large = ? (Fjern "_m" i image.media.m)
 	// this.title = ?
 	// this.el = $('<img title="' + ?? + '" alt="' + ?? + '" class="image-small" src="' + ?? + '" />')
 };
@@ -51,8 +51,8 @@ var start_image_gallery = function(el) {
 	el.html(loading_message);
 
 	$.ajax({
-		// dataType: "json"
-		
+		// dataType: "jsonp"
+
 		// Send med riktige parametre
 		// Se presentasjonen, eller google $.ajax :-)
 		// Tips: Begynn med console.log(respons) for å verifisere at du mottar data fra Flickr
