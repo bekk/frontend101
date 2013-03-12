@@ -85,8 +85,7 @@
 
     * setTimeout
     * setInterval
-    * undescore.js
-    * 
+
 * Oppgave:
     * Vise stort bilde ved klikk
     * Forhåndslasting
@@ -97,3 +96,4 @@
 ## Del 4:
     * God struktur for metoder og eller view
     * Vise at det finnes noe som heter Backbone, Require
+    * undescore.js

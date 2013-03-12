@@ -12,17 +12,42 @@
     <link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
 
     <style type="text/css" media="screen">
+        .table-center {
+            margin: 0 auto;
+        }
+        .fullimage {
+            padding: 0 !important;
+        }
+        .fullimage p {
+            margin: 0;
+        }
+
+        .fullimage img {
+            max-width: 100%;
+            max-height: 100%;
+        }
 
     </style>
     <script type="text/javascript">
-        $(document).ready(function() {
-            $(document).on("click", "#setTimeoutAlert", function(event) {
+    
+        $(document).on("click", "#setTimeoutAlert", function(event) {
 
-                setTimeout(function() {
-                    alert("2sec!")
-                }, 2000);
-            });
+            setTimeout(function() {
+                alert("2sec!")
+            }, 2000);
+        });
 
+    
+        var timeoutID;
+        $(document).on("click", "#demo2setTimeoutAlert", function(event) {
+
+            timeoutID = setTimeout(function() {
+                alert("2sec!")
+            }, 2000);
+        });
+
+        $(document).on("click", "#demo2clearTimeoutAlert", function(event) {
+            clearTimeout(timeoutID);
         });
     </script>
 
@@ -176,6 +201,7 @@ Returnerer/setter boolske verdier
 <br />
 
 
+
 .js
     $button.on("click", function(event) {
         console.log("je klikke!")
@@ -184,17 +210,173 @@ Returnerer/setter boolske verdier
 <br />
 
 
+
 .js
-    $wapper.on("click", "button", function(event) {
+    $button.on("click", function(event) {
+        this // DOM-elementet som trigget eventen
+
+        $(this) // wrap DOM-elementet med jquery for å få et jquyer objekt
+    });
+
+---
+
+
+.center
+
+# Event propagering
+
+<table class="table-center">
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+    <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+    </tr>
+</table>
+
+100 knapper = 100 event bindinger
+
+---
+# Event propagering
+
+.js
+    .on( events [, selector ] [, data ], handler(eventObject) )
+
+<br />
+
+
+.js
+    $("table").on("click", "button", function(event) {
         console.log("je klikke!")
     });
+
+---
+.middle.center
+# Event objekt
+
+.javascript.event
+    $button.on("click", function(event) {});
 
 ---
 
 # Event objekt
 
 .js
-    $wapper.on("click", "button", function(event) {
+    $button.on("click", function(event) {
         event.preventDefault();
         // forhindrer standard nettleser oppførsel
     });
@@ -204,8 +386,9 @@ Returnerer/setter boolske verdier
 
 # Event objekt
 
+
 .js
-    $wapper.on("click", "button", function(event) {
+    $button.on("click", function(event) {
         event.preventDefault();
         // forhindrer standard nettleser oppførsel
     });
@@ -214,17 +397,16 @@ Returnerer/setter boolske verdier
 
 
 .js
-    $wapper.on("click", "button", function(event) {
+    $button.on("click", function(event) {
         event.stopPropagation();
         // stopper event boblingen
     });
 
 ---
-
 # Event objekt
 
 .js
-    $wapper.on("click", "button", {spennende: "ting"}, function(event) {
+    $button.on("click", {spennende: "ting"}, function(event) {
         // data som sendes inn til callback funksjonen kan hentes gjennom event.data
         event.data.spennende; // "ting"
     });
@@ -234,7 +416,7 @@ Returnerer/setter boolske verdier
 # Event objekt
 
 .js
-    $wapper.on("click", "button", {spennende: "ting"}, function(event) {
+    $button.on("click", {spennende: "ting"}, function(event) {
         // data som sendes inn til callback funksjonen kan hentes gjennom event.data
         event.data.spennende; // "ting"
     });
@@ -243,7 +425,7 @@ Returnerer/setter boolske verdier
 
 
 .js
-    $wapper.on("click", "button", {spennende: "ting"}, function(event) {
+    $button.on("click", {spennende: "ting"}, function(event) {
         // få tak i dom elementet som trigget eventen gjennom event.currentTarget
         var $element = $(event.currentTarget);
 
@@ -260,7 +442,7 @@ Returnerer/setter boolske verdier
 ---
 .middle.center
 
-    <a id="setTimeoutAlert">2sec timout</a>
+    <a id="setTimeoutAlert">SnozzzzzZZZzz i 2 sekunder</a>
 
 
 
@@ -272,9 +454,8 @@ Returnerer/setter boolske verdier
     $button.on("click", function(event) {
 
         setTimeout(function() {
-            alert("2sec!")
+            alert("det har gått 2sekunder!")
         }, 2000);
-
     });
 
 ---
@@ -286,7 +467,7 @@ Returnerer/setter boolske verdier
     $button.on("click", function(event) {
 
         timeoutID = setTimeout(function() {
-            alert("2sec!")
+            alert("4sec!")
         }, 2000);
 
     });
@@ -301,9 +482,15 @@ Returnerer/setter boolske verdier
 <br />
 
 
-
+.html
     <a id="setTimeoutAlert">2sec timout</a>
     <a id="clearTimeoutAlert">clear timeout</a>
+
+
+---
+.middle.center    
+    <a id="demo2setTimeoutAlert">2sec timout</a><br />
+    <a id="demo2clearTimeoutAlert">clear timeout</a>
 
 ---
 
@@ -325,10 +512,9 @@ Attributter:
 
 1. Hente ut title-attributt fra bildet å vise denne som en bildetittel
 
-
-
-
-
+---
+.middle.center.fullimage
+![Screenshot løsningsforslag](img/losningsforslag.png)
 
     </textarea>
     <div id="slideshow"></div>
