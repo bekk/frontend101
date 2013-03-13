@@ -689,7 +689,7 @@ Lytte på klikk
     }
 
     // jQuery
-    $("h1").on("click", function() {
+    $("h1").click(function() {
       var header = $(this);
       header.text(header.text() + "!");
     });    
@@ -713,34 +713,47 @@ Endre CSS
 
 ---
 
-# Oppgave
-
-Lag denne menyen med javascript:
-
-![Meny](img/javascript.oppgave.meny.png)
-
-Kom i gang: [http://goo.gl/Qmvzx](http://goo.gl/Qmvzx)
-
----
-
-# Triks & tips
+# Tips & triks
 
     .javascript
 
-    // Vise/skjule
-    $(selector).toggle();
+    $(selektor).show(); // Vise element
+    $(selektor).hide(); // Skjule element
+    $(selektor).toggle(); // Vise/skjule element
 
-    // Lytte til events
-    $(selector).on("click", this, navn_paa_funksjon);
+    $(selektor).on("click", function() { doSomething() }); // Lytte til events
 
-    // Håndtere events
-    var navn_paa_funksjon = function(event) {
-        var objekt = event.data;
-    };
+    $(selektor).height(); // Finne høyden på element
+    $(selektor).outerHeight(); // Finne høyden på element inkl. border og padding
+
+    $(selektor).width(); // Finne bredden på element
+    $(selektor).outerWidth(); // Finne bredden på element inkl. border og padding
+
+    $(selektor).addClass("myClass"); // Legge til klasse
+    $(selektor).removeClass("myClass"); // Fjerne klasse
+    $(selektor).toggleClass("myClass"); // Toggle klasse
+
+    $(document).ready(function() { doSomething(); }); // Kjøre kode når siden er ferdig lastet
+
+    console.log("Hello World!"); // Skrive til konsollet
 
 ---
 
+.agenda
 
+# Oppgave
+
+1. Skriv ut *"Hello world"* når siden er lastet (hint: document ready)
+
+2. Vis menyknappen ved skjermbredde <= 480px (media query). 
+
+3. Sett høyden på hele menyen lik høyden på menyknappen (for å skjule alle menypunkter) og sett overflow: hidden på menyen;
+
+4. Ved klikk på menyknapp, endre høyden slik at hele menyen vises (tips: finn høyden på innholdet med outerHeight()). Legg også på klassen "*open*" på menyen.
+
+5. Legg på klassen "*animateHeight*" på menyen når siden er lastet.
+
+5. Ved klikk på menyknappen når menyen har klassen "*open*", sett høyden slik at kun menyknappen vises.
 
 
     </textarea>

@@ -1,15 +1,17 @@
 $(document).ready(function() {
 
-	$('.menubutton').click(function() {
+	$('nav').addClass('animateHeight');
 
-		var menuButtonHeight = $('.menubutton').outerHeight()
+	$('.menuButton').click(function() {
+
+		var menuButtonHeight = $('.menuButton').outerHeight();
 
 		if ($('nav').hasClass('open')) {
-			$('nav.sitenav').css('height', menuButtonHeight);	
+			$('nav').removeAttr('style');
 		} else {
 			var menuItemsHeight = $('nav ul').outerHeight();
 			var totalheight = menuItemsHeight + menuButtonHeight;
-			$('nav.sitenav').css('height', totalheight);
+			$('nav').css('height', totalheight);
 		}
 
 		$('nav').toggleClass('open');

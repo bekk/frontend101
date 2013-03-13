@@ -68,42 +68,49 @@ body > .container:first-of-type {
     padding-bottom:0;
 }
 
-.sitenav {
+nav {
     background: #26282b;
     margin: 0 -50px;
     padding:0 50px;
 }
 
-.sitenav ul {
+.menuButton {
+    display: none;
+    background-color: #26282b;
+    padding: 0.7em 0.5em;
+    font-size: 20px;
+}
+
+nav ul {
     margin: 0;
     padding: 0;
 }
 
-.sitenav li {
+nav li {
     padding-top: 5px;
     float: left;
 }
 
-.sitenav li.active {
+nav li.active {
     background-color: #fff;
 }
 
-.sitenav li:hover {
+nav li:hover {
     background: #ccc;
 }
 
-.sitenav li a {
+nav li a {
     display: block;
     padding: 1em;
     color: #ccc;
     text-decoration: none;
 }
 
-.sitenav li a:hover {
+nav li a:hover {
     color: #fff;
 }
 
-.sitenav li a, .sitenav li a:hover, .sitenav li a:active {
+nav li a, nav li a:hover, nav li a:active {
     background: #26282b;
 }
 
@@ -113,6 +120,13 @@ body > .container:first-of-type {
     display: block;
     height: 0;
     clear: both;
+}
+
+.animateHeight {
+    -webkit-transition: height 0.5s ease-out;
+    -moz-transition: height 0.5s ease-out;
+    -o-transition: height 0.5s ease-out;
+    transition: height 0.5s ease-out;
 }
 
 
@@ -136,7 +150,7 @@ body > .container:first-of-type {
         margin:0;
         left:0;
     }
-    .sitenav li a {
+    nav li a {
         padding: 1em 0.5em;
     }
     body > .container:first-of-type {
@@ -145,21 +159,26 @@ body > .container:first-of-type {
 }
 
 @media all and (max-width: 690px) {
-    .sitenav li {
+
+    nav li {
         width: 20%;
     }
     .siteheader {
         left: 0;
-        width: 100%;
+        width: 100%;ƒ
         position: relative;
         text-align: center;
     }
 }
 
 @media all and (max-width: 480px) {
-    .sitenav li {
+
+    nav li {
         width: 33%;
+        margin: 0 auto;
     }
+
+
 }
 
 @media only screen and (min-device-pixel-ratio: 1.5) {
@@ -176,3 +195,85 @@ body > .container:first-of-type {
 /* Snacks
 --------------------------------------------- */
 
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:1.8em;
+    line-height: .8;
+}
+
+h3 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size:1.2em;
+}
+
+h3 i {
+    margin:0 0.5em 0 0;
+}
+
+.container {
+    box-shadow:0 0 2em rgba(0,0,0,0.05);
+}
+
+nav li {
+    text-transform: uppercase;
+
+    -webkit-transition: all 100ms ease-in-out;
+    -moz-transition: all 100ms ease-in-out;
+    -ms-transition: all 100ms ease-in-out;
+    -o-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+.hero, article {
+    -webkit-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+       -moz-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+        -ms-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+         -o-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+}
+
+.hero:hover, article:hover {
+    cursor:pointer;
+    -webkit-transform: scale(1.03);
+       -moz-transform: scale(1.03);
+        -ms-transform: scale(1.03);
+         -o-transform: scale(1.03);
+            transform: scale(1.03);
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=3.0.1');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('../fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('../fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+
+/* sprites.less reset */
+  display: inline;
+  width: auto;
+  height: auto;
+  line-height: normal;
+  vertical-align: baseline;
+  background-image: none;
+  background-position: 0% 0%;
+  background-repeat: repeat;
+  margin-top: 0;
+}
+
+.icon:before           { content: "\f107"; }
+.open .icon:before     { content: "\f106"; }

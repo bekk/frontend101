@@ -68,42 +68,49 @@ body > .container:first-of-type {
     padding-bottom:0;
 }
 
-.sitenav {
+nav {
     background: #26282b;
     margin: 0 -50px;
     padding:0 50px;
 }
 
-.sitenav ul {
+.animateHeight {
+    -webkit-transition: height 0.5s ease-out;
+    -moz-transition: height 0.5s ease-out;
+    -o-transition: height 0.5s ease-out;
+    transition: height 0.5s ease-out;
+}
+
+nav ul {
     margin: 0;
     padding: 0;
 }
 
-.sitenav li {
+nav li {
     padding-top: 5px;
     float: left;
 }
 
-.sitenav li.active {
+nav li.active {
     background-color: #fff;
 }
 
-.sitenav li:hover {
+nav li:hover {
     background: #ccc;
 }
 
-.sitenav li a {
+nav li a {
     display: block;
     padding: 1em 1em 1.3em 1em;
     color: #ccc;
     text-decoration: none;
 }
 
-.sitenav li a:hover {
+nav li a:hover {
     color: #fff;
 }
 
-.sitenav li a, .sitenav li a:hover, .sitenav li a:active {
+nav li a, nav li a:hover, nav li a:active {
     background: #26282b;
 }
 
@@ -115,7 +122,7 @@ body > .container:first-of-type {
     clear: both;
 }
 
-.menubutton {
+.menuButton {
     display: none;
 }
 
@@ -140,7 +147,7 @@ body > .container:first-of-type {
         margin:0;
         left:0;
     }
-    .sitenav li a {
+    nav li a {
         padding: 1em 0.5em;
     }
     body > .container:first-of-type {
@@ -149,7 +156,7 @@ body > .container:first-of-type {
 }
 
 @media all and (max-width: 690px) {
-    .sitenav li {
+    nav li {
         width: 20%;
     }
     .siteheader {
@@ -161,22 +168,18 @@ body > .container:first-of-type {
 }
 
 @media all and (max-width: 480px) {
-    .sitenav {
+    nav {
         height: 53px;
         overflow: hidden;
-        -webkit-transition: height 0.5s ease-out;
-        -moz-transition: height 0.5s ease-out;
-        -o-transition: height 0.5s ease-out;
-        transition: height 0.5s ease-out;
     }
 
-    .sitenav li {
+    nav li {
         padding-top: 0px;
         float: none;
         margin: 0 auto;
     }
 
-    .menubutton {
+    .menuButton {
         display: block;
         background-color: #26282b;
         padding: 0.7em 0.5em;
@@ -185,16 +188,6 @@ body > .container:first-of-type {
         bottom: 0;
         left: 0;
         right: 0;
-    }
-}
-
-@media only screen and (min-device-pixel-ratio: 1.5) {
-    img.retina {
-        display: none;
-    }
-
-    img.standard {
-        display: block;
     }
 }
 
@@ -225,7 +218,7 @@ h3 i {
     box-shadow:0 0 2em rgba(0,0,0,0.05);
 }
 
-.sitenav li {
+nav li {
     text-transform: uppercase;
 
     -webkit-transition: all 100ms ease-in-out;
