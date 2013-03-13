@@ -40,7 +40,7 @@
 # Dag 2
 
 
-## DEL 1: [Erik] Enkel Introduksjon
+## Del 1: [Erik] Enkel Introduksjon
 
 * Presentasjon:
     * Intro jQuery
@@ -74,7 +74,18 @@
 
 ## Del 3: [Kent] Bygge videre på bildegalleriet
 * Presentasjon:
-    * ?
+    * jquery element triks
+        * Attributes
+            * attr
+            * val
+            * prop
+            * data
+        * element bubling (on - off)
+            * event objekt
+
+    * setTimeout
+    * setInterval
+
 * Oppgave:
     * Vise stort bilde ved klikk
     * Forhåndslasting
@@ -85,3 +96,4 @@
 ## Del 4:
     * God struktur for metoder og eller view
     * Vise at det finnes noe som heter Backbone, Require
+    * undescore.js
