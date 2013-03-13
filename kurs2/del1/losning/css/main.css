@@ -183,7 +183,8 @@ body > .container:first-of-type {
         font-size: 20px;
         position: absolute;
         bottom: 0;
-        left: 40%;
+        left: 0;
+        right: 0;
     }
 }
 
