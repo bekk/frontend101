@@ -188,16 +188,6 @@ body > .container:first-of-type {
     }
 }
 
-@media only screen and (min-device-pixel-ratio: 1.5) {
-    img.retina {
-        display: none;
-    }
-
-    img.standard {
-        display: block;
-    }
-}
-
 
 /* Snacks
 --------------------------------------------- */
