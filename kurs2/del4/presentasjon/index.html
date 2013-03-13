@@ -25,8 +25,9 @@
 
 # Agenda
 
-* Kort om Backbone.js
-* Kort om require.js
+* Backbone.js
+* require.js
+* underscore.js
 
 ---
 
@@ -47,8 +48,6 @@ Aktiv utvikling
 ---
 
 # MV*
-
-Vi valgte å gå for MVP.
 
 ![](img/mvp.png)
 
@@ -73,8 +72,6 @@ Med våre komponenter:
 ---
 
 # Model
-
-Håndterer forretningslogikk.
 
 Nøkkel/verdi-par.
 
@@ -196,34 +193,17 @@ Kalle model- og collection-metoder
 
 Det er *kun* views som har lov til å røre DOM-en!
 
----
-
-# Eventer
-
-Eventer er sentralt i en god JavaScript-arkitektur.
-
-Vi har vist bruken av det på models og collections, men det trengs ofte utenom
-disse abstraksjonene.
-
-Det er enkelt å lage en global eventaggregator i Backbone:
-
-    .javascript
-    // bruker Underscore.js til å legge event-funksjonalitet på et tomt objekt
-    var events = _.extend({}, Backbone.Events);
-
-    events.on("test", someMethod);
-    events.off("test", someMethod);
-    events.trigger("test");
-
-Bruk eventer for kontakt ut av en modul, for eksempel når et view skal gi
-beskjed om at noe har skjedd. Det gjør koden mye enklere å teste, og det blir
-mye mindre kobling mellom modulene.
 
 ---
 
 .middle.center
 
 ![](img/flyt.png)
+
+---
+.middle.center
+
+[TODO applikasjon skrevet med backbone](http://todomvc.com/architecture-examples/backbone/)
 
 ---
 
@@ -279,15 +259,69 @@ I tillegg er det kjedelig å skrive script includes
     spennendeModul.spennendeMetode() // awsome
 
 ---
+.middle.center
+# underscore.js
+## utility-belt for javascript
+
+---
+
+# underscore.js
+
+* Nærmeste du kommer funktionell programmering i JavaScript 
+* 80-ish utility fuksjoner for dagligdagse problemer
+* Gir deg *map, select, invoke* som vi er vant med fra ruby og python
+* "It's the tie to go along with jQuery's tux, and Backbone.js's suspenders."
+
+---
+
+# underscore.js
+  
+## _.map
+
+.javascript
+    _.map(list, iterator, [context])
+
+    _.map([1, 2, 3], function(num){ return num * 3; });
 
 
+## _.invoke
 
+.javascript
+    _.invoke(list, methodName, [*arguments]) 
+
+    _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+
+---
+
+# underscore.js
+
+## _.debounce
+
+.javascript
+    _.debounce(function, wait)
+
+    var lazyLayout = _.debounce(calculateLayout, 300);
+    $(window).resize(lazyLayout);
+
+
+## _.defer
+
+.javascript
+    _.defer(function, [*arguments]) 
+
+    _.defer(function(argument1, argument2) {
+        // run after everything
+    }, argument1, argument2);
+
+
+---
 
 #Les mer
-
+* [Backbone annotated source](http://backbonejs.org/docs/backbone.html)
 * [JavaScript-arkitektur](http://kjbekkelund.github.com/js-architecture-backbone/) av Kim Joar Bekkelund
 * [Step by step from jQuery to Backbone](https://github.com/kjbekkelund/writings/blob/master/published/understanding-backbone.md/) av Kim Joar Bekkelund
 * [Organize Your Code with RequireJS](http://blog.teamtreehouse.com/organize-your-code-with-requirejs)
+* [Underscore dokumentation](http://underscorejs.org/)
 
     </textarea>
     <div id="slideshow"></div>
