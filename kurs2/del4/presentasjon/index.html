@@ -25,8 +25,9 @@
 
 # Agenda
 
-* Kort om Backbone.js
-* Kort om require.js
+* Backbone.js
+* require.js
+* underscore.js
 
 ---
 
@@ -200,7 +201,9 @@ Det er *kun* views som har lov til å røre DOM-en!
 ![](img/flyt.png)
 
 ---
-* [TODO applikasjon skrevet med backbone](http://todomvc.com/architecture-examples/backbone/)
+.middle.center
+
+[TODO applikasjon skrevet med backbone](http://todomvc.com/architecture-examples/backbone/)
 
 ---
 
@@ -256,15 +259,69 @@ I tillegg er det kjedelig å skrive script includes
     spennendeModul.spennendeMetode() // awsome
 
 ---
+.middle.center
+# underscore.js
+## utility-belt for javascript
+
+---
+
+# underscore.js
+
+* Nærmeste du kommer funktionell programmering i JavaScript 
+* 80-ish utility fuksjoner for dagligdagse problemer
+* Gir deg *map, select, invoke* som vi er vant med fra ruby og python
+* "It's the tie to go along with jQuery's tux, and Backbone.js's suspenders."
+
+---
+
+# underscore.js
+  
+## _.map
+
+.javascript
+    _.map(list, iterator, [context])
+
+    _.map([1, 2, 3], function(num){ return num * 3; });
 
 
+## _.invoke
 
+.javascript
+    _.invoke(list, methodName, [*arguments]) 
+
+    _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
+
+---
+
+# underscore.js
+
+## _.debounce
+
+.javascript
+    _.debounce(function, wait)
+
+    var lazyLayout = _.debounce(calculateLayout, 300);
+    $(window).resize(lazyLayout);
+
+
+## _.defer
+
+.javascript
+    _.defer(function, [*arguments]) 
+
+    _.defer(function(argument1, argument2) {
+        // run after everything
+    }, argument1, argument2);
+
+
+---
 
 #Les mer
 * [Backbone annotated source](http://backbonejs.org/docs/backbone.html)
 * [JavaScript-arkitektur](http://kjbekkelund.github.com/js-architecture-backbone/) av Kim Joar Bekkelund
 * [Step by step from jQuery to Backbone](https://github.com/kjbekkelund/writings/blob/master/published/understanding-backbone.md/) av Kim Joar Bekkelund
 * [Organize Your Code with RequireJS](http://blog.teamtreehouse.com/organize-your-code-with-requirejs)
+* [Underscore dokumentation](http://underscorejs.org/)
 
     </textarea>
     <div id="slideshow"></div>
