@@ -412,6 +412,24 @@ BananaBread DEMO
 
 ---
 
+# Hvorfor dynamisk oppførsel?
+
+---
+
+# Hvorfor dynamisk oppførsel?
+
+Endre HTML og CSS
+
+Lytte på det brukeren gjør, som for eksempel å klikke på noe
+
+Validere brukerinput
+
+Animasjon
+
+Spill, lyd, video
+
+---
+
 .middle.center
 
 JavaScript er et programmeringspråk.
@@ -420,11 +438,307 @@ JavaScript er et programmeringspråk.
 
 .middle.center
 
-… men det har ingenting med Java å gjøre.
+ men det har ingenting med Java å gjøre.
 
 ---
 
+.middle.center
 
+La oss ta en rask introduksjon
+
+---
+
+.middle.center
+
+… men hvordan endrer vi HTML og CSS?
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+
+
+
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+addText.js:
+
+    .javascript
+    document.body.appendChild( document.createTextNode( 'Hello World!' ) );
+
+---
+
+# Legge til tekst
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+addText.js:
+
+    .javascript
+    document.body.appendChild( document.createTextNode( 'Hello World!' ) );
+
+Ny HTML etter at siden er lastet:
+
+    .html
+    <html>
+        <head>
+            <script src="addText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+            Hello World!
+        </body>
+    </html>
+
+---
+
+.middle
+
+`getElementsByTagName`
+
+`getElementsByClassName`
+
+`getElementById`
+
+---
+
+.middle
+
+`getElementsByTagName` &mdash; `.html <h1>Overskrift</h1>`
+
+`getElementsByClassName` &mdash; `.html <div class="user">…</div>`
+
+`getElementById` &mdash; `.html <div id="nav">…</div>`
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+
+
+
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+changeText.js:
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.textContent = "Ny tittel!";
+
+---
+
+# Endre tekst
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>This is HTML</h1>
+        </body>
+    </html>
+
+changeText.js:
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.textContent = "Ny tittel!";
+
+Ny HTML etter at siden er lastet:
+
+    .html
+    <html>
+        <head>
+            <script src="changeText.js"></script>
+        </head>
+        <body>
+            <h1>Ny tittel!</h1>
+        </body>
+    </html>
+
+---
+
+# Lytte på klikk
+
+    .javascript
+    var headers = document.getElementsByTagName("h1");
+    var header = headers[0];
+
+    header.addEventListener("click", function() {
+        header.textContent = header.textContent + "!";
+    });
+
+[http://jsbin.com/uqawuq/1/edit](http://jsbin.com/uqawuq/1/edit)
+
+Vi kan blant annet lytte på:
+
+* dblclick
+* keyup
+* mousedown
+* resize
+* scroll
+* touchstart
+
+---
+
+# Endre design
+
+    .javascript
+    var list = document.getElementsByClassName("technologies");
+    list[0].style.color = "red";
+
+[http://jsbin.com/icalon/2/edit](http://jsbin.com/icalon/2/edit)
+
+---
+
+.middle.center
+
+Stress å skrive `getElementsByClassName`, `getElementsByTagName` og
+`getElementById` hele tiden.
+
+![sleepy](img/sleepy.gif)
+
+---
+
+.middle.center.jquery
+
+![jQuery](img/jquery_logo.png)
+
+---
+
+# jQuery
+
+Endre tekst
+
+    .javascript
+
+    // JS
+    var headings = document.getElementsByTagName("h1");
+    for(i = 0; i < headings.length; i++) {
+        headings[i].textContent = "Ny tittel!";
+    }
+
+    // jQuery 
+    $("h1").text("Ny tittel!")
+
+---
+
+# jQuery
+
+Lytte på klikk
+
+    .javascript
+
+    // JS
+    var headings = document.getElementsByTagName("h1");
+    for(i = 0; i < headings.length; i++) {
+        headings[i].addEventListener("click", function() {
+            header.textContent = header.textContent + "!";
+        });
+    }
+
+    // jQuery
+    $("h1").on("click", function() {
+      var header = $(this);
+      header.text(header.text() + "!");
+    });    
+
+---
+
+# jQuery
+
+Endre CSS
+
+    .javascript 
+
+    // Javascript
+    var technologies = document.getElementsByClassName("technologies");
+    for(i = 0; i < technologies.length; i++) {
+        technologies[i].style.color = "red";
+    }
+
+    // jQuery
+    $(".technologies").css("color", "red");
+
+---
+
+# Oppgave
+
+Lag denne menyen med javascript:
+
+![Meny](img/javascript.oppgave.meny.png)
+
+Kom i gang: [http://goo.gl/Qmvzx](http://goo.gl/Qmvzx)
+
+---
+
+# Triks & tips
+
+    .javascript
+
+    // Vise/skjule
+    $(selector).toggle();
+
+    // Lytte til events
+    $(selector).on("click", this, navn_paa_funksjon);
+
+    // Håndtere events
+    var navn_paa_funksjon = function(event) {
+        var objekt = event.data;
+    };
+
+---
 
 
 

@@ -1,16 +1,14 @@
 $(document).ready(function() {
 
-	$('.menubutton').on('click', function() {
+	$('.menubutton').click(function() {
+
+		var menuButtonHeight = $('.menubutton').outerHeight()
 
 		if ($('nav').hasClass('open')) {
-
-			$('nav.sitenav').css('height', $('.menubutton').outerHeight());	
-
+			$('nav.sitenav').css('height', menuButtonHeight);	
 		} else {
-			var menuItems = $('nav ul').outerHeight();
-			var menuButton = $('.menubutton').outerHeight()
-
-			var totalheight = menuItems + menuButton;
+			var menuItemsHeight = $('nav ul').outerHeight();
+			var totalheight = menuItemsHeight + menuButtonHeight;
 			$('nav.sitenav').css('height', totalheight);
 		}
 
