@@ -553,15 +553,9 @@ Ajax med jQuery:
 
 ---
 
-#AJAX
+.middle.center
 
-##Same origin policy
-
-&laquo;In computing, the same origin policy is an important security concept for a number of browser-side programming languages, such as JavaScript.
-
-The policy permits scripts running on pages originating from the same site – a combination of scheme, hostname, and port number – to access each other's methods and properties with no specific restrictions, but prevents access to most methods and properties across pages on different sites.&raquo;
-
-Wikipedia
+#Same origin policy
 
 ---
 
@@ -683,14 +677,12 @@ JSONP
 
 #Oppgaver
 
-Del 2: Lag en bilde-stripe med bilder fra Flickr!
+##Del 2: Lag en bilde-stripe med bilder fra Flickr!
 
 1. Gjør et kall mot Flickr. Logg ut responsen.
-2. Lag et nytt **MyImage**-objekt for hvert bilde i responsen. 
-3. Lagre bildene i **images**-arrayet
-4. Rendre en bilde-meny (bildestripe) basert på bildene i arrayet
-5. Vis bildestripa i **el** som sendes inn til **start_image_gallery()**
-6. Fjern **loading_message** fra DOM
+2. Lag et nytt **MyImage**-objekt for hvert bilde i responsen. Lagre bildene i **images**-arrayet.
+3. Bygg en HTML-streng (bildestripe) basert på bildene i arrayet.
+4. Sett HTML-strengen inn i DOM-elementet med **id="thumbs"** som sendes inn til **startImageGallery()**
 
 ---
 

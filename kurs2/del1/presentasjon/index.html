@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lynkurs i webutvikling</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
+    <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
+
+    <link href='http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
+
+    <style type="text/css" media="screen">
+
+.fs { font-size:1.6em; }
+.f1 { font-family: 'Snowburst One', cursive; }
+.f2 { font-family: 'Griffy', cursive; }
+
+
+#slideshow .slide .content.front-page h1 { width: 100%; }
+.slide p { padding: 0; margin: 1.1em 0; }
+.slide ul { padding: 0; margin: 1.1em 0; }
+.slide img { max-width: 100%; max-height: 600px; }
+.slide .big { font-size: 4em; }
+#slideshow .slide .content ul li { padding-left: 1.3em; }
+#slideshow .slide .attr a { color:#333; font-size:0.8em; }
+#slideshow .slide .fullscreen img { width:100%; height:100%; position:absolute; top:40px; left:0; }
+.fullscreen.higher img {height:115% !important;max-height:115%;}
+.slide span.alt { color:#FD5158; }
+.jquery { background-color: #1E2837; }
+.nodejs { background-color: #3F4239; }
+#slideshow .position { display: none; }
+.invert { background:#fff; }
+.imgtranslate img { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+iframe { border:none; }
+.anim a { -webkit-transition: color 200ms ease-in-out; display: block; font-size: 3em; text-align: center; margin:1em 0; }
+.anim a:hover { color:#fff !important; text-decoration: none !important; }
+.imganim img { -webkit-transition: all 300ms ease-in-out; }
+.imganim img:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+
+.gradient { background-image:-webkit-linear-gradient(red, green, blue, purple, orange); }
+
+.gradient * { color:#fff !important; }
+
+.middle.center h1 span { background:none !important; }
+
+.middle.center.shadow { background:#333; text-shadow:2px 2px 2px rgba(0,0,0,0.3); }
+.middle.center.shadow .shadow1 { background: #444; padding:1em; box-shadow:0 2px 3px rgba(0,0,0,0.2); }
+
+.caniuse { background: #ede1cc !important; }
+
+a.two { font-size:3em; display: block; text-align: left; color:#fff !important; line-height: 1.3; }
+
+.spinners {
+    width:500px;
+    height:600px;
+    margin:0 auto;
+    position: relative;
+}
+
+.anim-steps .spinners {
+    height:250px;
+}
+
+.spinner1 {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-80px 0 0 -80px;
+
+    border:20px solid #228fd3;
+    border-right:20px solid #000;
+    border-left:20px solid #000;
+    border-radius:160px;
+    width:160px;
+    height:160px;
+    -webkit-animation:rotation 2s infinite linear;
+    -moz-animation:rotation 2s infinite linear;
+    -ms-animation:rotation 2s infinite linear;
+    -o-animation:rotation 2s infinite linear;
+    animation:rotation 2s infinite linear;
+}
+
+.spinner2 {
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin:-40px 0 0 -40px;
+    border:20px solid #228fd3;
+    border-right:20px solid #000;
+    border-left:20px solid #000;
+    border-radius:80px;
+    width:80px;
+    height:80px;
+    -webkit-animation:rotation2 2s infinite linear;
+    -moz-animation:rotation2 2s infinite linear;
+    -ms-animation:rotation2 2s infinite linear;
+    -o-animation:rotation2 2s infinite linear;
+    animation:rotation2 2s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(359deg); }
+}
+
+@-webkit-keyframes rotation2 {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(-359deg); }
+}
+
+#slideshow .slide .content.front-page h1 { width: 100%; }
+      .slide p { padding: 0; margin: 1.1em 0; }
+      .slide ul { padding: 0; margin: 1.1em 0; }
+      .slide img { max-width: 100%; max-height: 600px; }
+      .slide .big { font-size: 4em; }
+      #slideshow .slide .content ul li { padding-left: 1.3em; }
+      #slideshow .slide .attr a { color:#333; font-size:0.8em; }
+      #slideshow .slide .fullscreen img { width:100%; height:100%; position:absolute; top:40px; left:0; }
+      .slide span.alt { color:#FD5158; }
+      .jquery { background-color: #1E2837; }
+      .nodejs { background-color: #3F4239; }
+      #slideshow .position { display: none; }
+
+    /*Egne ninjatriks:*/
+      .whitebg {background: #fff;color:#000;}
+      .hl-text {background:#000;padding:0 .6em 0 0; color: #FD5158; text-transform:uppercase;font-weight: normal;font-size: 1.5em;font-style: italic;}
+      .fullscreen {position: relative;}
+      .fullscreen img {width:100%; min-height:100%; height:auto; top:0 !important;}
+      .fullscreen.higher img {height:115% !important;max-height:115%;}
+      .fullscreen .overlay {position:absolute;left:0;right:0;top:35%;z-index:999;background:rgba(0,0,0,.75);}
+      .slide .source {position: absolute;bottom:3px; left:5px;z-index:999;font-size:.7em;}
+      .loud {font-size:2em;}
+
+      blockquote, .loud {font-size:2em;}
+      blockquote cite, .loud small {font-size:.7em;color:#FD5158;}
+      .slide .overlay h1 > span {background:transparent !important;}
+      .slide .overlay h1:before {border-top:none !important;}
+
+      .css-example {border:1px solid rgba(0,0,0,.2); font-size:.8em;padding:1em;}
+      .css-example .pbox {width:100px;height:100px;line-height: 2;text-align: center;font-size: 3em}
+      .css-example .pbox:nth-child(2) {color:red;}
+      .css-example .pbox:nth-child(3) {color:white;}
+      .css-eaxample-clear:after, .group:after { 
+   content: ""; 
+   visibility: hidden; 
+   height: 0; 
+   display: block; 
+   clear: both;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+.fullscreen
+
+<!-- <iframe src="http://dl.dropbox.com/u/6213850/WebGL/nyanCat/nyan.html" 
+    style="width:100%; height:100%; position:absolute; top:0; left:0; border:none;"></iframe> -->
+
+<div style="position:absolute;z-index:9999;top:10%;left:5%;font-size:3.1em;text-shadow:5px 5px #000">
+github.com/olav/frontend101
+</div>
+
+---
+
+
+.front-page
+
+# Frontend 101
+
+## Kom igang med JavaScript
+
+Presentasjon holdt for NTNU
+
+Erik Wendel, Helge Fredheim og Kent Andersen
+
+Mars 2013
+
+---
+
+.agenda
+
+# Agenda
+
+* Dynamisk oppførsel      <span class="alt">(JavaScript, jQuery, DOM api)</span>
+* Andre ting             <span class="alt">(innhold)</span>
+* Tredje ting              <span class="alt">(design)</span>
+* Fjerde ting       <span class="alt">(oppførsel)</span>
+* Noe mer             <span class="alt">(transport)</span>
+
+---
+
+.middle.center.fullscreen.higher
+
+![HTML](img/101/html.jpeg)
+
+<div class="source">
+http://flic.kr/p/5HzQsy
+</div>
+
+---
+
+# HTML
+
+    .html
+    <!doctype html>
+
+    <html lang="en">
+        <head>
+
+            <meta charset="utf-8">
+            <title>En enkel HTML-side</title>
+
+        </head>
+        <body>
+            <div class="article">
+                <h1>Velkommen til min flotte nettside!</h1>
+                <p>Her er litt mer informasjon.</p>            
+            </div>
+            <div class="footer">
+                <a href="http://google.com">Søk</a>
+            </div>
+        </body>
+    </html>
+
+
+---
+
+.middle.fullscreen
+
+
+
+![CSS](img/101/css-gangnam.jpg)
+<div class="" style="position:absolute;top:5%;left:5%;-webkit-transform:rotate(-17deg);-moz-transform:rotate(-17deg);transform:rotate(-17deg)">
+<h1>&nbsp;CSS&nbsp;</h1>
+</div>
+<div class="" style="position:absolute;top:9%;left:12%;">
+<h1>Cascading Style Sheets</h1>
+</div>
+
+---
+
+# CSS properties
+<!--
+    .css
+    selector {property:value}
+
+&nbsp;-->
+
+    .css
+    selector {        
+        background: #f00;                       /* Bakgrunn */
+
+        font-size:20px;                         /* Tekst */
+        line-height:1.5;
+
+        border: 1px solid red;                  /* Kanter */
+        border-radius: 20px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        
+        height:20px;                            /* Dimensjoner */
+        width:30px;
+
+        float:left;                             /* Posisjon */
+        position:absolute;
+        top:10px;
+        left:25px;
+
+        margin:10px;                            /* Spacing */
+        padding: 10px 0;
+    }
+
+---
+#css selectors
+
+    .css
+
+    element   
+
+    .class
+
+    #id
+
+    #id .class element              /*kombinasjon av forskjellige selektorer*/
+
+    .class1.class2 .class3          /*?*/
+
+    element .class #id              /*wtf*/
+
+    e:active, e:hover, e:focus      /*match basert på interaksjon*/
+
+    e[foo]                          /*matcher elementer med attr "foo", uansett verdi*/
+
+    e[foo="warning"]                /*?*/     
+
+    e:first-child                   /*matcher e når e er første barn av sin forelder*/
+
+    e:last-child                    /*?*/
+
+    e:first-of-type                 /*?*/
+
+
+&nbsp;
+
+[https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors](https://developer.mozilla.org/en-US/docs/CSS/Getting_Started/Selectors)
+
+---
+
+---
+
+
+
+
+
+
+
+.middle.center
+
+![Mediaqueri.es](img/mediaq.png)
+#Responsive Web Design
+
+<div class="source">
+http://mediaqueri.es/
+</div>
+
+---
+
+# Media queries
+
+
+&nbsp;
+
+    .css
+    /* <= 1000+x*/
+    @media screen and (max-width:1000px) {
+        #content {
+            width:960px;
+        }
+    }
+    /* <= 750 px */
+    @media screen and (max-width:750px) {
+        #content {
+            width:500px;
+        }
+    }
+    /* <= 480px px */
+    @media screen and (max-width:480px) {
+        #content {
+            width: 100%;
+        }
+    }
+
+---
+
+.agenda
+
+# CSS-Snacks
+
+* Web fonts + Icon fonts
+* Gradients + Shadows
+* Transforms + Transitions + Animations
+
+---
+
+.middle.center
+
+HTML beskriver hva innholdet *er*.
+
+CSS beskriver hvordan innholdet *ser ut*.
+
+Men hva hvis vi trenger *dynamisk oppførsel*?
+
+---
+
+.middle.center
+
+# JavaScript
+
+---
+
+.middle.center
+
+![Google instant search](img/google.png)
+
+---
+
+.middle.center
+
+![Google Maps](img/googlemaps.png)
+
+---
+
+.middle.center
+
+![JSLinux](img/jslinux.png)
+[JSLinux](http://bellard.org/jslinux/)
+
+---
+
+.middle.center
+
+![Three.js](img/threejs.png)
+[Three.js](http://mrdoob.github.com/three.js/)
+
+---
+
+BananaBread DEMO
+
+---
+
+.middle.center
+
+JavaScript er et programmeringspråk.
+
+---
+
+.middle.center
+
+… men det har ingenting med Java å gjøre.
+
+---
+
+# Oppgave
+
+1. Skriv ut "Hello world" når siden er lastet (hint: document ready)
+2. Vis menyknappen ved skjermbredde <= 480px (media query)
+3. Sett høyden på hele menyen lik høyden på menyknappen (for å skjule alle menypunkter) og sett overflow: hidden;
+4. Ved klikk på menyknapp, endre høyden slik at hele menyen vises. Sett også 
+5. Ved klikk, legg til klassen *open* på 
+
+
+
+
+
+    </textarea>
+    <div id="slideshow"></div>
+  </body>
+</html>
