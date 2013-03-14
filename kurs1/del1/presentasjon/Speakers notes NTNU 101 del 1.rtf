@@ -1,0 +1,211 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16200\viewh16520\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\b\fs24 \cf0 HTML
+\b0 \
+XML, Beskriver struktur og innhold, DOM brukes av CSS og JS, forskjellige tags til forskjellige format. Sematisk web.\
+\
+
+\b HTML5:
+\b0  is the latest iteration of HTML, and includes new features, improvements to existing features, and scripting-based APIs. \
+Hvordan se forskjell?\
+	Test i IE\
+Sammenligning html4 og 5\
+Spesifikasjon + "oppsummering"\
+\
+\
+
+\b CSS
+\b0 \
+Bestemmer hvordan siden rendres /innholdet ser ut\
+\
+Kule ting en kan gj\'f8re med CSS\
+	Ikoner\
+	Opera-logo\
+\
+Syntaks\
+Properties & values\
+Selectors\
+	Enkelt eksempel\
+	Dr\'f8yere eksempel (pseudo / css3)\
+\
+Selekorer - hvem vinner?\
+	En selektor sier bl\'e5 tekst, en annen sier r\'f8d teskst - what to do?	\
+
+\b Nettleseren kj\'f8rer igjennom (opp til) 4 steg:
+\b0 \
+	
+\b 1
+\b0  Finn alle deklarasjoner som gjelder et element fra alle kilder\
+		\
+		Hvis det finnes deklarasjoner fra to, eller flere forskjellige kilder:\
+\
+	
+\b 2 
+\b0 Prioritere og sortere basert p\'e5 kilde! G\'e5 igjennom den prioriterte rekkef\'f8lgen\
+\
+		Hvis stiler har samme kilde / vekting:\
+\
+	
+\b 3 
+\b0 Specificity\
+		Specificity -> vekting -> bestemmer hvor sterk en selektor er\
+		inline - kan vi overg\'e5 det?\
+			important\
+\
+		Fortsatt uavgjort?\
+		\
+	
+\b 4 
+\b0 rekkef\'f8lge\
+\
+En annen ting som kan v\'e6re med \'e5 bestemme hvilke stiler som gjelder et gitt element: 
+\b ARV
+\b0 \
+	Baserer seg p\'e5 html-strukturen\
+	Slipper \'e5 sette font-properties per element\
+\
+quiz\
+	Hvilke stiler blir satt p\'e5 .favorite?\
+\
+Overgang til 
+\b BOX MODEL
+\b0 \
+	\
+Alt er (for nettleseren) firkanter som er stacket opp\'e5 hverandre, eller ved siden av hverandre.\
+BOX MODEL forteller noe om hvor mye plass en boks tar\
+	\
+"Eskemetafor"\
+	width: innhold\
+	padding: isopor\
+	broder: papp\
+	margin: avst\'e5nd til neste eske\
+	\
+	Best \'e5 la innholdet styre h\'f8yden\
+\
+For \'e5 bestemme plasseringen av boksene kan en for eksempel bruke 
+\b FLOATING
+\b0 \
+\
+	Tradisjonelt sett (bilder + tekst)\
+	mye brukt til grid / sideoppsett (flytte BOKSER)\
+		Vil ha artikkel til venstre, aside til h\'f8yre, footer nederst. Hvordan?\
+		Clearing av footer\
+\
+	Kjent problem: COLLAPSE (hvorfor, og hvorfor er det bra?)	\
+Annen m\'e5te \'e5 plassere bokser p\'e5: 
+\b POSITION
+\b0 \
+	\
+Relative\
+	ingenting annet overtar plassen i "flyten"\
+\
+Absolute\
+	Dras ut av flyten\
+\
+Fixed\
+	Dras ut av flyten. Kan v\'e6re vrien.\
+\
+\
+overgang fra FIXED --> n\'e5r man har kontroll p\'e5 alt dette her er css 
+\b AWESOME
+\b0 . Eller?\
+	forklare lightbox-eksempel\
+\
+Hvor awesome css er avhenger av nettleser\
+	awesome i noen nettlesere\
+	hvordan hverdag som front-end-utvikler kan fortone seg\
+		bruker mye tid og energi p\'e5 \'e5 hate ie\
+\
+GODE NYHETER\
+	IE p\'e5 vei ned\
+\
+	MEN MAN M\'c5 FORTSATT H\'c5NDTERE ULIKE NETTLESERE I YMSE KVALITET\
+\
+
+\b HISTORIE:
+\b0  Hvordan har en h\'e5ndtert nettleserproblemer f\'f8r? Fokus p\'e5 EN nettleser\
+Gammel & gladkristen 1994-ish site\
+	Glem \'e5 bruke denne om du ikke bruker IE. "IE er en gave fra gud"\
+	Bruker du ikke IE er du on your own\
+	Ingen alternativ m\'e5te \'e5 bruke siten p\'e5, ingen feilmeldinger, ingen tilpasninger\
+	Man vet ikke hva man ikke f\'e5r se (innhold)\
+\
+Andre approaches / strategier:\
+\
+
+\b Graceful degrading 
+\b0 fokuserer p\'e5 the latest & greatest (ikke bare EN nettleser)\
+	Gj\'f8r testing i ulike nettlesere p\'e5 slutten av utviklinga\
+		Gj\'f8r evt billige sm\'e5 tweaks for \'e5 forbedre brukeropplevelsen				\
+	Gi tilbakemelding til brukeren om at her er det noe som han / hun ikke f\'e5r se		F.eks noscript. Sucks to be you, nothing to see, move along\
+			
+\b ALTERNATIV
+\b0  meny i noscript-tag (tilgjengelighet)\
+\
+D\'e5rlig og mangelfull strategi\
+\
+
+\b PROGRESSIVE ENHANCEMENT
+\b0 \
+Annet utviklingsl\'f8p - 
+\b innholdet i fokus
+\b0 . Skal kunne brukes av alle.\
+	Illustreres med rulletrappeksempel\
+\
+Sagt p\'e5 en annen m\'e5te\
+	.. bedre \'e5 fokusere p\'e5 innholdet. Kjerna. S\'f8rg for at det VIKTIGSTE er tilgjengelig for ALLE\
+	Add ons for fetere opplevelse\
+	Skille struktur og design\
+\
+M&M\
+	The layered cake\
+	polish p\'e5 toppen\
+\
+\
+===========================================================================\
+Dive in:\
+\
+
+\b Cascade, specificity
+\b0 \
+http://www.maxdesign.com.au/articles/css-cascade/ \
+http://css-tricks.com/specifics-on-css-specificity/\
+http://www.standardista.com/css3/css-specificity/\
+http://reference.sitepoint.com/css/specificity\
+http://designshack.net/articles/css/what-the-heck-is-css-specificity/\
+http://coding.smashingmagazine.com/2010/04/07/css-specificity-and-inheritance/ \
+http://coding.smashingmagazine.com/2007/07/27/css-specificity-things-you-should-know/\
+\
+Kalkulator: http://specificity.keegan.st/\
+\
+
+\b Arv
+\b0 \
+http://www.w3.org/TR/CSS21/propidx.html\
+\
+
+\b Box model
+\b0 \
+https://developer.mozilla.org/en-US/docs/CSS/box_model\
+\
+
+\b Floating
+\b0 \
+http://css.maxdesign.com.au/floatutorial/introduction.htm\
+http://alistapart.com/article/css-floats-101\
+http://css-tricks.com/all-about-floats/\
+http://coding.smashingmagazine.com/2007/05/01/css-float-theory-things-you-should-know/\
+\
+
+\b Position
+\b0 \
+http://alistapart.com/article/css-positioning-101\
+\
+Learn CSS Layout {\field{\*\fldinst{HYPERLINK "http://learnlayout.com/toc.html"}}{\fldrslt http://learnlayout.com/toc.html}}\
+\
+\
+}
