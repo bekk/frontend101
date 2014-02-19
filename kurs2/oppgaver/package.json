@@ -1,0 +1,14 @@
+{
+  "name": "oppgaver",
+  "version": "0.0.1",
+  "description": "Oppgaver til frontend 101 kurs del 2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "jsbin": "git://github.com/torgeir/jsbin.git#2a740752924a425cedf75607cc5de1505f3154db"
+  },
+  "author": "@torgeir",
+  "license": "MIT"
+}
