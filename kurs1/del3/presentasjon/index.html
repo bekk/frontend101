@@ -17,7 +17,6 @@
 .f1 { font-family: 'Snowburst One', cursive; }
 .f2 { font-family: 'Griffy', cursive; }
 
-
 #slideshow .slide .content.front-page h1 { width: 100%; }
 .slide p { padding: 0; margin: 1.1em 0; }
 .slide ul { padding: 0; margin: 1.1em 0; }
@@ -35,8 +34,12 @@
 iframe { border:none; }
 .anim a { -webkit-transition: color 200ms ease-in-out; display: block; font-size: 3em; text-align: center; margin:1em 0; }
 .anim a:hover { color:#fff !important; text-decoration: none !important; }
-.imganim img { -webkit-transition: all 300ms ease-in-out; }
-.imganim img:hover { -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px); }
+.imganim img { 
+    -webkit-transition: all 300ms ease-in-out;
+}
+.imganim img:hover { 
+    -webkit-transform: perspective(600px) rotateY(20deg) scale(0.8) translateX(60px);
+}
 
 .gradient { background-image:-webkit-linear-gradient(red, green, blue, purple, orange); }
 
@@ -127,9 +130,7 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 
 .middle.center
 
-# Web fonts
-
-<span class="fs">Lett å bruke,  <span class="f1">vanskelig</span> <span class="f2">å mestre</span></span>
+# <span class="f1">Web</span> <span class="f2">fonts</span>
 
 ---
 
@@ -210,15 +211,15 @@ Windings++
 
 ---
 
-.middle.center.invert
+.middle.center
 
-![Iconfonts example](img/awsfont2.png)
+![Awsfont](img/awsfont.png)
 
 ---
 
 .middle.center
 
-![Awsfont](img/awsfont.png)
+![Awsfont](img/awsfont2.png)
 
 ---
 
@@ -244,57 +245,6 @@ Mer fleksibelt enn bakgrunnsbilder
 
     /* Gradient */
     background-image: linear-gradient(red, green, blue, purple, orange);
-
----
-
-# CSS Gradients
-
-    .css
-    /* fallback */
-    background-color:#063053;
-
-    /* chrome 10+, safari 5.1+ */
-    background-image: -webkit-linear-gradient(red, green, blue, purple, orange);
-
-    /* firefox; multiple color stops */
-    background-image: -moz-linear-gradient(top, red, green, blue, purple, orange);
-
-    /* ie10 */
-    background-image: -ms-linear-gradient(red, green, blue, purple, orange);
-
-    /* opera 11.1 */
-    background-image: -o-linear-gradient(red, green, blue, purple, orange);
-
-    /* Gradient */
-    background-image: linear-gradient(red, green, blue, purple, orange);
-
-    /*
-     * Generering av gradienter:
-     *
-     * - http://www.colorzilla.com/gradient-editor/
-     * - SASS, LESS, Stylus, etc.
-     */
-
----
-
-# CSS Gradients
-
-    .css
-    <!--[if lt IE 10]>
-        <style>
-
-            .gradientElement {
-
-              filter: progid:DXImageTransform.Microsoft.gradient(
-                startColorstr='#063053', endColorstr='#395873');
-
-              -ms-filter: "progid:DXImageTransform.Microsoft.gradient(
-                startColorstr='#063053', endColorstr='#395873')";
-
-            }
-
-        </style>
-    <![endif]-->
 
 ---
 
@@ -342,7 +292,7 @@ Mer fleksibelt enn bakgrunnsbilder
 
 # CSS Transforms
 
-Endre koordinater utenom flyten, i 2D og 3D.
+Skalere, rotere, perspektiv, flytte posisjon
 
 ---
 
@@ -408,7 +358,6 @@ Endre koordinater utenom flyten, i 2D og 3D.
 
 ![caniuse.transforms](img/caniuse.transforms.png)
 
-
 ---
 
 # CSS Transforms
@@ -452,7 +401,7 @@ Endre koordinater utenom flyten, i 2D og 3D.
 
 # CSS Transitions
 
-Overgang mellom stiler, med implisitt animasjon.
+Overgang mellom stiler, med animasjon fra start til slutt-tilstand
 
 
 ---
@@ -533,7 +482,7 @@ Overgang mellom stiler, med implisitt animasjon.
 
 # CSS Animations
 
-Egne animasjoner mellom stiler, med keyframes.
+Full kontroll over animasjoner via keyframes
 
 ---
 
@@ -584,21 +533,13 @@ Egne animasjoner mellom stiler, med keyframes.
 
 ---
 
-.middle.center
-
-Fornuftig bruk av animasjoner?
-
-<a href="https://squareup.com/">Square landing page</a>
-
----
-
 # Siste oppgaver
 
 &nbsp;
 
 Fonts:
 
-1. Bruk en font fra Google Web Fonts til oveskrifter
+1. Bruk en font fra Google Web Fonts til overskrifter
 
 2. Bruk en annen font til avsnitt
 
@@ -608,15 +549,13 @@ Fonts:
 
 Shadows:
 
-1. Legg på en subtil `box-shadow` bak .container (over bakgrunnsfargen).
+1. Legg på en subtil `box-shadow` bak `.container` (over bakgrunnsfargen).
 
 &nbsp;
 
 Animations (se eksempler i løsningsforslaget):
 
-4. Bruk en CSS-transition som animerer farger på linker i menyen, ved `:hover`.
-
-5. Bruk en CSS-transition for å gjøre bildet større ved `:hover`.
+4. Bruk en CSS-transition for å gjøre bildet større ved `:hover`.
 
 
 
