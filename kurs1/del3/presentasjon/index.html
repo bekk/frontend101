@@ -5,7 +5,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
     <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Snowburst+One' rel='stylesheet' type='text/css'>
@@ -67,51 +66,45 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 
 .spinner1 {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     margin:-80px 0 0 -80px;
-
-    border:20px solid #228fd3;
-    border-right:20px solid #000;
-    border-left:20px solid #000;
-    border-radius:160px;
-    width:160px;
-    height:160px;
-    -webkit-animation:rotation 2s infinite linear;
-    -moz-animation:rotation 2s infinite linear;
-    -ms-animation:rotation 2s infinite linear;
-    -o-animation:rotation 2s infinite linear;
-    animation:rotation 2s infinite linear;
 }
 
 .spinner2 {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     margin:-40px 0 0 -40px;
-    border:20px solid #228fd3;
-    border-right:20px solid #000;
-    border-left:20px solid #000;
-    border-radius:80px;
-    width:80px;
-    height:80px;
-    -webkit-animation:rotation2 2s infinite linear;
-    -moz-animation:rotation2 2s infinite linear;
-    -ms-animation:rotation2 2s infinite linear;
-    -o-animation:rotation2 2s infinite linear;
-    animation:rotation2 2s infinite linear;
 }
 
-@-webkit-keyframes rotation {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(359deg); }
+.editor {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    font-family: monospace;
+    font-size: 12px;
+    width: 40%;
+    box-sizing: border-box;
+    background: transparent;
+    color: #ccc;
+    border: 0;
+    padding: 20px 5px 20px 20px;
+    outline: none;
 }
 
-@-webkit-keyframes rotation2 {
-    from { -webkit-transform: rotate(0deg); }
-    to { -webkit-transform: rotate(-359deg); }
+.editor-example {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 60%;
 }
 
+.editor-example button {
+    margin-left: 1em;
+}
 
     </style>
   </head>
@@ -486,7 +479,44 @@ Full kontroll over animasjoner via keyframes
 
 ---
 
+<pre class="textarea">
+
+.spinner1 {
+    border:20px solid #228fd3;
+    xborder-right:20px solid #000;
+    xborder-left:20px solid #000;
+    xborder-radius:160px;
+    width:160px;
+    height:160px;
+    x-webkit-animation:rotation1 1s infinite linear;
+}
+
+.spinner2 {
+    border:20px solid #228fd3;
+    xborder-right:20px solid #000;
+    xborder-left:20px solid #000;
+    xborder-radius:80px;
+    width:80px;
+    height:80px;
+    x-webkit-animation:rotation2 1s infinite linear;
+}
+
+
+@-webkit-keyframes rotation1 {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(359deg); }
+}
+
+@-webkit-keyframes rotation2 {
+    0%   { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(-359deg); }
+}
+
+</pre>
+<div class="editor-example">
+<button>Fiks CSS</button>
 <div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
+</div>
 
 ---
 
@@ -495,41 +525,6 @@ Full kontroll over animasjoner via keyframes
 ![circle](img/circle.png)
 
 <div class="spinners"><div class="spinner1"></div><div class="spinner2"></div></div>
-
----
-
-# CSS Animations
-
-    .css
-    @keyframes rotation1 {
-        0%   { transform: rotate(0deg); }
-        100% { transform: rotate(359deg); }
-    }
-
-    @keyframes rotation2 {
-        0%   { transform: rotate(0deg); }
-        100% { transform: rotate(-359deg); }
-    }
-
-    .spinner1 {
-        border:20px solid #228fd3;
-        border-right:20px solid #000;
-        border-left:20px solid #000;
-        border-radius:160px;
-        width:160px;
-        height:160px;
-        animation:rotation1 1s infinite linear;
-    }
-
-    .spinner2 {
-        border:5px solid #228fd3;
-        border-right:5px solid #000;
-        border-left:5px solid #000;
-        border-radius:20px;
-        width:20px;
-        height:20px;
-        animation:rotation2 1s infinite linear;
-    }
 
 ---
 
@@ -561,5 +556,66 @@ Animations (se eksempler i løsningsforslaget):
 
     </textarea>
     <div id="slideshow"></div>
+    <script>
+
+    $(document).ready(function() {
+      var processed = [];
+
+      $("head").append("<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>");
+
+      remark.config.highlightStyle = "solarized_light";
+
+      remark.events.addListener("slidein", function(element, index) {
+        if (processed.indexOf(index) > -1) return;
+
+        var el = $(element);
+        el.find("p:empty").remove();
+        if (el.find(".front-page").length === 0) {
+          el.find("h1").wrapInner("<span>");
+        }
+        el.find(".pushed img").parent().wrapInner("<span class='img'>");
+        replaceTextareas(el);
+
+        processed.push(index);
+      });
+    });
+
+    var stylesheet = document.createElement('style');
+    document.body.appendChild(stylesheet);
+
+    function replaceTextareas(el) {
+        var textarea = el.find(".textarea");
+        if(textarea.length > 0) {
+            var contents = textarea.text();
+            textarea.before("<textarea class='editor'>" + contents + "</textarea>");
+            textarea.remove();
+            textarea = el.find("textarea");
+
+            reloadStyle(textarea);
+            textarea.keyup(function(e) {
+                reloadStyle(this);
+            });
+
+            textarea.on('focus', function() {
+                window._saved_onkeydown = window.onkeydown;
+                window.onkeydown = null;
+            });
+            textarea.on('blur', function() {
+                window.onkeydown = window._saved_onkeydown;
+            });
+
+            el.find('.editor-example button').click(function() {
+                var enabled = textarea.val().replace(/^(\s*)x/mg, '$1');
+                textarea.val(enabled);
+                reloadStyle(textarea);
+            });
+        }
+    }
+
+    function reloadStyle(source) {
+        stylesheet.innerHTML = $(source).val();
+    }
+
+    </script>
   </body>
 </html>
