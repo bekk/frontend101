@@ -7,8 +7,8 @@
     * HTML-intro (DOM, tags, classes, IDs, structure, doctype)
     * CSS-intro (selectors, propreties, values, sizes, colors box-model, positioning, floats)
     * Developer tools intro (element selector, HTML editing, CSS editing, console)
-    * Graceful degradation, progressive enhancement
-    * Normalisering / reset av CSS
+    * Dropper: Graceful degradation, progressive enhancement
+    * Dropper: Normalisering / reset av CSS
 
 * Oppgave:
     * Intro til oppgavesett, nedlasting av filer, forklaring av struktur
