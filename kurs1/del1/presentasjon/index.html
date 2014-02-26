@@ -100,51 +100,6 @@ http://flic.kr/p/5HzQsy
 
 ---
 
-<!-- http://learn.shayhowe.com/html-css/terminology-syntax-intro -->
-
-
-# HTML
-
-    .html
-    <h1>
-        Velkommen til min flotte nettside!
-    </h1>
-
-    <p>
-        Her er et avsnitt.
-    </p>
-
-    <p>
-        Her er en link til en annen side: 
-        <a href="http://bekk.no">Bekk Consulting AS</a>.
-    </p>
-
-
----
-
-
-# HTML
-  
-    .html
-    <!doctype html>
-
-    <html lang="en">
-        <head>
-
-
-
-
-        </head>
-        <body>
-
-
-
-
-        </body> 
-    </html>
-
----
-
 # HTML
 
     .html
@@ -158,91 +113,24 @@ http://flic.kr/p/5HzQsy
 
         </head>
         <body>
-            <div class="article">
-                <h1>Velkommen til min flotte nettside!</h1>
-                <p>Her er litt mer informasjon.</p>            
-            </div>
-            <div class="footer">
-                <a href="http://google.com">Søk</a>
-            </div>
+		
+            <header>
+				<h1>Velkommen</h1>
+				<nav>
+					<a href="/side2.html">Side2</a>
+				</nav>
+			</header>
+			<main>
+				<article>En artikkel</article>
+			</main>
+			<aside>Sidebar</aside>
+			<footer>The end</footer>
+			
         </body>
     </html>
 
 ---
 
-.middle.center.fullscreen
-
-![HTML](img/101/html5.png)
-
----
-.middle.center
-
-
-![HTML vs HTML5](img/101/HTML-HTML5.jpeg)
-
-<div class="source">
-    Elijah Manor / http://i.imgur.com/2Kq6Y.jpg
-</div>
-
----
-#HTML4 &amp; HTML5
-
-    .html
-        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">        
-        <div id="header">
-            <h1>Velkommen</h1>
-            <div id="nav">
-                <a href="/side2.html">Side2</a>
-            </nav>
-        </div>
-        <div id="main">
-            <div id="article">En artikkel</div>
-        </div>      
-        <div id="sidebar">Sidebar</div>
-        <div id="footer">The end</div>
-&nbsp;
-
-    .html 
-        <!doctype html>
-        <header>
-            <h1>Velkommen</h1>
-            <nav>
-                <a href="/side2.html">Side2</a>
-            </nav>
-        </header>
-        <main>
-            <article>En artikkel</article>
-        </main>
-        <aside>Sidebar</aside>
-        <footer>The end</footer>
-
----
-
-<!-- .middle.center.whitebg
-
-
-![HTML5 page structure](img/101/html5_structure.png)
-
-<div class="source">
-http://coding.smashingmagazine.com/2009/07/16/html5-and-the-future-of-the-web/
-</div>
-
---- -->
-
-#HTML5
-
-##Spesifikasjon
-
-[WHATWG: HTML living standard](http://www.whatwg.org/html/)
-
-[W3C: HTML5](http://dev.w3.org/html5/)
-
-##Mer om HTML5
-[Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/HTML/HTML5)
-
-[Dive into HTML5](http://diveintohtml5.info/)
-
----
 <!-- OPPSUMMERING HTML -->
 # HTML
 
@@ -450,7 +338,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 ##Hva om flere selektorer sloss om samme element?
 
----
+<!-- ---
 
 .middle.fullscreen
 
@@ -459,7 +347,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 <div class="" style="position:absolute;top:5%;left:5%;">
 <h1>&nbsp;Hvem vinner?&nbsp;</h1>
-</div>
+</div> -->
 
 <!-- 
 .middle.center
@@ -1409,100 +1297,39 @@ http://flic.kr/p/2yYGP
    ##6
 </div>
 
-
-
 ---
+
 .whitebg
 
-<span class="hl-text" style="z-idex:1">Awesome</span>
+<span class="hl-text">Fixed</span>
 
     .css
-    .lightbox {
-        position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba (0,0,0,.65)
-    }
-    .lightbox div {
-        position:absolute;top:30%;left:50%;margin-left:-208px;box-shadow: 10px 10px 10px
+    div:first-child {
+        position: fixed;
+        z-index: 2
     }
 
-<div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
+<div class="css-example" style="overflow:auto;height:150px;">
+    <div class="" style="background:#f5dcdc;position:fixed;z-index:2"><h2>1 (fixed)</h2></div>
+   ##2
+   ##3
+   ##4
+   ##5
+   ##6
+</div>
 
-<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
+
+<div style="z-index:2;position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
+
+<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 0 0 50px">
 ![Css is awesome](img/101/css-awesome.jpg)
 </div>
 </div>
 
----
-
-.middle.center
-
-![Really do](img/really.jpeg)
-
----
-.middle.center.whitebg
-
-![Usage share of web browsers](img/101/stats2014.jpg)
-
----
-.middle.center.whitebg
-
-![IE7 Countdown](img/101/ie7.png)
-
----
-
-.whitebg
-
-<span class="hl-text" style="z-idex:1">Graceful degradation</span>
-
-![no flash](img/101/browser-noflash.jpeg)
 
 
 ---
-#Graceful degradation
 
-
-&nbsp;
-
-
-    .html
-    <noscript>
-    Nettleseren din støtter ikke JavaScript! Synd for deg. Snakkes!
-    </noscript>
-
-<!-- Lite optimal strategi -->
-
----
-.middle.center
-
-#Progressive enhancement
-
----
-
-.middle.center.fullscreen
-
-![Escalator](img/101/browser-escalator.jpeg)
-
-<div class="source">
-http://flic.kr/p/wzHU
-</div>
-
----
-
-.middle.center.fullscreen
-
-![Escalator](img/101/browser-escalator.jpeg)
-<div class="overlay">
-<blockquote>
-    An escalator can never break, <br />
-    it can only become stairs.  
-<cite>Mitch Hedberg</cite>
-</blockquote>
-</div>
-
-<div class="source">
-http://flic.kr/p/wzHU
-</div>
-
----
 
 .middle.center
 
