@@ -119,334 +119,127 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 
 # JavaScript - Del 2
 
-* Objekter
-* Array
-* Prototype
-* Ajax
+
 * DOM
+* Ajax
+
+---
+.middle.center
+Hvordan endre HTML etter siden er lastet?
+
 
 ---
 
-# Objekter
+#jQuery dom manupulering
 
-Vi kan lage objekter:
-
-    .javascript
-    var obj = {
-        x: 100,
-        y: "Test",
-        z: function () {
-            return true; 
-        }
-    };
-
-    obj.x // 100
-    obj.y // Test
-    obj.z() // true
 
 ---
 
-# Objekter
-
-Vi kan lage objekter:
+#jQuery dom manupulering
 
     .javascript
-    var obj = {
-        x: 100,
-        y: "Test",
-        z: function () {
-            return true; 
-        }
-    };
+    $("ul li").hide();
 
-    obj.x // 100
-    obj.y // Test
-    obj.z() // true
+---
 
-Og arrays:
+#jQuery dom manupulering
 
     .javascript
-    var array = [1, 2, "Test", true, {"navn": "Helge"}];
+    $("ul li").hide();
 
-    array[0] // 1
-    array[2] // "Test"
+Finn et objekt, gjør noe med det.
+
+---
+
+#jQuery dom manupulering
+
+
+##Vi kan gjør mange artige ting
+
+    .javascript
+    $("ul li").hide();              // vis alle list elementer
+    $("ul li").show();              // skjul alle list elementer
+    $("ul li").toggle();            // skjul alle synlige, vi alle usynelige
+
+    $("ul li").html();                      // få innhold i første li element
+    $("ul li").html("<p>min html</p>");     // sett innhold
+
+    $("ul").append("<li>Spennende</li>");   // legg til element på slutten av listen
+    $("ul").prepend("<li>Spennende</li>");  // legg til element på begynnelsen av listen
+
+    $("ul li").text();              // få innhold i første li element, men escape html-kode
+    $("ul li").text("min text");    // sett innhold, men escape html-kode
+
+    $("ul li").addClass("something");       // legg til klasse
+    $("ul li").removeClass("something");    // fjern klasse
+
+    $("ul").empty();                // tøm innhold
+    $("ul li").remove();            // slett elementer
+
+    $("ul li").each(function () {   // gjøre noe med alle elementer
+        // noe spennende
+    });
 
 ---
 
 .middle.center
 
-# Prototype
+![modal](img/modal.png)
 
 ---
 
-# Nesten alt er objekter
+#La oss lage en modal
 
     .javascript
+    function showModal() {
 
-    var navn = "Helge Fredheim";
-
----
-
-# Nesten alt er objekter
-
-    .javascript
-
-    var navn = "Helge Fredheim";
-    typeof navn; // "string"
-
----
-
-# Nesten alt er objekter
-
-    .javascript
-
-    var navn = "Helge Fredheim";
-    typeof navn; // "string"
-
-    /* Strengen har metoder og attributter */
-    navn.length; // 14
-    navn.substr(0, 5); // Helge
-    navn.split(" "); // ["Helge", "Fredheim"]
-    navn.replace("Helge", "Kenneth"); // Kenneth Fredheim
-
----
-
-# Nesten alt er objekter
-
-    .javascript
-
-    var navn = "Helge Fredheim";
-    typeof navn; // "string"
-
-    /* Strengen har metoder og attributter */
-    navn.length; // 14
-    navn.substr(0, 5); // Helge
-    navn.split(" "); // ["Helge", "Fredheim"]
-    navn.replace("Helge", "Kenneth"); // Kenneth Fredheim
-
-    /* Disse arves fra String.prototype */
-
-    String.prototype.log = function () {
-        console.log("Logg: " + String(this));
-    };
-
-    navn.log(); // "Logg: Helge Fredheim"
-
----
-
-# Nesten alt er objekter
-
-    .javascript
-
-    var frukter = ["eple", "banan"];
-    typeof frukter; // "object" (!!)
-
-    /* Arrayet har metoder og attributter */
-    frukter.length; // 2
-    frukter.push("drue"); // ["eple", "banan", "drue"];
-    frukter.pop(); // ["eple"];
-
----
-
-# Prototype
-
-## Constructor Invocation
-
-    .javascript
-    var Person = function(navn) {
-        this.navn = navn;
-    };
-
----
-
-# Prototype
-
-## Constructor Invocation
-
-    .javascript
-    var Person = function(navn) {
-        this.navn = navn;
-    };
-
-    var helge = new Person("Helge");
-    helge.navn // "Helge"
-
----
-
-# Prototype Chain
-
-.middle.center
-
-![Prototype Chain](img/prototype2.png)
-
----
-
-# Prototype
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-        this.hils = function() {
-            console.log("Hei, jeg heter " + this.navn);
-        };
-    };
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-        this.hils = function() {
-            console.log("Hei, jeg heter " + this.navn);
-        };
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-        this.hils = function() {
-            console.log("Hei, jeg heter " + this.navn);
-        };
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
-    pat.hils(); // "Hei, jeg heter Pat"
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-        /* this.hils = function() {
-            console.log("Hei, jeg heter " + this.navn);
-        }; */
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
-    Person.prototype.hils = function() {
-        console.log("Hei, jeg heter " + this.navn);
-    };
-
----
-
-# Prototype 
-
-    .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-    };
-
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
-
-    Person.prototype.hils = function() {
-        console.log("Hei, jeg heter " + this.navn);
     }
 
-    nils_arne.hils(); // "Hei, jeg heter Nils Arne"
-    pat.hils(); // "Hei, jeg heter Pat"
+    function removeModal() {
+
+    }
 
 ---
 
-# Prototype 
+#La oss lage en modal
 
     .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-    };
+    function showModal() {
 
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
+        var $modal = $('<div class="modal"><h2>Modal Heading</h2></p>...</p></div>');
+        $("body").append($modal);
 
-    Person.prototype.hils = function() {
-        console.log("Hei, jeg heter " + this.navn);
     }
 
-    nils_arne.hils(); // "Hei, jeg heter Nils Arne"
-    pat.hils(); // "Hei, jeg heter Pat"
+    function removeModal() {
 
-    pat.katt = "Miss"; 
+    }
 
 ---
 
-# Prototype 
+#La oss lage en modal
 
     .javascript
-    var Person = function (navn, stilling, firma) {
-        this.navn = navn;
-        this.stilling = stilling;
-        this.firma = firma;
-    };
+    function showModal() {
 
-    var pat = new Person("Pat", "postmann", "Posten");
-    var nils_arne = new Person("Nils Arne", "trener", "Rosenborg");
+        var $modal = $('<div class="modal"><h2>Modal Heading</h2></p>...</p></div>');
+        $("body").append($modal);
 
-    Person.prototype.hils = function() {
-        console.log("Hei, jeg heter " + this.navn);
     }
 
-    nils_arne.hils(); // "Hei, jeg heter Nils Arne"
-    pat.hils(); // "Hei, jeg heter Pat"
+    function removeModal() {
 
-    pat.katt = "Miss"; 
+        $("body .modal").remove();
 
-    console.log(pat.katt); // "Miss"
-    console.log(per.katt); // undefined   
+    }
+
+---
+
+#TODO
+
+* Lage noen html widgets
+    * popover kanskje
+
 
 ---
 
@@ -576,7 +369,7 @@ JSONP
         "Name": "Foo",
         "Id": 1234,
         "Rank": 7
-    }      
+    }
 
 ---
 
@@ -590,13 +383,13 @@ JSONP
         "Name": "Foo",
         "Id": 1234,
         "Rank": 7
-    }    
+    }
 
 ## JSONP
 
     .javascript
     // JSONP
-    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});    
+    functionCall({"Name": "Foo", "Id": 1234, "Rank": 7});
 
 ---
 
@@ -604,16 +397,16 @@ JSONP
 
 ###JSONP med jQuery
 
-    .javascript 
+    .javascript
     $.ajax({
-        dataType: "jsonp", 
-        url: "http://www.bekk.no/api?jsoncallback=?", 
+        dataType: "jsonp",
+        url: "http://www.bekk.no/api?jsoncallback=?",
         success: function(res) {
             console.log(res);
         },
         error: function() {
             console.log("Sorry, an error occured.");
-        }    
+        }
     });
 
 ---
@@ -622,16 +415,16 @@ JSONP
 
 ###JSONP med jQuery
 
-    .javascript 
+    .javascript
     $.ajax({
-        dataType: "jsonp", 
-        url: "http://www.bekk.no/api?jsoncallback=?", 
+        dataType: "jsonp",
+        url: "http://www.bekk.no/api?jsoncallback=?",
         success: function(res) {
             console.log(res);
         },
         error: function() {
             console.log("Sorry, an error occured.");
-        }    
+        }
     });
 
 ### URL
@@ -643,23 +436,23 @@ JSONP
 
 ###JSONP med jQuery
 
-    .javascript 
+    .javascript
     $.ajax({
-        dataType: "jsonp", 
-        url: "http://www.bekk.no/api?jsoncallback=?", 
+        dataType: "jsonp",
+        url: "http://www.bekk.no/api?jsoncallback=?",
         success: function(res) {
             console.log(res);
         },
         error: function() {
             console.log("Sorry, an error occured.");
-        }    
+        }
     });
 
 ### URL
     http://www.bekk.no/api?jsoncallback=jQuery18005757881309741956_1363111010831&_=1363111010857
 
 ### Respons
-    jQuery18005757881309741956_1363111010831({"Name": "Foo", "Id": 1234, "Rank": 7}); 
+    jQuery18005757881309741956_1363111010831({"Name": "Foo", "Id": 1234, "Rank": 7});
 
 ---
 
