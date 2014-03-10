@@ -226,7 +226,7 @@ h3 i {
             transform: scale(1.03);
 }
 
-/* Image gallery 
+/* Image gallery
 --------------------------------------------- */
 
 .loading {
@@ -239,9 +239,14 @@ h3 i {
     margin-bottom: 40px;
 }
 
-.image-small {
+#image_gallery img {
     width: 65px;
     height: auto;
     padding: 5px;
-    margin-right: 20px;   
+    margin-right: 20px;
+}
+
+#image_gallery img:hover {
+    padding: 0;
+    width: 75px;
 }
