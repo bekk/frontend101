@@ -48,6 +48,7 @@
    clear: both;
 }
 
+
 .specificity {display:inline-block;}
 .specificity tbody {background:#fff;color:#000;}
 .specificity td { height:120px;width:60px;padding:20px;border:4px solid #ccc;color:000;font-size:2em;text-align:center;
@@ -76,7 +77,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#29000000', e
 
 # Agenda
 
-* Introduksjon          <span class="alt">(HTML, CSS, Tools, Nettlesere &amp; strategier)</span>
+* Introduksjon          <span class="alt">(HTML, CSS, Tools)</span>
 * Responsive Design     <span class="alt">(Mobile first, media queries &amp; break points)</span>
 * Detaljer              <span class="alt">(Webfonts, CSS transitions &amp; CSS transforms)</span>
 
@@ -99,51 +100,6 @@ http://flic.kr/p/5HzQsy
 
 ---
 
-<!-- http://learn.shayhowe.com/html-css/terminology-syntax-intro -->
-
-
-# HTML
-
-    .html
-    <h1>
-        Velkommen til min flotte nettside!
-    </h1>
-
-    <p>
-        Her er et avsnitt.
-    </p>
-
-    <p>
-        Her er en link til en annen side: 
-        <a href="http://bekk.no">Bekk Consulting AS</a>.
-    </p>
-
-
----
-
-
-# HTML
-  
-    .html
-    <!doctype html>
-
-    <html lang="en">
-        <head>
-
-
-
-
-        </head>
-        <body>
-
-
-
-
-        </body> 
-    </html>
-
----
-
 # HTML
 
     .html
@@ -157,91 +113,24 @@ http://flic.kr/p/5HzQsy
 
         </head>
         <body>
-            <div class="article">
-                <h1>Velkommen til min flotte nettside!</h1>
-                <p>Her er litt mer informasjon.</p>            
-            </div>
-            <div class="footer">
-                <a href="http://google.com">Søk</a>
-            </div>
+		
+            <header>
+				<h1>Velkommen</h1>
+				<nav>
+					<a href="/side2.html">Side2</a>
+				</nav>
+			</header>
+			<main>
+				<article>En artikkel</article>
+			</main>
+			<aside>Sidebar</aside>
+			<footer>The end</footer>
+			
         </body>
     </html>
 
 ---
 
-.middle.center.fullscreen
-
-![HTML](img/101/html5.png)
-
----
-.middle.center
-
-
-![HTML vs HTML5](img/101/HTML-HTML5.jpeg)
-
-<div class="source">
-    Elijah Manor / http://i.imgur.com/2Kq6Y.jpg
-</div>
-
----
-#HTML4 &amp; HTML5
-
-    .html
-        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">        
-        <div id="header">
-            <h1>Velkommen</h1>
-            <div id="nav">
-                <a href="/side2.html">Side2</a>
-            </nav>
-        </div>
-        <div id="main">
-            <div id="article">En artikkel</div>
-        </div>      
-        <div id="sidebar">Sidebar</div>
-        <div id="footer">The end</div>
-&nbsp;
-
-    .html 
-        <!doctype html>
-        <header>
-            <h1>Velkommen</h1>
-            <nav>
-                <a href="/side2.html">Side2</a>
-            </nav>
-        </header>
-        <main>
-            <article>En artikkel</article>
-        </main>
-        <aside>Sidebar</aside>
-        <footer>The end</footer>
-
----
-
-<!-- .middle.center.whitebg
-
-
-![HTML5 page structure](img/101/html5_structure.png)
-
-<div class="source">
-http://coding.smashingmagazine.com/2009/07/16/html5-and-the-future-of-the-web/
-</div>
-
---- -->
-
-#HTML5
-
-##Spesifikasjon
-
-[WHATWG: HTML living standard](http://www.whatwg.org/html/)
-
-[W3C: HTML5](http://dev.w3.org/html5/)
-
-##Mer om HTML5
-[Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/HTML/HTML5)
-
-[Why HTML5 rocks](http://www.html5rocks.com/en/why)
-
----
 <!-- OPPSUMMERING HTML -->
 # HTML
 
@@ -297,14 +186,14 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 .middle.center.fullscreen
 
-![NTNU](img/101/ntnu-html-source.png)
+![Miniquiz kilde](img/101/source.png)
 
 
 ---
 
 .middle.center.fullscreen
 
-![NTNU](img/101/ntnu-style-off.png)
+![Miniquiz kilde](img/101/utencss.png)
 
 
 ---
@@ -312,22 +201,14 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 .middle.center.fullscreen
 
-![NTNU](img/101/ntnu-style-on.png)
+![Miniquiz kilde](img/101/medcss.png)
 
 
 ---
 
 .middle.fullscreen
 
-
-
-![CSS](img/101/css-gangnam.jpg)
-<div class="" style="position:absolute;top:5%;left:5%;-webkit-transform:rotate(-17deg);-moz-transform:rotate(-17deg);transform:rotate(-17deg)">
-<h1>&nbsp;CSS&nbsp;</h1>
-</div>
-<div class="" style="position:absolute;top:9%;left:12%;">
-<h1>Cascading Style Sheets</h1>
-</div>
+![CSS](img/101/css.gif)
 
 
 ---
@@ -349,10 +230,36 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 
 ---
+
+#css
+	
+	.css
+	selector { property:value }
+	
+&nbsp;
+
+	.css
+	selector { property:value; property:value }
+
+---
+
 #css
 
     .css
-    selector {property:value}
+	/*  <link href="style.css" type="text/css" rel="stylesheet"> */
+    selector { property:value }
+	
+&nbsp;
+
+	.html
+	<style type="text/css">
+		selector { property:value }
+	</style>
+		
+&nbsp;
+
+	.html
+	<div style="property:value"></div>
 
 ---
 
@@ -385,6 +292,10 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
         margin:10px;                            /* Spacing */
         padding: 10px 0;
     }
+	
+&nbsp;
+
+[http://www.w3.org/TR/CSS21/propidx.html](http://www.w3.org/TR/CSS21/propidx.html)	
 
 ---
 #css selectors
@@ -427,6 +338,8 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
     e:last-child                    /*?*/
 
     e:first-of-type                 /*?*/
+	
+	e::after						/*?*/
 
 
 &nbsp;
@@ -438,7 +351,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 ##Hva om flere selektorer sloss om samme element?
 
----
+<!-- ---
 
 .middle.fullscreen
 
@@ -447,7 +360,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 
 <div class="" style="position:absolute;top:5%;left:5%;">
 <h1>&nbsp;Hvem vinner?&nbsp;</h1>
-</div>
+</div> -->
 
 <!-- 
 .middle.center
@@ -475,6 +388,7 @@ HTML er et markeringsspråk som beskriver semantikken til et dokument.
 ####3  Author style sheets
 ###2  !important i Author style sheets
 ##1  !important i User style sheets
+
 
 <!--
 .middle
@@ -900,15 +814,6 @@ CSS Specificity in 138 characters: CSS Specificity is 4 columns: inline=1|0|0|0,
         </div>
     </body>
 
-
-
-
-
-&nbsp;
-
-[http://www.w3.org/TR/CSS21/propidx.html](http://www.w3.org/TR/CSS21/propidx.html)
-
-
 ---
 #specificity quiz
 
@@ -969,7 +874,7 @@ http://flic.kr/p/49K6ZF
 
 
     .css
-     div { width: 180px}
+     div { width: 180px; height: 180px}
 
 &nbsp;
 
@@ -985,7 +890,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px} /* Ny bredde: 180 + 40 + 40 = 260 */
+     div { width: 180px; height: 180px; padding:40px} /* Ny bredde: 180 + 40 + 40 = 260 */
 
 &nbsp;
 
@@ -1005,7 +910,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px; border: 10px} /* Ny bredde: 260 + 10 + 10 = 280*/
+     div { width: 180px; height: 180px; padding:40px; border: 10px} /* Ny bredde: 260 + 10 + 10 = 280*/
 
 &nbsp;
 
@@ -1022,7 +927,7 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 <span class="hl-text">Box model</span>
 
     .css
-     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
+     div { width: 180px; height: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
 
 &nbsp;
 
@@ -1036,6 +941,65 @@ Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte.
 
 
 ---
+
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; height: auto; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
+
+&nbsp;
+
+<div style="width:282px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:180px;height:auto;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px; border: 10px; margin: 20px} /*box + margin = 320*/
+
+&nbsp;
+
+<div style="width:282px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
+<div class="border-box bb-padding" style="padding:40px;width:182px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:180px;border:1px solid;">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+</div>
+
+
+---
+.whitebg
+
+<span class="hl-text">Box model</span>
+
+    .css
+     div { width: 180px; padding:40px; border: 10px; margin: 20px; box-sizing: border-box}
+
+&nbsp;
+
+<div style="width:180px;padding:20px;border:2px dashed rgba(0,0,0,.2);margin: 0 auto;margin-top:28px">
+<div class="border-box bb-padding" style="padding:40px;width:80px;margin:0 auto;background:rgba(241, 255, 131, 1);border:10px solid;">
+<div class="border-box bb-content" style="width:80px;border:1px solid">
+Det ble stille og neandertaleren viste hvordan den langhårete krepsen fungerte. En sebra degraderte astronauten uansvarlig. 
+</div>
+</div>
+</div>
+
+
+---
+
 .middle.center.fullscreen
 
 
@@ -1117,7 +1081,6 @@ En gitarist spillte veldig elegant. Sjeiken dro en purk til han snakket høflig 
    <div style="padding:20px; background: #f5dcdc; margin-bottom: 10px">&lt aside/ &gt;</div>
    <div style="padding:20px; background: #dcf5dc;">&lt footer/ &gt;</div>
 </div>
-
 
 ---
 .whitebg
@@ -1339,112 +1302,40 @@ http://flic.kr/p/2yYGP
    ##6
 </div>
 
-
-
 ---
+
 .whitebg
 
-<span class="hl-text" style="z-idex:1">Awesome</span>
+<span class="hl-text">Fixed</span>
 
     .css
-    .lightbox {
-        position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba (0,0,0,.65)
-    }
-    .lightbox div {
-        position:absolute;top:30%;left:50%;margin-left:-208px;box-shadow: 10px 10px 10px
+    div:first-child {
+        position: fixed;
+        z-index: 2
     }
 
-<div style="position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
+<div class="css-example" style="overflow:auto;height:150px;">
+    <div class="" style="background:#f5dcdc;position:fixed;z-index:2"><h2>1 (fixed)</h2></div>
+   ##2
+   ##3
+   ##4
+   ##5
+   ##6
+</div>
 
-<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 10px 10px 10px">
+
+<div style="z-index:2;position:fixed;top:0;bottom:0;left:0;right:0;background:rgba(0,0,0,.75);">
+
+<div style="position:absolute;top:31%;left:50%;margin-left:-208px;background:#fff;padding:20px 40px;box-shadow: 0 0 50px">
 ![Css is awesome](img/101/css-awesome.jpg)
 </div>
 </div>
 
----
-
-.middle.center
-
-![Really do](img/really.jpeg)
-
----
-.middle.center.whitebg
-
-![Usage share of web browsers](img/101/usage-share-browsers.svg)
-
----
-.middle.center.fullscreen
-
-
-![best viewed](img/101/browser-best-viewed.jpg)
-
----
-.whitebg
-
-<span class="hl-text" style="z-idex:1">Graceful degradation</span>
-
-![no flash](img/101/browser-noflash.jpeg)
 
 
 ---
-#Graceful degradation
 
 
-&nbsp;
-
-
-    .html
-    <noscript>
-    Nettleseren din støtter ikke JavaScript! Synd for deg. Snakkes!
-    </noscript>
-
-<!-- Lite optimal strategi -->
-
----
-.middle.center
-
-#Progressive enhancement
-
----
-
-.middle.center.fullscreen
-
-![Escalator](img/101/browser-escalator.jpeg)
-
-<div class="source">
-http://flic.kr/p/wzHU
-</div>
-
----
-
-.middle.center.fullscreen
-
-![Escalator](img/101/browser-escalator.jpeg)
-<div class="overlay">
-<blockquote>
-    An escalator can never break, <br />
-    it can only become stairs.  
-<cite>Mitch Hedberg</cite>
-</blockquote>
-</div>
-
-<div class="source">
-http://flic.kr/p/wzHU
-</div>
-
----
-
-.middle.center.whitebg
-
-
-
-![Understanding progressive enhancement](img/101/browser-layered-cake.jpeg)
-
-<div class="source">
-http://www.alistapart.com/articles/understandingprogressiveenhancement/
-</div>
-
----
 .middle.center
 
 #Developer tools
@@ -1462,8 +1353,6 @@ TODO
 
 <div class="group">
 <div style="float:left;width:50%;margin-right:5%">
-   Last ned <a href="https://github.com/olav/frontend101" target="_blank">kurset fra Github</a> (ZIP) og åpne filene for oppgaven under del 1. 
-
    Du skal jobbe med index.html og main.css.
 
 <h3>Oppgave</h3>
@@ -1477,11 +1366,11 @@ Få menyen til å "sitte fast" i toppen av siden selv om en scroller. Annet innh
 </div>
 
 <div style="float:left;width:45%">
-    <a href="img/101-oppg/oppg1-1.png" target="_blank" title="Utgangspunkt">
-<img src="img/101-oppg/oppg1-1.png" style="max-width:100%;margin-bottom:20px"/>
+    <a href="img/101-oppg/fra.png" target="_blank" title="Utgangspunkt">
+<img src="img/101-oppg/fra.png" style="max-width:100%;margin-bottom:20px"/>
     </a>
-    <a href="img/101-oppg/oppg1-2.png" target="_blank" title="Ønsket design">
-<img src="img/101-oppg/oppg1-2.png" style="max-width:100%;"/>
+    <a href="img/101-oppg/til.png" target="_blank" title="Ønsket design">
+<img src="img/101-oppg/til.png" style="max-width:100%;"/>
     </a>
 </div>
 </div>
@@ -1491,8 +1380,8 @@ Få menyen til å "sitte fast" i toppen av siden selv om en scroller. Annet innh
 
 ##Spørsmål?
 
-anders.skifte@bekk.no<br/>
-[@skifte](http://twitter.com/skifte)
+lars.skjelbek@bekk.no<br/>
+[@skjelbek](http://twitter.com/skjelbek)
 
 
 

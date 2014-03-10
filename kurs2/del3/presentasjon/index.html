@@ -4,7 +4,7 @@
     <title>Lynkurs i webutvikling</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script src="https://github.com/downloads/gnab/remark/remark-0.3.4.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
     <script src="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.js" type="text/javascript"></script>
     <link href="https://github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.3.css" type="text/css" rel="stylesheet">
 
@@ -12,6 +12,7 @@
     <link href='http://fonts.googleapis.com/css?family=Griffy' rel='stylesheet' type='text/css'>
 
     <style type="text/css" media="screen">
+        a { cursor: pointer; }
         .table-center {
             margin: 0 auto;
         }
@@ -28,27 +29,39 @@
         }
 
     </style>
-    <script type="text/javascript">
-    
-        $(document).on("click", "#setTimeoutAlert", function(event) {
+  <script type="text/javascript">
+      $(document).on('click', '#event-1', function (event) {
+        alert("je klikke!");
+      });
 
-            setTimeout(function() {
-                alert("Wakie Wakie! Hands of snakey!")
-            }, 2000);
-        });
+      $(document).on("click", "table button", function (event) {
+        alert("je klikke!");
 
-    
-        var timeoutID;
-        $(document).on("click", "#demo2setTimeoutAlert", function(event) {
+        var $currentTarget = $(event.currentTarget); // gir deg knappen
+        console.log($currentTarget);
 
-            timeoutID = setTimeout(function() {
-                alert("2sec!")
-            }, 2000);
-        });
+        var $this = $(this); // gir deg også knappen
+        console.log($this);
+      });
 
-        $(document).on("click", "#demo2clearTimeoutAlert", function(event) {
-            clearTimeout(timeoutID);
-        });
+      $(document).on("click", "#timeout-1", function (event) {
+
+        setTimeout(function () {
+          alert("Det har gått 2 sekunder!")
+        }, 2000);
+      });
+
+      var timeoutId;
+      $(document).on("click", "#timeout-2", function (event) {
+
+        timeoutId = setTimeout(function () {
+          alert("2 sekunder!")
+        }, 2000);
+      });
+
+      $(document).on("click", "#timeout-3", function (event) {
+        clearTimeout(timeoutId);
+      });
     </script>
 
 
@@ -66,41 +79,28 @@
 
 ---
 
-
-.middle.center
-
-![I know jquery](img/iknowjquery.jpg)
-
----
-
 .middle.center
 # html attributes
 
- .attr() .val() .data() .prop() 
-
-
-![Bomb defusar](img/bombdefusar2.jpg)
+`.attr()` `.val()` `.data()` `.prop()`
 
 ---
 
 # html attributes
 
-.html
     <input type="checkbox" value="first" name="choice" data-namespace="dance" checked />
 
 ---
 
 # html attributes
 
-.html
     <input type="checkbox" value="first" name="choice" data-namespace="dance" checked />
-    
+
 ## .attr()
 
-Returnerer/setter innholdet i attributten
+Returnerer/setter innholdet i attributtt
 
-
-.js
+    var $input = $('input');
     $input.attr("type")             // returnerer "checkbox"
     $input.attr("type", "radio")    // setter type til "radio"
 
@@ -108,31 +108,27 @@ Returnerer/setter innholdet i attributten
 
 # html attributes
 
-.html
     <input type="checkbox" value="first" name="choice" data-namespace="dance" checked />
-    
+
 ## .val()
 
 Returnerer/setter verdien
 
-
-.js
-    $input.val()                // returnerer "checkbox"
+    var $input = $('input');
+    $input.val()                // returnerer "first"
     $input.val("bestoption")    // setter verdien til "bestoption"
 
 ---
 
 # html attributes
 
-.html
     <input type="checkbox" value="first" name="choice" data-namespace="dance" checked />
-    
+
 ## .data()
 
 Returnerer/setter data attributt verdien
 
-
-.js
+    var $input = $('input');
     $input.data("namespace")                // returnerer "dance"
     $input.data("namespace", "letsdance")   // setter verdien til "letsdance"
 
@@ -140,85 +136,51 @@ Returnerer/setter data attributt verdien
 
 # html attributes
 
-.html
     <input type="checkbox" value="first" name="choice" data-namespace="dance" checked />
-    
+
 ## .prop()
 
 Returnerer/setter boolske verdier
 
-
-.js
+    var $input = $('input');
     $input.prop("checked")          // true
-    $input.prop("checked", true)    // setter "checked" attributten
-    $input.prop("checked", false)   // fjærner "checked" attributten
+    $input.prop("checked", true)    // setter "checked" attributtet
+    $input.prop("checked", false)   // fjerner "checked" attributtet
 
 ---
 
 .middle.center
 
-# Event propagering
+# Events
 
 ---
 
-# Event propagering
+# Events
 
+    <button>Trykk her!</button>
 
-.js
-    .on( events [, selector ] [, data ], handler(eventObject) )
+<br>
 
+      var $button = $('button');
+      $button.on("click", function (event) {
+          alert("je klikke!")
+      });
 
----
-
-
-# Event propagering
-
-.js
-    .on( events [, selector ] [, data ], handler(eventObject) )
-
-<br />
-
-
-
-.js
-    $button.on("click", function(event) {
-        console.log("je klikke!")
-    });
+<button id="event-1">Trykk her!</button>
 
 ---
 
+.middle.center
 
-# Event propagering
-
-.js
-    .on( events [, selector ] [, data ], handler(eventObject) )
-
-<br />
-
-
-
-.js
-    $button.on("click", function(event) {
-        console.log("je klikke!")
-    });
-
-<br />
-
-
-
-.js
-    $button.on("click", function(event) {
-        this // DOM-elementet som trigget eventen
-
-        $(this) // wrap DOM-elementet med jquery for å få et jquyer objekt
-    });
+# TODO Event propagering
 
 ---
-
 
 .center
 
 # Event propagering
+
+100 knapper = 100 event bindinger!
 
 <table class="table-center">
     <tr>
@@ -343,158 +305,137 @@ Returnerer/setter boolske verdier
     </tr>
 </table>
 
-100 knapper = 100 event bindinger
+Må vi gjøre det 100 ganger?
 
 ---
 
-.middle.center
+# Event propagering
+![Event propagation 1](img/event-propagering-1.png)
 
-![event propagation](img/eventpropagation.png)
+---
+
+# Event propagering
+![Event propagation 2](img/event-propagering-2.png)
+
+---
+
+# Event propagering
+![Event propagation 3](img/event-propagering-3.png)
+
+---
+
+# Event propagering
+![Event propagation 4](img/event-propagering-4.png)
+
+---
+
+# Event propagering
+![Event propagation 5](img/event-propagering-5.png)
 
 ---
 
 # Event propagering
 
-.js
-    .on( events [, selector ] [, data ], handler(eventObject) )
+    <table>
+      <tr>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        <td><button>Knapp</button></td>
+        ...
+      </tr>
+      <tr>
+        ...
 
-<br />
+Holder med én lytter!
 
-
-.js
-    $("table").on("click", "button", function(event) {
-        console.log("je klikke!")
+    $("table").on("click", "button", function (event) {
+        alert("je klikke!")
     });
 
 ---
+
+# Event propagering
+
+    $table.on("click", "button", function (event) {
+
+        var $knappen = $(event.currentTarget); // gir deg knappen
+
+        var $sammeKnappen = $(this); // gir deg også knappen
+    });
+
+---
+
 .middle.center
 # Event objekt
 
 .javascript.event
-    $button.on("click", function(event) {});
+
+    $enLink.on("click", function (event) { });
 
 ---
 
 # Event objekt
 
-.js
-    $button.on("click", function(event) {
+    $enLink.on("click", function (event) {
+
+        // hindrer standard nettleseroppførsel
         event.preventDefault();
-        // forhindrer standard nettleser oppførsel
     });
 
+<br>
 
----
+    $enLink.on("click", function (event) {
 
-# Event objekt
-
-
-.js
-    $button.on("click", function(event) {
-        event.preventDefault();
-        // forhindrer standard nettleser oppførsel
-    });
-
-<br />
-
-
-.js
-    $button.on("click", function(event) {
+        // stopper at eventet bobler videre til andre elementer
         event.stopPropagation();
-        // stopper event boblingen
     });
-
----
-# Event objekt
-
-.js
-    $button.on("click", {spennende: "ting"}, function(event) {
-        // data som sendes inn til callback funksjonen kan hentes gjennom event.data
-        event.data.spennende; // "ting"
-    });
-
----
-
-# Event objekt
-
-.js
-    $button.on("click", {spennende: "ting"}, function(event) {
-        // data som sendes inn til callback funksjonen kan hentes gjennom event.data
-        event.data.spennende; // "ting"
-    });
-
-<br />
-
-
-.js
-    $button.on("click", {spennende: "ting"}, function(event) {
-        // få tak i dom elementet som trigget eventen gjennom event.currentTarget
-        var $element = $(event.currentTarget);
-
-        // samme objektet som this (context)
-        var $element = $(this);
-    });
-
 
 ---
 .middle.center
 
-# timing
+# Timing
 ![Timing cat](img/catswingtail.gif)
 
 ---
 .middle.center
 
-    <a id="setTimeoutAlert">SnozzzzzZZZzz i 2 sekunder</a>
+    <a id="timeout-1">SnozzzzzZZZzz i 2 sekunder</a>
 
 ![Tired cat](img/Im_So_Tired_Cat.jpg)
 
+---
+
+# Timing
+
+    $enLink.on("click", function (event) {
+
+        setTimeout(function () {
+            alert("Det har gått 2sekunder!")
+        }, 2000);
+    });
+
+<a href="#18" id="timeout-1">Klikk meg</a>
 
 ---
 
 # timing
 
-.js
-    $button.on("click", function(event) {
+    var timeoutId;
 
-        setTimeout(function() {
-            alert("det har gått 2sekunder!")
-        }, 2000);
-    });
+    $linkEn.on("click", function (event) {
 
----
-
-# timing
-
-.js
-    var timeoutID;
-    $button.on("click", function(event) {
-
-        timeoutID = setTimeout(function() {
-            alert("4sec!")
-        }, 2000);
+      timeoutId = setTimeout(function () {
+        alert("2 sekunder!")
+      }, 2000);
 
     });
 
-    $abortButton.on("click", function(event) {
-        clearTimeout(timeoutID);
+    $linkTo.on("click", function (event) {
+      clearTimeout(timeoutId);
     });
 
-
-
-
-<br />
-
-
-.html
-    <a id="setTimeoutAlert">2sec timout</a>
-    <a id="clearTimeoutAlert">clear timeout</a>
-
-
----
-.middle.center    
-    <a id="demo2setTimeoutAlert">2sec timout</a><br />
-    <a id="demo2clearTimeoutAlert">clear timeout</a>
+<a id="timeout-2">link én - 2 sec timout</a><br>
+<a id="timeout-3">link to - clear timeout</a>
 
 ---
 
@@ -505,16 +446,16 @@ Returnerer/setter boolske verdier
 ##Eventer
 
 1. Vise stor versjon av bilde ved klikk
-2. Legg til et søkefelt for å velge tag
-3. Oppdatere søketag på ved skriving in søkefeltet (hint: keyup-event)
+
+2. Legg til et søkefelt der man kan søke `tags` på flickr
+
+3. Oppdater søk ved skriving in søkefeltet (Hint: `keyup-event`)
 
 ##Attributter
 
 1. Hente ut title-attributt fra bildet å vise denne som en bildetittel
 
-
 [Løsningsforslag](../losning/index.html)
-
 
 ---
 .middle.center.fullimage

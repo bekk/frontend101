@@ -53,7 +53,7 @@ article {
 /* Meny
 --------------------------------------------- */
 
-body > .container:first-of-type {
+body > .container {
     margin-top: 140px;
 }
 
@@ -127,24 +127,24 @@ body > .container:first-of-type {
     max-width: 100%;
 }
 
-@media all and (max-width: 950px) {
+@media (max-width: 950px) {
     .container {
-        width:auto;
+        width: auto;
     }
     .siteheader {
         position: relative;
-        margin:0;
-        left:0;
+        margin: 0;
+        left: 0;
     }
     .sitenav li a {
         padding: 1em 0.5em;
     }
-    body > .container:first-of-type {
+    body > .container {
         margin-top: 0px;
     }
 }
 
-@media all and (max-width: 690px) {
+@media (max-width: 690px) {
     .sitenav li {
         width: 20%;
     }
@@ -159,18 +159,18 @@ body > .container:first-of-type {
     }
 }
 
-@media all and (max-width: 480px) {
+@media (max-width: 480px) {
     .sitenav li {
         width: 33%;
     }
 }
 
-@media only screen and (min-device-pixel-ratio: 1.5) {
+@media (min-device-pixel-ratio: 1.5) {
     img.retina {
-        display: BLOCK;
+        display: block;
     }
 
     img.standard {
-        display: NONE;
+        display: none;
     }
 }

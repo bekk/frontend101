@@ -1,20 +1,20 @@
 # Dag 1
 
 
-## Del 1: Intro
+## Del 1: [Lars] Intro
 
 * Presentasjon:
     * HTML-intro (DOM, tags, classes, IDs, structure, doctype)
     * CSS-intro (selectors, propreties, values, sizes, colors box-model, positioning, floats)
     * Developer tools intro (element selector, HTML editing, CSS editing, console)
-    * Graceful degradation, progressive enhancement
-    * Normalisering / reset av CSS
+    * Dropper: Graceful degradation, progressive enhancement
+    * Dropper: Normalisering / reset av CSS
 
 * Oppgave:
     * Intro til oppgavesett, nedlasting av filer, forklaring av struktur
     * Style utlevert HTML, tilpasset desktop
 
-## Del 2: Responsive
+## Del 2: [Sebastian] Responsive
 
 * Presentasjon:
     * Responsive design (mobile first, practices)
@@ -23,14 +23,12 @@
 * Oppgave:
     * Responsive tilpassing av siden for desktop + tablets + mobile.
 
-## Del 3: Detaljer
+## Del 3: [Mads] Detaljer
 
 * Presentasjon:
     * Web fonts, icon fonts
-    * CSS transitions, transform
-    * CSS transforms
+    * CSS transitions, transform, animations
     * Eksempler på hva man kan få til med CSS
-    * Semantisk markup
 * Oppgave:
     * Legge til webfonts på siden
     * Bruke en icon-font på siden

@@ -50,6 +50,7 @@
 
 [bradfrostweb.com](http://bradfrostweb.com/blog/web/responsive-web-design-missing-the-point/)
 
+
 ---
 
 .middle.center
@@ -62,9 +63,31 @@
 
 .middle.center
 
+![NAV.no på en tesla](img/tesla-beta.jpeg)
+
+beta.nav.no i en Tesla
+
+
+---
+
+.middle.center
+
 ![Finn.no Stats](img/finn.stats.device.png)
 
 [labs.finn.no](http://labs.finn.no/)
+
+---
+
+.middle.center
+
+# Responsive vs mobil-side
+![Responsive vs mobile](img/obama-mitt-sites.png)
+
+---
+
+.agenda
+
+# Responsive Web Design er
 
 ---
 
@@ -96,15 +119,15 @@ design som skalerer
 
 .css
     #content {
-        width: 960px;
+        width: 1000px;
         font-size: 12px;
         margin: 20px;
     }
 
     #content {
         width: 100%;
-        font-size: 0.75em; /* 12px/16px */
-        margin: 0.02083333333%; /* 20px/960px */
+        font-size: 75%; /* 12px/16px */
+        margin: 20%; /* 20px/1000px */
     }
 
 ---
@@ -118,9 +141,9 @@ design som skalerer
 .middle.center
 
 # target / context = result
-12 px / 16 px = 0.75 em
+12 px / 16 px = 0.75 (%)
 
-540 px / 960 px = 0.54166666666 %
+540 px / 1000 px = 0.54 (%)
 
 .. ikke rund av!
 
@@ -128,18 +151,44 @@ design som skalerer
 
 # Hva er context?
 
----
+.css 
+    #parent {
+        width: 500px;
+    }
+    #child-of-parent {
+        width: 250px;
+    }
 
+=>
+    #parent {
+        width: 500px;
+    }
+    #child-of-parent {
+        width: 50%;
+    }
+
+---
 # Hva er context?
 
-default font size
+.css 
+    #parent {
+        width: 500px;
+    }
+    #child-of-parent {
+        width: 250px;
+    }
 
-    .css 
-        html {
-            font-size: 16px; /* eksplisitt verdi */
-            font-size: 100%; /* browser default */
-            font-size: 62.5%; /* 10px */
-        }
+=>
+    #parent {
+        width: 500px;
+    }
+    #child-of-parent {
+        width: 50%; 
+    }
+->
+    #root { /* body element */
+        width: 100%; /* Browser width */
+    }
 
 ---
 
@@ -152,7 +201,8 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
         width: 200px;
     }
     #child-of-parent {
-        margin: 35px;
+        width: 100px;
+        margin: 30px;
     }
 
 ---
@@ -166,7 +216,8 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
         width: 200px;
     }
     #child-of-parent {
-        margin: 35px;
+        width: 100px;
+        margin: 30px;
     }
 
 ->
@@ -175,7 +226,8 @@ Når man beregner marginer, er det størrelsen på containeren til elementet du 
         width: 200px;
     }
     #child-of-parent {
-        margin: 17.5%; /* 35px/200px */
+        width: 100px;
+        margin: 15%; /* 30px/200px */
     }
 
 ---
@@ -206,7 +258,33 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
 
     #site {
         width: 540px;
-        padding: 0.03703703703%; /* 20px/540px */
+        padding: 3.703703703%; /* 20px/540px */
+    }
+
+---
+
+# Padding 2 tv
+
+Når man beregner padding, er det størrelsen på elementet du setter padding på som er context
+
+.css
+    #site {
+        width: 540px;
+        padding: 20px;
+    }
+
+->
+
+    #site {
+        width: 540px;
+        padding: 3.703703703%; /* 20px/540px */
+    }
+
+->
+
+    #tv {
+        width: 50%;
+        padding-top: 56.25%;
     }
 
 ---
@@ -217,6 +295,7 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
 
 ---
 
+.white 
 # Flexible Media
 
 1. Bruk større bilder
@@ -227,13 +306,6 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
         max-width: 100%
     }
 
----
-
-.middle.center
-
-# Retina
-
-![Finn.no Stats](img/retina.png)
 
 
 ---
@@ -246,12 +318,9 @@ Når man beregner padding, er det størrelsen på elementet du setter padding p�
 
 .middle.center
 
-Media queries gir oss *betinget css* gjennom *nettleserspørringer*
-
-Basically; hvis stor skjerm, så stor skjerm-css.
-
-(legg inn mediaqueri.es bildene her)
-
+![mediaquieries.es](img/muumilaakso.png)
+![mediaquieries.es](img/erik-ford.png)
+[mediaqueri.es](http://mediaqueri.es/)
 
 
 ---
@@ -263,23 +332,31 @@ Basically; hvis stor skjerm, så stor skjerm-css.
 
     .css
     /* <= 1000+x*/
-    @media screen and (max-width:1000px) {
+    @media (max-width:1000px) {
         #content {
             width:960px;
         }
     }
     /* <= 750 px */
-    @media screen and (max-width:750px) {
+    @media (max-width:750px) {
         #content {
             width:500px;
         }
     }
     /* <= 480px px */
-    @media screen and (max-width:480px) {
+    @media (max-width:480px) {
         #content {
             width: 100%;
         }
     }
+
+---
+
+.middle.center
+
+# Retina
+
+![Finn.no Stats](img/retina.png)
 
 ---
 
@@ -314,14 +391,6 @@ Basically; hvis stor skjerm, så stor skjerm-css.
 
 ---
 
-.middle.center
-
-![Mediaqueri.es](img/mediaq.png)
-
-[mediaqueri.es](http://mediaqueri.es/)
-
----
-
 #Oppgaver
 
 Ved hjelp av media queries, løs følgende problem ved siden:
@@ -343,9 +412,11 @@ Ved hjelp av media queries, løs følgende problem ved siden:
 
 Spørsmål?
 
-erik.wendel@bekk.no
+sebastian.steinmann@bekk.no
 
     </textarea>
     <div id="slideshow"></div>
   </body>
 </html>
+
+

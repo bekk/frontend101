@@ -16,8 +16,8 @@ a {
 }
 
 h1 {
-    margin:-50px -50px 0 -50px;
-    padding:30px 50px;
+    margin: 0 -50px;
+    padding: 30px 50px;
     font-weight: normal;
     font-size: 1.5em;
     background: #228fd3;
@@ -39,21 +39,21 @@ header, nav, section {
     width: 860px;
     margin: 0 auto;
     background: #fff;
-    padding:50px;
+    padding: 50px;
 }
 
 article {
     background: #eceef1;
-    padding:1em 2em;
-    margin:0 0 2em 0;
-    border-left:5px solid #228fd3;
+    padding: 1em 2em;
+    margin: 0 0 2em 0;
+    border-left: 5px solid #228fd3;
 }
 
 
 /* Meny
 --------------------------------------------- */
 
-body > .container:first-of-type {
+body > .container {
     margin-top: 140px;
 }
 
@@ -65,13 +65,14 @@ body > .container:first-of-type {
 }
 
 .siteheader .container {
-    padding-bottom:0;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .sitenav {
     background: #26282b;
     margin: 0 -50px;
-    padding:0 50px;
+    padding: 0 50px;
 }
 
 .sitenav ul {
