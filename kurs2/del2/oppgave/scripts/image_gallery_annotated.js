@@ -1,20 +1,13 @@
-// utilities
+var createImageObjects = function (items) {
+  var images = [];
 
-var generateFlickrUrl = function(query) {
-    return "http://api.flickr.com/services/feeds/photos_public.gne?lang=en-us&tags=" + query + "&tagmode=all&format=json&jsoncallback=?"
+  // $(items).each(function() {
+  // 	// Her itererer vi over items, og lager et nytt bilde-objekt per item
+  //	// Legg til objektet i images
+  // });
+
+  return images;
 };
-
-var getDataFromFlickr = function(url, successCallback, errorCallback) {
-
-    $.ajax({
-        dataType: "jsonp",
-        url: url,
-        success: successCallback,
-        error: errorCallback
-    });
-
-};
-
 
 // application
 
