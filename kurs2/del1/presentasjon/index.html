@@ -395,9 +395,15 @@ Spill, lyd, video
 
 ---
 
-# TODO:
+# JS + Web
 
-## Fete demoer
+[Famous](http://famo.us/)
+
+[asm.js](http://www.unrealengine.com/html5/)
+
+[Discourse](http://try.discourse.org/)
+
+[Flickr](https://www.flickr.com/explore)
 
 ---
 
@@ -406,25 +412,99 @@ Spill, lyd, video
 JavaScript er et programmeringspråk.
 
 ---
-#TODO
+.center.middle
+## Laget av Brendan Eich på ~1 uke i 1995.
 
-- Introdusere JS som programmeringspråk
-- Vise noen JS eksempler
-- Introdusere DOM APIene og si noe om hvordan de skiller seg fra JS som programmeringspråk
-- Vise noen DOM API eksempler
+---
+.center.middle
+## Prototype basert, dynamisk og første-klasses funksjoner.
+
+---
+.center.middle
+## Oftest funnet i browsern, men blir mer og mer utbredt.
+
+---
+#JavaScript
+
+    .javascript
+    console.log('Hello world!'); //=> Hello world!
+
+---
+#JavaScript
+
+    .javascript
+    var hello = function(name) {
+      return 'Hello, ' + name + '!';
+    };
+
+    console.log(hello('Bob'));
+
+---
+#JavaScript
+
+    .javascript
+    var hello = function(name) {
+      return 'Hello, ' + name + '!';
+    };
+
+    console.log(hello('Bob')); //=> Hello, Bob!
+
+---
+.middle.center
+
+##Browsere eksponerer et API til DOMen
+
+---
+.middle.center
+
+##En del av webplatform standarden
+
+---
+.middle.center
+
+##Gir oss muligheten til å programmere browseroppførsel
+
+---
+#DOM APIet
+
+    .javascript
+    var boks = document.querySelectorAll('#boks');
+
+---
+#DOM APIet
+
+    .javascript
+    var boks = document.querySelectorAll('#boks');
+
+    boks.classList.add('stor');
+
+---
+#DOM APIet
+
+    .javascript
+    var boks = document.querySelectorAll('#boks');
+
+    boks.classList.add('stor');
+
+    console.log(boks.style);
 
 ---
 .agenda
 
 # Oppgave
 
-1. Skriv ut *"Hello world"* til konsollet
+1) Skriv ut 'Hello world' til konsollet
 
-2. Skrive ut resultatet av en funksjon (TBD)
+2) Lag en funksjon som legger sammen to tall
 
-3. Bruke DOM-APIene til å få en div til å vises når man trykker på en knapp
+3) Bruke DOM-APIene til å endre URL'en man er på når man trykker på en knapp
 
-4. Bruke DOM-APIene til å endre URL'en man er på når man trykker på en knapp
+
+Bonus:
+
+4) Bruke DOM-APIene til å få en div til å vises når man trykker på en knapp
+
+hints: Google: 'event listener mdn' og 'add class mdn'
 
     </textarea>
     <div id="slideshow"></div>
