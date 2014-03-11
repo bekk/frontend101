@@ -21,20 +21,23 @@ var renderThumbs = function(images, numberOfImages) {
 
 // Denne funksjonen kalles når siden er ferdig lastet
 var app = function() {
-  var $appElement = $("#image_gallery")
-
+  var $app = $("#image_gallery");
+  var $thumbs = $app.find("#thumbs");
   var tag = "trondheim";
+
+  $thumbs.html("loading the awsome " + tag);
+
   Flickr.search(tag, function (items) {
     if (items.length == 0) {
-      $appElement.html("Oups, no images found.");
+      $thumbs.html("Oups, no images found.");
       return;
     }
 
     var thumbsHtml = renderThumbs(items, 10);
-    $appElement.html(thumbsHtml);
+    $thumbs.html(thumbsHtml);
   });
 };
 
-// startup
 
+// startup
 $(document).ready(app);
