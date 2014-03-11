@@ -120,7 +120,7 @@ a.two { font-size:3em; display: block; text-align: left; color:#fff !important; 
 # JavaScript - Del 2
 
 
-* DOM
+* jQuery DOM
 * Callbacks
 * Ajax
 
@@ -131,6 +131,7 @@ Hvordan endre HTML etter siden er lastet?
 
 ---
 
+.middle.center
 #jQuery dom manupulering
 
 
@@ -139,18 +140,58 @@ Hvordan endre HTML etter siden er lastet?
 #jQuery dom manupulering
 
     .javascript
-    $("ul li").hide();
+    $(selector).action();
 
 ---
 
 #jQuery dom manupulering
 
     .javascript
-    $("ul li").hide();
+    $(selector).action();
 
 Finn et objekt, gjør noe med det.
 
 ---
+
+#jQuery dom manupulering
+
+    .javascript
+    $(selector).action();
+
+Finn et objekt, gjør noe med det.
+
+Css-ish selector
+
+---
+
+#jQuery dom manupulering
+
+    .javascript
+    $(selector).action();
+
+Finn et objekt, gjør noe med det.
+
+Css-ish selector.<br />
+En action å utføre
+
+---
+
+#jQuery dom manupulering
+
+    .javascript
+    $(selector).action();
+
+Finn et objekt, gjør noe med det.
+
+Css-ish selector<br/>
+En action å utføre
+
+    .javascript
+    $("ul li").hide();
+
+---
+
+
 
 #jQuery dom manupulering
 
@@ -177,9 +218,14 @@ Finn et objekt, gjør noe med det.
     $("ul").empty();                // tøm innhold
     $("ul li").remove();            // slett elementer
 
+    $("ul li").find("a");           // Finn a under hver ul li
+
     $("ul li").each(function () {   // gjøre noe med alle elementer
         // noe spennende
     });
+
+
+[jQuery api](http://api.jquery.com/)
 
 ---
 
@@ -236,19 +282,127 @@ Finn et objekt, gjør noe med det.
 
 ---
 
-#TODO
+.middle.center
 
-* Lage noen html widgets
-    * popover kanskje
+#Callbacks
+
+---
+
+.middle.center
+
+![callback](img/callbacks.jpg)
 
 
 ---
 
-#TODO Callbacks
+#Callbacks
 
-*Funksjonspekere
+    .javascript
+    myAwsomeFunction(function() {
+        // be awsome
+    });
 
 ---
+
+.middle.center
+
+![function](img/yofunction.jpg)
+
+---
+
+#Callbacks
+
+    .javascript
+    myAwsomeFunction(function() {
+        // be awsome
+    });
+
+---
+
+#Callbacks
+
+    .javascript
+    myAwsomeFunction(function() {
+        // be awsome
+    });
+
+    function myAwsomeFunction(callback) {
+        // do some awesomeness
+
+        // hope this is awsome
+        callback();
+
+        // more awesomeness here!
+    }
+
+
+---
+
+#Callbacks
+
+    .javascript
+    myAwsomeFunction(function() {
+        suteUp(true);
+    });
+
+    doSomethingNotSoAwsome();
+
+---
+
+#Callbacks
+
+    .javascript
+    myAwsomeFunction(function() {
+        suteUp(true);
+    });
+
+    doSomethingNotSoAwsome();
+
+&nbsp;
+
+!=
+
+&nbsp;
+
+    .javascript
+    myAwsomeFunction();
+
+    suteUp(true);
+
+    doSomethingNotSoAwsome();
+
+---
+
+#Callbacks
+
+    .javascript
+    setTimeout(function() {
+        console.log("dary");
+    }, 1000);
+
+    console.log("Legen");
+    console.log("wait for it");
+
+---
+
+#Callbacks
+
+    .javascript
+    setTimeout(function() {
+        console.log("dary");
+    }, 1000);
+
+    console.log("Legen");
+    console.log("wait for it");
+
+<br />
+<br />
+
+
+![Barney Stinson](img/barney.jpg)
+
+---
+
 
 .middle.center
 
@@ -258,15 +412,15 @@ Hvordan slipper Gmail å laste siden på nytt når du åpner en epost?
 
 .middle.center
 
-#AJAX
-
-&nbsp;
+![jQuery](img/ajax.png)
 
 ---
 
 .middle.center
 
-#AJAX
+![jQuery](img/ajax.png)
+
+&nbsp;
 
 Send og motta data i bakgrunnen
 
@@ -469,18 +623,31 @@ JSONP
 
 ---
 
+.middle.center
+
+![Screenshot av løsningsforslag](img/losning.png)
+
+
+---
+
 #Oppgaver
 
 ##Del 2: Lag en bilde-stripe med bilder fra Flickr!
 
-1. Gjør et kall mot Flickr. Logg ut responsen.
-2. Lag et nytt **MyImage**-objekt for hvert bilde i responsen. Lagre bildene i **images**-arrayet.
-3. Bygg en HTML-streng (bildestripe) basert på bildene i arrayet.
-4. Sett HTML-strengen inn i DOM-elementet med **id="thumbs"** inni **el** som sendes inn til **startImageGallery()**
+1) Bruk metoden `Flickr.search()` for å gjøre et kall mot Flickr. Logg responsen.
+
+2) Bygg en HTML-streng (bildestripe) basert på responsen.
+
+3) Sett HTML-strengen inn i DOM-elementet med **id="thumbs"** inni **id="image_gallery"**.
+
+<br />
+###Det finnes to startpunkt:
+* **for the brave:** image_gallery.js
+* **for the mortal:** image_gallery_annotated.js <br />
+*husk å endre filnavn til image_gallery.js før du starter*
 
 Prøv å løse oppgaven uten å se på [løsningsforslaget](../losning/index.html)
 
----
 
     </textarea>
     <div id="slideshow"></div>
