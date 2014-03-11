@@ -25,7 +25,7 @@ var app = function() {
   var $thumbs = $app.find("#thumbs");
   var tag = "trondheim";
 
-  $thumbs.html("loading the awsome " + tag);
+  $thumbs.html('<p class="loading">loading the awsome "' + tag + '"</p>');
 
   Flickr.search(tag, function (items) {
     if (items.length == 0) {

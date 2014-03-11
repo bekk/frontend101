@@ -43,7 +43,8 @@ var app = function() {
       timeoutId = setTimeout(function () {
       $largeImage.hide();
 
-      $thumbs.html("loading the awsome " + tag);
+      $thumbs.html('<p class="loading">loading the awsome "' + tag + '"</p>');
+
       // Venter litt, slik at søket ikke fyres
       // av hver gang man trykker på en tast
       Flickr.search(tag, function (items) {
