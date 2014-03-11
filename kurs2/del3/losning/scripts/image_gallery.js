@@ -13,25 +13,27 @@ var MyImage = function(item) {
 
 /* IMAGE GALLERY */
 
-var images = [];
 
 var createImageObjects = function(items) {
+  var images = [];
+
   // Vi itererer over respons, og lager et nytt bilde-objekt per item
-  images = []; // husk på å tømme lista for hver gang
   $(items).each(function() {
     var item = this;
     var img = new MyImage(item);
     images.push(img); // Vi legger til hvert bilde-objekt på slutten av arrayet
   });
+
+  return images;
 };
 
-var renderThumbs = function(numberOfImages) {
+var renderThumbs = function(images, numberOfImages) {
   var container = $('<div class="images-nav" />');
 
   for(i = 0; i < numberOfImages; i++) {
     var image = images[i];
     container.append(image.smallImage);
-  };
+  }
 
   return container;
 };
@@ -47,36 +49,29 @@ var startImageGallery = function(el) {
   var $thumbsContainer = el.find("#thumbs");
   var $largeImageContainer = el.find("#largeImage");
 
+  var images = [];
+
   var timeoutId;
 
   $inputField.on("keyup", function(event){
-    var keyCode = event.keyCode;
+    var tag = $(this).val();
 
-    // Hva sjekker du her?
-    if(keyCode >= 48 && keyCode <= 90 ||
-       keyCode == 222 ||
-         keyCode == 186 ||
-           keyCode == 219
-      ){
-        var tag = $(this).val();
-        tag = $.trim(tag); // Fjerner mellomrom foran og bak
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function () {
+      // Venter litt, slik at søket ikke fyres
+      // av hver gang man trykker på en tast
+      Flickr.search(tag, function (items) {
+        if (items.length == 0) {
+          $thumbsContainer.html("Oups, no images found.");
+          return;
+        }
 
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(function(){
-          // Venter 1 sekund, slik at søket ikke fyres
-          // av hver gang man trykker på en tast
-          Flickr.search(tag, function (images) {
-            if (images.length == 0) {
-              $thumbsContainer.html("Oups, no images found.");
-            }
+        images = createImageObjects(items);
 
-            createImageObjects(images);
-
-            var html = renderThumbs(8);
-            $thumbsContainer.html(html);
-          })
-        }, 500);
-      }
+        var html = renderThumbs(images, 8);
+        $thumbsContainer.html(html);
+      });
+    }, 500);
   });
 
   $thumbsContainer.on("click", "img", function() {

@@ -13,18 +13,21 @@ var MyImage = function(item) {
 
 /* IMAGE GALLERY */
 
-var images = [];
 
 var createImageObjects = function(items) {
+  var images = [];
+
   // Vi itererer over respons, og lager et nytt bilde-objekt per item
   $(items).each(function() {
     var item = this;
     var img = new MyImage(item);
     images.push(img); // Vi legger til hvert bilde-objekt på slutten av arrayet
   });
+
+  return images;
 };
 
-var renderThumbs = function(numberOfImages) {
+var renderThumbs = function(images, numberOfImages) {
   var container = $('<div class="images-nav" />');
 
   for(i = 0; i < numberOfImages; i++) {
@@ -47,13 +50,14 @@ var startImageGallery = function(el) {
   // var $inputField = el.find("#tagSearch");
   // var $largeImageContainer = el.find("#largeImage");
 
+  // var images = [];
+
   $inputField.on("keyup", function(event){
-    var keyCode = event.keyCode;
     // Gjør et søk basert på det som står i input-feltet
-  };
+  });
 
   $thumbsContainer.on("click", "img", function() {
-    var image = $this;
+    var image = $(this);
     // Vis stort bilde i largeImageContainer ved klikk på thumbnail
   });
 
