@@ -41,7 +41,7 @@ Høyere nivå abstraksjon, ikke ferdig rammeverk
 
 Økende popularitet
 
-Stabilt og nærmer seg 1.0
+Stabilt
 
 Aktiv utvikling
 
@@ -207,7 +207,7 @@ Det er *kun* views som har lov til å røre DOM-en!
 
 ---
 
-.middle.center 
+.middle.center
 # require.js
 ## Asynchronous Module Definition <br />(AMD)
 
@@ -221,7 +221,7 @@ Det er *kun* views som har lov til å røre DOM-en!
 * Applikasjoner med 40 000 kodelinjer spredd over 200 filer er vanskelig å få oversikt
 * Få oversikt over avhengigheter mellom moduler
 * Ikke grise til globale scopet
-* Gjør det lett gjenbruke komponenter og metoder. 
+* Gjør det lett gjenbruke komponenter og metoder.
 
 ---
 .middle.center
@@ -244,7 +244,7 @@ I tillegg er det kjedelig å skrive script includes
   ## Definere en modul
     .js
     define("spennendeModul", function() {
-      
+
         return {
             spennendeMetode: function() {
                 return "awsome";
@@ -253,7 +253,7 @@ I tillegg er det kjedelig å skrive script includes
     });
 
 
-  ## Importere en modul 
+  ## Importere en modul
     .js
     var spennendeModul = require(spennendeModul);
     spennendeModul.spennendeMetode() // awsome
@@ -267,7 +267,7 @@ I tillegg er det kjedelig å skrive script includes
 
 # underscore.js
 
-* Nærmeste du kommer funktionell programmering i JavaScript 
+* Nærmeste du kommer funktionell programmering i JavaScript
 * 80-ish utility fuksjoner for dagligdagse problemer
 * Gir deg *map, select, invoke* som vi er vant med fra ruby og python
 * "It's the tie to go along with jQuery's tux, and Backbone.js's suspenders."
@@ -275,7 +275,7 @@ I tillegg er det kjedelig å skrive script includes
 ---
 
 # underscore.js
-  
+
 ## _.map
 
 .javascript
@@ -287,7 +287,7 @@ I tillegg er det kjedelig å skrive script includes
 ## _.invoke
 
 .javascript
-    _.invoke(list, methodName, [*arguments]) 
+    _.invoke(list, methodName, [*arguments])
 
     _.invoke([[5, 1, 7], [3, 2, 1]], 'sort');
 
@@ -307,7 +307,7 @@ I tillegg er det kjedelig å skrive script includes
 ## _.defer
 
 .javascript
-    _.defer(function, [*arguments]) 
+    _.defer(function, [*arguments])
 
     _.defer(function(argument1, argument2) {
         // run after everything
