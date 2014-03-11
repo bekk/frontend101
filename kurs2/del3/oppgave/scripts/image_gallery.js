@@ -1,64 +1,56 @@
-/* MY IMAGE */
+// application
 
-var MyImage = function(item) {
-  this.srcSmall = item.media.m.replace("_m", "_s");
-  this.srcLarge = item.media.m.replace("_m", "");
-  this.title = item.title;
-  this.largeImage = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-large" src="' + this.srcLarge + '" />');
-  this.smallImage = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-small" src="' + this.srcSmall + '" />');
+var renderThumbItem = function(image) {
+  // wrap img-taggen i en a-tag med href (link) til store versjonen av bilde
+  var url = image.media.m.replace("_m", "_s");
+  var title = image.title;
 
-  var img = new Image();
-  img.src = this.srcLarge;
-};
-
-/* IMAGE GALLERY */
-
-
-var createImageObjects = function(items) {
-  var images = [];
-
-  // Vi itererer over respons, og lager et nytt bilde-objekt per item
-  $(items).each(function() {
-    var item = this;
-    var img = new MyImage(item);
-    images.push(img); // Vi legger til hvert bilde-objekt på slutten av arrayet
-  });
-
-  return images;
+  return '<img alt="' + title + '" src="' + url + '" />';
 };
 
 var renderThumbs = function(images, numberOfImages) {
-  var container = $('<div class="images-nav" />');
+  var html = "";
+  var imagesToRender = (numberOfImages < images.length) ? numberOfImages : images.length;
 
-  for(i = 0; i < numberOfImages; i++) {
-    var image = images[i];
-    container.append(image.smallImage);
+  for (var i = 0; i < imagesToRender; i++) {
+    html += renderThumbItem(images[i]);
   };
 
-  return container;
+  return '<div id="thumbs">' + html + "</div>";
 };
 
 
-/* APPLICATION SETUP */
+var renderLargeImage = function(imageUrl, title) {
+  // rendere og returner html strengen
+  // <img src="bildeurl" /><div class="title">bildetittel</div>;
+};
 
-var startImageGallery = function(el) {
+// Denne funksjonen kalles når siden er ferdig lastet
+var startImageGallery = function() {
+  var $app = $("#image_gallery");
+  var $thumbs = $app.find("#thumbs");
 
-  // Tar i mot et dom-element med jQuery-funksjoner, f.eks.
-  // $('<div id="bildegalleri" />');
+  // var $inputField = $app.find("#tagSearch");
+  // var $largeImage = $app.find("#largeImage");
 
-  var $thumbsContainer = el.find("#thumbs");
-  // var $inputField = el.find("#tagSearch");
-  // var $largeImageContainer = el.find("#largeImage");
-
-  // var images = [];
 
   $inputField.on("keyup", function(event){
     // Gjør et søk basert på det som står i input-feltet
+
+    // $thumbs.html("loading the awsome " + tag);
+
   });
 
-  $thumbsContainer.on("click", "img", function() {
+  $thumbsContainer.on("click", "a", function(event) {
+    event.preventDefault();
     var image = $(this);
     // Vis stort bilde i largeImageContainer ved klikk på thumbnail
+    // renderLargeImage(url, title);
+    // $largeImage.html(largeImageHtml).show();
+
   });
 
 };
+
+// startup
+$(document).ready(app);

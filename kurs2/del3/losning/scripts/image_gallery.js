@@ -1,86 +1,77 @@
-/* MY IMAGE */
+// application
 
-var MyImage = function(item) {
-  this.srcSmall = item.media.m.replace("_m", "_s");
-  this.srcLarge = item.media.m.replace("_m", "");
-  this.title = item.title;
-  this.largeImage = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-large" src="' + this.srcLarge + '" />');
-  this.smallImage = $('<img title="' + this.title + '" alt="' + this.title + '" class="image-small" src="' + this.srcSmall + '" />')
+var renderThumbItem = function(image) {
+  var url = image.media.m.replace("_m", "_s");
+  var largeUrl = image.media.m.replace("_m", "");
+  var title = image.title;
 
-  var img = new Image();
-  img.src = this.srcLarge;
-};
-
-/* IMAGE GALLERY */
-
-
-var createImageObjects = function(items) {
-  var images = [];
-
-  // Vi itererer over respons, og lager et nytt bilde-objekt per item
-  $(items).each(function() {
-    var item = this;
-    var img = new MyImage(item);
-    images.push(img); // Vi legger til hvert bilde-objekt på slutten av arrayet
-  });
-
-  return images;
+  return '<a href="' + largeUrl + '"><img alt="' + title + '" src="' + url + '" /></a>';
 };
 
 var renderThumbs = function(images, numberOfImages) {
-  var container = $('<div class="images-nav" />');
+  var html = "";
+  var imagesToRender = (numberOfImages < images.length) ? numberOfImages : images.length;
 
-  for(i = 0; i < numberOfImages; i++) {
-    var image = images[i];
-    container.append(image.smallImage);
-  }
+  for (var i = 0; i < imagesToRender; i++) {
+    html += renderThumbItem(images[i]);
+  };
 
-  return container;
+  return '<div id="thumbs">' + html + "</div>";
 };
 
-/* APPLICATION SETUP */
+var renderLargeImage = function(imageUrl, title) {
 
-var startImageGallery = function(el) {
+  return '<img src="' + imageUrl + '" /><div class="title">' + title + "</div>";
+};
 
-  // Tar i mot et dom-element med jQuery-funksjoner, f.eks.
-  // $('<div id="bildegalleri" />');
 
-  var $inputField = el.find("#tagSearch");
-  var $thumbsContainer = el.find("#thumbs");
-  var $largeImageContainer = el.find("#largeImage");
+// Denne funksjonen kalles når siden er ferdig lastet
+var app = function() {
+  var $app = $("#image_gallery");
+  var $thumbs = $app.find("#thumbs");
+  var $inputField = $app.find("#tagSearch");
+  var $largeImage = $app.find("#largeImage");
 
-  var images = [];
 
+  // setup søkefelt
   var timeoutId;
 
   $inputField.on("keyup", function(event){
     var tag = $(this).val();
 
     clearTimeout(timeoutId);
-    timeoutId = setTimeout(function () {
+      timeoutId = setTimeout(function () {
+      $largeImage.hide();
+
+      $thumbs.html("loading the awsome " + tag);
       // Venter litt, slik at søket ikke fyres
       // av hver gang man trykker på en tast
       Flickr.search(tag, function (items) {
         if (items.length == 0) {
-          $thumbsContainer.html("Oups, no images found.");
+          $thumbs.html("Oups, no images found...");
           return;
         }
 
-        images = createImageObjects(items);
-
-        var html = renderThumbs(images, 8);
-        $thumbsContainer.html(html);
+        var thumbsHtml = renderThumbs(items, 10);
+        $thumbs.html(thumbsHtml);
       });
     }, 500);
   });
 
-  $thumbsContainer.on("click", "img", function() {
+  // setup klikk eventer
+  $thumbs.on("click", "a", function(event) {
+    event.preventDefault();
+
     var $image = $(this);
-    var index = $image.index();
+    var url = $image.attr("href");
+    var title = $image.find("img").attr("alt");
 
-    var image = images[index];
-    var imageTitleHtml = '<div class="title">' + image.title + "</div>";
-
-    $largeImageContainer.html([image.largeImage, imageTitleHtml]).show();
+    var largeImageHtml = renderLargeImage(url, title);
+    $largeImage.html(largeImageHtml).show();
   });
+
 };
+
+// startup
+
+$(document).ready(app);

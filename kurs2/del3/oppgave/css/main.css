@@ -226,48 +226,33 @@ h3 i {
             transform: scale(1.03);
 }
 
-/* Image gallery 
+/* Image gallery
 --------------------------------------------- */
-#tagSearch {
-    font-size: 1.5em;
-    padding: 5px 10px;
-    display: block;
-    margin: 0 auto;
-}
-
-#thumbs {
-    margin-top: 30px;
-}
-
-#largeImage {
-    display: none; /* initial state , js overstyrer når element blir klikket*/
-    width: 640px;
-    margin: 0 auto;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
 
 .loading {
+    padding: 100px 30px;
     text-align: center;
 }
 
 .images-nav, .image-stage {
     text-align: center;
-    font-size: 1.2em;
-    color: #808080;
     margin-bottom: 40px;
 }
 
-.image-small {
+#image_gallery img {
     width: 65px;
     height: auto;
     padding: 5px;
-    margin-right: 20px;   
+    margin-right: 20px;
+
+    -webkit-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+       -moz-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+        -ms-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+         -o-transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
+            transition: all 200ms cubic-bezier(0.420, 0.000, 0.580, 1.000);
 }
 
-.image-large {
-    width: 100%;
-    height: auto;
+#image_gallery img:hover {
+    padding: 0;
+    width: 75px;
 }
