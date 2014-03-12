@@ -32,7 +32,6 @@ var app = function() {
   var $inputField = $app.find("#tagSearch");
   var $largeImage = $app.find("#largeImage");
 
-
   // setup søkefelt
   var timeoutId;
 
@@ -63,9 +62,11 @@ var app = function() {
   $thumbs.on("click", "a", function(event) {
     event.preventDefault();
 
-    var $image = $(this);
-    var url = $image.attr("href");
-    var title = $image.find("img").attr("alt");
+    var $link = $(this);
+    var url = $link.attr("href");
+
+    var $image = $link.find('img');
+    var title = $image.attr("alt");
 
     var largeImageHtml = renderLargeImage(url, title);
     $largeImage.html(largeImageHtml).show();
