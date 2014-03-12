@@ -40,7 +40,7 @@ var app = function() {
     var tag = $(this).val();
 
     clearTimeout(timeoutId);
-      timeoutId = setTimeout(function () {
+    timeoutId = setTimeout(function () {
       $largeImage.hide();
 
       $thumbs.html('<p class="loading">loading the awsome "' + tag + '"</p>');
