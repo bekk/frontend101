@@ -1,14 +1,3 @@
-var createImageObjects = function (items) {
-  var images = [];
-
-  // $(items).each(function() {
-  // 	// Her itererer vi over items, og lager et nytt bilde-objekt per item
-  //	// Legg til objektet i images
-  // });
-
-  return images;
-};
-
 // application
 
 var renderThumbItem = function(image) {
@@ -24,11 +13,15 @@ var renderThumbs = function(images, numberOfImages) {
 
 // Denne funksjonen kalles når siden er ferdig lastet
 var app = function() {
+    var $app = $("#image_gallery");
     var tag = "trondheim";
 
     // Vis lastetekst
 
     // hent data fra flickr
+    // Flickr.search(tag, function (items) {
+    // ...
+    // });
 
     // rendre thumbnails
 };
